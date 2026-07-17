@@ -1,6 +1,6 @@
 # Technical Foundations for Builders - Execution Plan
 
-Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-17
+Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-18
 
 ## 1. Objective
 
@@ -289,4 +289,4 @@ A historical artefact is ready only when:
 
 ## 8. Current Milestone 4 action
 
-Publish and complete WP-05 as the first controlled Milestone 4 batch. Research and draft the Chapter 3 first pass, then run independent standards and specification reviews before opening later chapter batches. Continue to defer optional further-territory packages.
+WP-05 has produced a researched and independently reviewed Chapter 3 first-pass draft. Pause for owner review before opening a later chapter batch. Continue to defer optional further-territory packages.

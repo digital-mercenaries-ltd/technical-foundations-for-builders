@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = [
     ROOT / "chapters/01-computing-foundations.md",
     ROOT / "chapters/02-programming-foundations.md",
+    ROOT / "chapters/03-software-engineering.md",
 ]
 WORD_RE = re.compile(r"[A-Za-z0-9]+(?:[’'-][A-Za-z0-9]+)*")
 LINK_RE = re.compile(r"\[([^]]+)]\([^)]+\)")

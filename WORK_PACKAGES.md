@@ -1,6 +1,6 @@
 # Technical Foundations for Builders issue-ready work packages
 
-Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-17
+Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-18
 
 These are bounded drafting and integration batches for publication to the `digital-mercenaries-ltd/technical-foundations-for-builders` GitHub issue tracker after Milestone 2 approval. They are not a required reading order.
 
@@ -75,6 +75,10 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 ## Construction packages
 
 ### WP-05: Draft Chapter 3 - software engineering
+
+**Issue:** [#3](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/3)
+
+**Status:** Reviewed draft ready for owner review - 2026-07-18.
 
 **Depends on:** WP-03.
 

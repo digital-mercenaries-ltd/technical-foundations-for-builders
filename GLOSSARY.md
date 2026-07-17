@@ -1,10 +1,14 @@
 # Glossary
 
-Status: Milestone 3 approved - 2026-07-17
+Status: Milestone 4 Chapter 3 draft - 2026-07-18
 
 This alphabetical index defines terms used by the drafted concepts and reader-facing navigation. It will grow with the guide. Definitions stay short and link to a published canonical explanation rather than to an outline placeholder.
 
 ## A
+
+### Abstraction
+
+A useful model and set of operations that suppress details irrelevant at that level; see [Abstraction, information hiding and interfaces](chapters/03-software-engineering.md#abstraction-information-hiding-and-interfaces).
 
 ### Artificial intelligence (AI)
 
@@ -38,9 +42,21 @@ A group of eight bits; see [Bits and bytes](chapters/01-computing-foundations.md
 
 The processor that follows machine instructions and performs calculations; see [Processors, memory and persistent storage](chapters/01-computing-foundations.md#processors-memory-and-persistent-storage).
 
+### Cohesion
+
+The degree to which the responsibilities inside a module belong together; see [Modularity, cohesion, coupling and separation of concerns](chapters/03-software-engineering.md#modularity-cohesion-coupling-and-separation-of-concerns).
+
+### Continuous integration (CI)
+
+The practice of frequently integrating small changes into a shared primary branch and checking the combined result; see [Build automation, continuous integration and fast feedback](chapters/03-software-engineering.md#build-automation-continuous-integration-and-fast-feedback).
+
 ### Coordinated Universal Time (UTC)
 
 The international time standard used as a reference for civil time and offsets; see [Time, clocks, dates and time zones](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones).
+
+### Coupling
+
+The extent to which one module depends on another module's details or behaviour; see [Modularity, cohesion, coupling and separation of concerns](chapters/03-software-engineering.md#modularity-cohesion-coupling-and-separation-of-concerns).
 
 ## E
 
@@ -64,6 +80,16 @@ A finite-precision number representation that covers a wide range by storing a s
 
 A base-16 positional notation using digits `0` to `9` and letters `A` to `F`; see [Hexadecimal and octal](further/01-computing-foundations.md#hexadecimal-and-octal).
 
+## I
+
+### Interface
+
+The operations and behavioural promises that another component is allowed to depend on; see [Abstraction, information hiding and interfaces](chapters/03-software-engineering.md#abstraction-information-hiding-and-interfaces).
+
+### Invariant
+
+A condition that must remain true in every valid state covered by a design; see [Functional requirements, quality attributes, specifications and invariants](chapters/03-software-engineering.md#functional-requirements-quality-attributes-specifications-and-invariants).
+
 ## L
 
 ### Latency
@@ -75,6 +101,10 @@ The elapsed time from a defined start to a defined finish for one operation or p
 ### Module
 
 A unit of code with its own namespace and an interface to other code; see [Modules, packages and dependencies](chapters/02-programming-foundations.md#modules-packages-and-dependencies).
+
+### Modularity
+
+The division of a system into parts with understandable responsibilities and controlled relationships; see [Modularity, cohesion, coupling and separation of concerns](chapters/03-software-engineering.md#modularity-cohesion-coupling-and-separation-of-concerns).
 
 ### Mutation
 
@@ -120,6 +150,10 @@ Presenting a small first view and making additional detail optional so that brea
 
 Working memory used by active programs and data; see [Processors, memory and persistent storage](chapters/01-computing-foundations.md#processors-memory-and-persistent-storage).
 
+### Refactoring
+
+Changing software's internal structure through small, behaviour-preserving steps so that it becomes easier to understand or modify; see [Refactoring, technical debt, legacy systems and evolutionary replacement](chapters/03-software-engineering.md#refactoring-technical-debt-legacy-systems-and-evolutionary-replacement).
+
 ### Request for Comments (RFC)
 
 A numbered publication in the Internet technical-document series. Some RFCs define standards; others record information, experiments or current practice. Chapter 1 uses RFCs to ground [Internet byte terminology](chapters/01-computing-foundations.md#bits-and-bytes), [time representations](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones) and [performance measurements](chapters/01-computing-foundations.md#latency-and-throughput).
@@ -134,7 +168,15 @@ The environment and services used while a program executes; see [Source code, pr
 
 An observable change beyond producing a function's result, such as changing shared state or writing to another system; see [Variables, state, mutability and side effects](chapters/02-programming-foundations.md#variables-state-mutability-and-side-effects).
 
+### Specification
+
+A record of expected properties and constraints precise enough to guide construction and evaluation; see [Functional requirements, quality attributes, specifications and invariants](chapters/03-software-engineering.md#functional-requirements-quality-attributes-specifications-and-invariants).
+
 ## T
+
+### Technical debt
+
+A metaphor for internal decisions that make future changes cost more; see [Refactoring, technical debt, legacy systems and evolutionary replacement](chapters/03-software-engineering.md#refactoring-technical-debt-legacy-systems-and-evolutionary-replacement).
 
 ### Throughput
 
@@ -165,3 +207,13 @@ A variable-length Unicode encoding that uses one to four bytes for each Unicode 
 ### Unsigned integer
 
 A whole-number representation with no negative values; an unsigned 8-bit integer can represent values from 0 through 255. See [Integer ranges and overflow](chapters/01-computing-foundations.md#integer-ranges-and-overflow).
+
+## V
+
+### Verification
+
+The use of tests, review, analysis or other evidence to assess whether an implementation, artefact or model satisfies specified requirements; see [Testing, verification and evidence](chapters/03-software-engineering.md#testing-verification-and-evidence).
+
+### Version control
+
+A system that records project states and changes so that people can compare, attribute and recover known versions; see [Version control, code review, shared ownership and recovery](chapters/03-software-engineering.md#version-control-code-review-shared-ownership-and-recovery).

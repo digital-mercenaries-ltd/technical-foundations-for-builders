@@ -10,7 +10,7 @@ TFB supplies that missing map. It introduces the major areas of modern computing
 
 Awareness is only the beginning. Knowing that authentication matters is different from being able to find a missing authorisation check, repair it safely and prove that the repair works. TFB helps turn vague concerns and invisible constraints into recognisable mechanisms, better questions and clearer signals that deeper investigation or experienced help is required.
 
-> **Project status:** Milestone 3 was approved on 2026-07-17. Milestone 4 has begun with a controlled Chapter 3 batch.
+> **Project status:** Milestone 3 was approved on 2026-07-17. The first controlled Milestone 4 batch, Chapter 3, is ready for owner review.
 
 ## Who this is for
 
@@ -121,7 +121,7 @@ Source code gives instructions to runtimes using values, types, state, control f
 
 Software engineering is how intent becomes change that can be understood, tested, reviewed and recovered. This chapter covers requirements, modularity, interfaces, testing, version control, build feedback, code review, technical debt and the hidden knowledge that makes whole-system rewrites dangerous.
 
-[Browse the tiered Chapter 3 plan](OUTLINE.md#3-software-engineering)
+[Read Chapter 3](chapters/03-software-engineering.md) · [Browse the tiered Chapter 3 plan](OUTLINE.md#3-software-engineering)
 
 ### 4. The Internet, web and application programming interfaces
 
@@ -190,6 +190,7 @@ Experienced practitioners use compact models to notice recurring patterns in sys
 - [Style guide](STYLE_GUIDE.md) - the editorial contract for contributors and agents.
 - [Execution plan](PLAN.md) - milestones and document lifecycle.
 - [Issue-ready work packages](WORK_PACKAGES.md) - bounded batches for later drafting.
+- [Milestone 4 Chapter 3 audit](reviews/milestone-4-chapter-3-audit.md) - research, measurements, review findings and verification for the first controlled batch.
 - [Milestone 3 audit](reviews/milestone-3-audit.md) - first-pass chapter measurements, review findings and verification results.
 - [Milestone 2 audit](reviews/milestone-2-audit.md) - editorial review findings, resolutions and verification results.
 - [Milestone 1 audit](reviews/milestone-1-audit.md) - prototype review findings and verification results.
