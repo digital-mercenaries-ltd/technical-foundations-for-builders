@@ -289,4 +289,4 @@ A historical artefact is ready only when:
 
 ## 8. Current Milestone 4 action
 
-WP-05 has produced a researched and independently reviewed Chapter 3 first-pass draft. Pause for owner review before opening a later chapter batch. Continue to defer optional further-territory packages.
+WP-05 was approved on 2026-07-18. Publish and complete [WP-06](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/4) as the next controlled batch: research, draft and independently review the Chapter 4 first pass, then pause for owner review before opening Chapter 5. Continue to defer optional further-territory packages.

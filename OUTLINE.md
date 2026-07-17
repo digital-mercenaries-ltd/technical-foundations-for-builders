@@ -1,6 +1,6 @@
 # TFB tiered content outline
 
-Status: Milestone 3 approved - 2026-07-17
+Status: Milestone 4 Chapter 3 approved; Chapter 4 in progress - 2026-07-18
 
 This is the editorial source of truth for the scope of **Technical Foundations for Builders** (TFB). The [README](README.md) is the short reader-facing map. This file records what belongs on the first pass, what belongs in optional further territory and which names should initially appear for recognition or landscape orientation.
 

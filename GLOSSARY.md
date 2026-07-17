@@ -1,6 +1,6 @@
 # Glossary
 
-Status: Milestone 4 Chapter 3 draft - 2026-07-18
+Status: Milestone 4 Chapter 3 approved - 2026-07-18
 
 This alphabetical index defines terms used by the drafted concepts and reader-facing navigation. It will grow with the guide. Definitions stay short and link to a published canonical explanation rather than to an outline placeholder.
 

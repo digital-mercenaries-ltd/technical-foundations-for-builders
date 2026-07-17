@@ -336,6 +336,6 @@ Joel Spolsky's 2000 essay [*Things You Should Never Do, Part I*](https://www.joe
 
 ## Chapter status
 
-The Chapter 3 first-pass draft covers the seven entries selected in the approved outline. Further territory and current product material remain optional and will be added only where they improve awareness without overloading the main traversal.
+The approved Chapter 3 first pass covers seven entries. Further territory and current product material remain optional and will be added only where they improve awareness without overloading the main traversal.
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 3 plan](../OUTLINE.md#3-software-engineering)

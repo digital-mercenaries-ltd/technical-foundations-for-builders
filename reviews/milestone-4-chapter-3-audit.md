@@ -1,6 +1,6 @@
 # Milestone 4 Chapter 3 audit
 
-Status: reviewed draft ready for owner review - 2026-07-18
+Status: approved - 2026-07-18
 
 This audit covers the first controlled Milestone 4 batch against public issue [#3](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/3). The public comparison point is commit `3563aae`, the approved Milestone 3 publication.
 
@@ -89,4 +89,4 @@ The 24 distinct external links in Chapter 3 were requested on 2026-07-18. Twenty
 
 ## Gate
 
-The Chapter 3 batch has passed independent review and the verification suite. It is ready for owner review. Chapter 4 remains deferred until that pause has occurred.
+The Chapter 3 batch passed independent review and the verification suite. The owner approved it on 2026-07-18 and authorised the Chapter 4 controlled batch.

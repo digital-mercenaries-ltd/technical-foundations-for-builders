@@ -78,13 +78,17 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Issue:** [#3](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/3)
 
-**Status:** Reviewed draft ready for owner review - 2026-07-18.
+**Status:** Complete; approved on 2026-07-18.
 
 **Depends on:** WP-03.
 
 **Scope:** requirements, modularity, abstraction, verification, version control, build feedback, review and evolutionary change. Use Joel Spolsky material as dated practitioner context where assigned.
 
 ### WP-06: Draft Chapter 4 - Internet, web and application programming interfaces
+
+**Issue:** [#4](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/4)
+
+**Status:** In progress - 2026-07-18.
 
 **Depends on:** WP-01 and WP-03.
 
