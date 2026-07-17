@@ -10,7 +10,7 @@ TFB supplies that missing map. It introduces the major areas of modern computing
 
 Awareness is only the beginning. Knowing that authentication matters is different from being able to find a missing authorisation check, repair it safely and prove that the repair works. TFB helps turn vague concerns and invisible constraints into recognisable mechanisms, better questions and clearer signals that deeper investigation or experienced help is required.
 
-> **Project status:** Milestone 2 was approved on 2026-07-17. The complete Chapter 1 and Chapter 2 first-pass drafts are now under Milestone 3 review.
+> **Project status:** Milestone 3 was approved on 2026-07-17. Milestone 4 has begun with a controlled Chapter 3 batch.
 
 ## Who this is for
 
@@ -190,17 +190,19 @@ Experienced practitioners use compact models to notice recurring patterns in sys
 - [Style guide](STYLE_GUIDE.md) - the editorial contract for contributors and agents.
 - [Execution plan](PLAN.md) - milestones and document lifecycle.
 - [Issue-ready work packages](WORK_PACKAGES.md) - bounded batches for later drafting.
+- [Milestone 3 audit](reviews/milestone-3-audit.md) - first-pass chapter measurements, review findings and verification results.
 - [Milestone 2 audit](reviews/milestone-2-audit.md) - editorial review findings, resolutions and verification results.
 - [Milestone 1 audit](reviews/milestone-1-audit.md) - prototype review findings and verification results.
 
-## Milestone 2 decision
+## Milestone decisions
 
-Approved on 2026-07-17:
+Milestone 2 was approved on 2026-07-17 with a provisional 91-entry first traversal. It also established the progressive-disclosure structure, dated landscape material and qualified use of practitioner stories and hacker folklore.
 
-- use the 94-entry first traversal established during Milestone 3, below the 95-entry planning guardrail;
-- move binary and hexadecimal to Chapter 1 further territory without rewriting their approved explanations;
-- retain dated landscape material, contemporary products and organisations;
-- allow qualified practitioner stories and hacker folklore;
-- test actual reading time, conceptual load and entry bundling during Milestone 3 before increasing the production batch size.
+Milestone 3 was approved on 2026-07-17. It:
 
-Milestone 3 is limited to the Chapter 1 and Chapter 2 first-pass pages plus relocation of the two existing numeric entries. It does not draft all optional further-territory topics.
+- accepted the Chapter 1 and Chapter 2 first-pass pages;
+- accepted three splits that raised the traversal to 94 entries, still below the 95-entry planning guardrail;
+- moved binary and hexadecimal to Chapter 1 further territory without rewriting their explanations; and
+- retained eight entries as a calibration maximum rather than a target for later chapters.
+
+Milestone 4 begins with Chapter 3 as one controlled batch. Later chapters remain blocked until its research, drafting and independent review show that the workflow still produces concise, coherent material.

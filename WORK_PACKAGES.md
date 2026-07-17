@@ -1,6 +1,6 @@
 # Technical Foundations for Builders issue-ready work packages
 
-Status: Milestone 2 approved - 2026-07-17
+Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-17
 
 These are bounded drafting and integration batches for publication to the `digital-mercenaries-ltd/technical-foundations-for-builders` GitHub issue tracker after Milestone 2 approval. They are not a required reading order.
 
@@ -32,7 +32,7 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Issue:** [#1](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/1)
 
-**Status:** Draft complete; awaiting Milestone 3 owner review - 2026-07-17.
+**Status:** Complete; approved on 2026-07-17.
 
 **Depends on:** WP-00.
 
@@ -60,7 +60,7 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Issue:** [#2](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/2)
 
-**Status:** Draft complete; awaiting Milestone 3 owner review - 2026-07-17.
+**Status:** Complete; approved on 2026-07-17.
 
 **Depends on:** WP-00 and the terminology established by WP-01.
 

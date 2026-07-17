@@ -1,6 +1,6 @@
 # Technical Foundations for Builders - Execution Plan
 
-Status: Milestone 2 approved; Milestone 3 draft ready for review - 2026-07-17
+Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-17
 
 ## 1. Objective
 
@@ -67,7 +67,7 @@ Each concept entry uses this default shape:
 8. **Deeper concepts to explore**
 9. **Further reading**, limited to a few strong resources
 
-Relevant internal and external links should also be embedded naturally throughout the explanation. The final sections are curated navigation, not a duplicate list of every inline link.
+Relevant internal and external links should also be embedded naturally throughout the explanation. The final sections are curated navigation, not an automatic duplicate list of every inline link. Repeating one or two inline sources is acceptable when they are also the strongest routes to deeper understanding; their descriptions should say what further value they provide.
 
 Use a soft initial budget of 250-500 words per concept, excluding resource lists. Milestone 1 showed that this range can support concrete awareness-level teaching; clarity takes priority over a rigid limit.
 
@@ -211,6 +211,8 @@ Acceptance gate: the user approves or revises the tiering, first-pass selections
 
 Acceptance gate: two complete chapters demonstrate a repeatable quality level.
 
+Approved on 2026-07-17. The evidence supports keeping the 250–500-word entry calibration range and eight-entry chapter maximum unchanged. Eight entries is a ceiling, not a target: the next batch starts with one chapter so reading load, terminology and review effort can be checked before broader parallel drafting.
+
 ### Milestone 4 - Controlled parallel drafting
 
 - Draft the remaining chapters in small, non-overlapping batches.
@@ -285,6 +287,6 @@ A historical artefact is ready only when:
 - dated assumptions and rhetorical absolutes are qualified;
 - it is presented as context or a conversation aid, not proof, certification or a universal process.
 
-## 8. Current Milestone 3 action
+## 8. Current Milestone 4 action
 
-Publish WP-01 and WP-03 as issues in `digital-mercenaries-ltd/technical-foundations-for-builders`. Complete WP-01 first so Chapter 2 can rely on the terminology established by Chapter 1. Defer the remaining optional further-territory packages until the calibration review is complete.
+Publish and complete WP-05 as the first controlled Milestone 4 batch. Research and draft the Chapter 3 first pass, then run independent standards and specification reviews before opening later chapter batches. Continue to defer optional further-territory packages.

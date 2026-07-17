@@ -1,18 +1,24 @@
 # Glossary
 
-Status: Milestone 3 draft - 2026-07-17
+Status: Milestone 3 approved - 2026-07-17
 
 This alphabetical index defines terms used by the drafted concepts and reader-facing navigation. It will grow with the guide. Definitions stay short and link to a published canonical explanation rather than to an outline placeholder.
 
+## A
+
+### Artificial intelligence (AI)
+
+Software techniques that produce outputs associated with human cognitive work, including the models and agents used to assist software development; see [AI-assisted engineering](README.md#12-ai-assisted-engineering).
+
 ## B
-
-### Big-O notation
-
-A shorthand for how an algorithm's resource requirements are bounded as its input grows; it does not state an operation's measured speed. See [Collections, data structures and algorithmic cost](chapters/02-programming-foundations.md#collections-data-structures-and-algorithmic-cost).
 
 ### Base (or radix)
 
 The number of digit values used by a positional number system: decimal is base 10, [binary](further/01-computing-foundations.md#binary-numbers) is base 2, octal is base 8 and hexadecimal is base 16.
+
+### Big-O notation
+
+A shorthand for how an algorithm's resource requirements are bounded as its input grows; it does not state an operation's measured speed. See [Collections, data structures and algorithmic cost](chapters/02-programming-foundations.md#collections-data-structures-and-algorithmic-cost).
 
 ### Binary
 
@@ -25,6 +31,16 @@ A binary digit with one of two values, `0` or `1`; see [Bits and bytes](chapters
 ### Byte
 
 A group of eight bits; see [Bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes).
+
+## C
+
+### Central processing unit (CPU)
+
+The processor that follows machine instructions and performs calculations; see [Processors, memory and persistent storage](chapters/01-computing-foundations.md#processors-memory-and-persistent-storage).
+
+### Coordinated Universal Time (UTC)
+
+The international time standard used as a reference for civil time and offsets; see [Time, clocks, dates and time zones](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones).
 
 ## E
 
@@ -64,6 +80,12 @@ A unit of code with its own namespace and an interface to other code; see [Modul
 
 A change to an existing mutable value or location; see [Variables, state, mutability and side effects](chapters/02-programming-foundations.md#variables-state-mutability-and-side-effects).
 
+## N
+
+### National Institute of Standards and Technology (NIST)
+
+A United States standards and measurement agency whose technical glossaries and publications are used throughout TFB; see its role in defining [bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes).
+
 ## O
 
 ### Octal
@@ -76,13 +98,13 @@ An unambiguous name for an eight-bit byte, commonly used in Internet standards; 
 
 ## P
 
+### Portable Operating System Interface (POSIX)
+
+A family of standards for operating-system interfaces. TFB uses it as one source for [process and thread behaviour](chapters/01-computing-foundations.md#operating-systems-and-running-programs) and [clock behaviour](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones), not as a description of every platform.
+
 ### Positional number system
 
 A way of writing numbers in which a digit's value depends on its position, as explained in [Binary numbers](further/01-computing-foundations.md#binary-numbers).
-
-### Portable Operating System Interface (POSIX)
-
-A family of standards for operating-system interfaces. TFB uses it as one source for process, thread, file and clock behaviour, not as a description of every platform.
 
 ### Process
 
@@ -94,9 +116,13 @@ Presenting a small first view and making additional detail optional so that brea
 
 ## R
 
+### Random-access memory (RAM)
+
+Working memory used by active programs and data; see [Processors, memory and persistent storage](chapters/01-computing-foundations.md#processors-memory-and-persistent-storage).
+
 ### Request for Comments (RFC)
 
-A numbered publication in the Internet technical-document series. Some RFCs define standards; others record information, experiments or current practice.
+A numbered publication in the Internet technical-document series. Some RFCs define standards; others record information, experiments or current practice. Chapter 1 uses RFCs to ground [Internet byte terminology](chapters/01-computing-foundations.md#bits-and-bytes), [time representations](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones) and [performance measurements](chapters/01-computing-foundations.md#latency-and-throughput).
 
 ### Runtime
 
@@ -132,18 +158,10 @@ A standard that assigns numbers to the characters and other text elements used b
 
 A numbered unit that Unicode encodings can represent; one visible character may contain more than one scalar value. See [Text, Unicode and character encodings](chapters/01-computing-foundations.md#text-unicode-and-character-encodings).
 
-### Unsigned integer
-
-A whole-number representation with no negative values; an unsigned 8-bit integer can represent values from 0 through 255. See [Integer ranges and overflow](chapters/01-computing-foundations.md#integer-ranges-and-overflow).
-
-### UTF-8
+### Unicode Transformation Format 8-bit (UTF-8)
 
 A variable-length Unicode encoding that uses one to four bytes for each Unicode scalar value; see [Text, Unicode and character encodings](chapters/01-computing-foundations.md#text-unicode-and-character-encodings).
 
-## Acronyms used across the guide
+### Unsigned integer
 
-- **AI:** artificial intelligence.
-- **CPU:** central processing unit.
-- **NIST:** National Institute of Standards and Technology.
-- **RAM:** random-access memory.
-- **UTC:** Coordinated Universal Time.
+A whole-number representation with no negative values; an unsigned 8-bit integer can represent values from 0 through 255. See [Integer ranges and overflow](chapters/01-computing-foundations.md#integer-ranges-and-overflow).

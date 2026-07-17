@@ -33,7 +33,7 @@ The most useful distinction is between a **container and its interpretation**. C
 01000001
 ```
 
-Read as an unsigned number, it is 65. Read using [UTF-8, a common text encoding](../GLOSSARY.md#utf-8), it represents `A`. In another format it could be part of a colour, machine instruction, compressed file or encrypted message. The bits do not carry that meaning by themselves; a rule such as a number type, text encoding or file format supplies it. The [Unicode Standard's UTF-8 definition](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-3/#G7404) also shows why encoded size and visible-character count differ: one [Unicode scalar value](../GLOSSARY.md#unicode-scalar-value) - the basic numbered unit encoded by UTF-8 - requires one to four bytes, and one visible character can contain several scalar values.
+Read as an unsigned number, it is 65. Read using [UTF-8, a common text encoding](../GLOSSARY.md#unicode-transformation-format-8-bit-utf-8), it represents `A`. In another format it could be part of a colour, machine instruction, compressed file or encrypted message. The bits do not carry that meaning by themselves; a rule such as a number type, text encoding or file format supplies it. The [Unicode Standard's UTF-8 definition](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-3/#G7404) also shows why encoded size and visible-character count differ: one [Unicode scalar value](../GLOSSARY.md#unicode-scalar-value) - the basic numbered unit encoded by UTF-8 - requires one to four bytes, and one visible character can contain several scalar values.
 
 ### Why a builder needs to know this
 
@@ -65,7 +65,6 @@ The Hypertext Transfer Protocol (HTTP) uses the more precise word [**octet**](..
 ### Further reading
 
 - [Harvard CS50: Lecture 0 notes](https://cs50.harvard.edu/x/notes/0/) - an accessible introduction to information represented with bits.
-- [NIST: Byte](https://csrc.nist.gov/glossary/term/byte) - the concise standards-linked definition.
 - [NIST: Prefixes for binary multiples](https://physics.nist.gov/cuu/Units/binary.html) - the difference between units such as MB and MiB.
 
 ## Integer ranges and overflow

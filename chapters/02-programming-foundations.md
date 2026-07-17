@@ -96,12 +96,12 @@ Pay particular attention to missing values. An absent field, an empty string, ze
 ### Related concepts in TFB
 
 - [Bits and bytes](01-computing-foundations.md#bits-and-bytes) - the same stored pattern can receive different interpretations.
+- [Integer ranges and overflow](01-computing-foundations.md#integer-ranges-and-overflow), [floating-point approximation](01-computing-foundations.md#floating-point-approximation) and [text encodings](01-computing-foundations.md#text-unicode-and-character-encodings) - representation limits that can make conversions lossy.
 
 ### Deeper concepts
 
 - Static and dynamic typing - when type constraints are checked and what evidence they provide.
 - Validation and schemas - how software checks that external data meets a required shape and meaning.
-- [Integer ranges and overflow](01-computing-foundations.md#integer-ranges-and-overflow), [floating-point approximation](01-computing-foundations.md#floating-point-approximation) and [text encodings](01-computing-foundations.md#text-unicode-and-character-encodings) - representation limits that can make conversions lossy.
 
 ### Further reading
 
@@ -395,6 +395,6 @@ A **Bohr bug** is reliably reproducible under known conditions. A **heisenbug** 
 
 ## Chapter status
 
-This Milestone 3 draft covers the eight Chapter 2 first-pass concepts. Further territory and current landscape material remain optional and will be added only where they improve recognition without overwhelming the main traversal.
+The approved Chapter 2 first pass covers eight concepts. Further territory and current landscape material remain optional and will be added only where they improve recognition without overwhelming the main traversal.
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 2 plan](../OUTLINE.md#2-programming-foundations)

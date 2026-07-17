@@ -40,19 +40,18 @@ The model helps explain integer limits, memory sizes, colour components, permiss
 
 - [Bits and bytes](../chapters/01-computing-foundations.md#bits-and-bytes) - the storage units used by the notation.
 - [Hexadecimal and octal](#hexadecimal-and-octal) - readable shorthand for grouped binary digits.
-- Planned: Boolean logic, integer overflow, data types and permissions.
+- [Integer ranges and overflow](../chapters/01-computing-foundations.md#integer-ranges-and-overflow) - what happens at the boundary of a fixed representation.
+- [Values, types and conversions](../chapters/02-programming-foundations.md#values-types-and-conversions) - how programs interpret and convert represented values.
+- Planned: Boolean logic and permissions.
 
 ### Deeper concepts
 
 - Two's complement and signed integers - how fixed-width binary represents negative values.
-- Fixed-width overflow - what happens when a result exceeds the available patterns.
 - Bit masks, shifts and Boolean algebra - how programs inspect and move individual bit positions.
-- Floating-point representation - how binary systems approximate fractional values.
 
 ### Further reading
 
 - [Harvard CS50: Binary](https://cs50.harvard.edu/x/notes/0/#binary) - a visual beginner-level explanation.
-- [Python: Integer literals](https://docs.python.org/3/reference/lexical_analysis.html#integer-literals) - real-world notation for binary, octal and hexadecimal values.
 - [MDN: Bitwise operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#bitwise_operators) - where binary positions appear in JavaScript, including important width rules.
 
 ## Hexadecimal and octal
@@ -106,7 +105,6 @@ Octal is less common, but it remains visible in Unix-style permissions because r
 
 ### Further reading
 
-- [RFC 4648: Base16 encoding](https://www.rfc-editor.org/rfc/rfc4648.html#section-8) - the standard mapping between bytes and printable hex.
 - [W3C CSS Color 4: Hex notation](https://www.w3.org/TR/css-color-4/#hex-notation) - a familiar use of byte-sized hex components.
 - [GNU Coreutils: Numeric modes](https://www.gnu.org/software/coreutils/manual/html_node/Numeric-Modes.html) - the practical connection between octal and Unix permissions.
 

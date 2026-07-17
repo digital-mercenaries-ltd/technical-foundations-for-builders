@@ -1,6 +1,6 @@
 # TFB Style Guide
 
-Status: Milestone 2 approved - 2026-07-17
+Status: Milestone 3 approved - 2026-07-17
 
 This is the editorial contract for Technical Foundations for Builders (TFB). It applies to human and agent contributors.
 
@@ -156,6 +156,7 @@ Use standard GitHub Markdown links in a wiki-like editorial style.
 - Link concepts to their one canonical entry with a relative path and heading anchor.
 - Link sources at the claim or explanation they support when that context helps the reader.
 - Use descriptive link text; avoid “click here”, raw URLs and repeated links to the same target in one section.
+- Do not automatically repeat every inline source under **Further reading**. Repeating one or two is acceptable when they are also the strongest routes to deeper understanding and their descriptions explain what further value they provide.
 - Prefer stable canonical URLs over search results, mirrors, URL shorteners or tracking links.
 - Do not create links to planned headings that do not yet exist.
 - Check relative links and heading anchors before review.

@@ -1,6 +1,6 @@
 # TFB tiered content outline
 
-Status: Milestone 2 approved - 2026-07-17
+Status: Milestone 3 approved - 2026-07-17
 
 This is the editorial source of truth for the scope of **Technical Foundations for Builders** (TFB). The [README](README.md) is the short reader-facing map. This file records what belongs on the first pass, what belongs in optional further territory and which names should initially appear for recognition or landscape orientation.
 
@@ -15,7 +15,7 @@ The guide intentionally includes material at different levels of abstraction. A 
 
 Each durable mechanism has one canonical home. Products, vendors, organisations, standards, schemes, laws and stories may appear beside that mechanism or receive a dated landscape entry when knowing the name is itself useful.
 
-The current outline contains 94 principal entries across the complete first traversal, below a planning guardrail of 95. Milestone 3 raised the approved Milestone 2 count from 91 by splitting three overloaded labels: integer overflow from floating point, time from performance, and error handling from diagnosis. Raising the guardrail itself requires an explicit editorial review rather than filling every chapter to its local maximum.
+The current approved outline contains 94 principal entries across the complete first traversal, below a planning guardrail of 95. Milestone 3 raised the Milestone 2 count from 91 by splitting three overloaded labels: integer overflow from floating point, time from performance, and error handling from diagnosis. Raising the guardrail itself requires an explicit editorial review rather than filling every chapter to its local maximum.
 
 ## 1. Computing foundations
 
