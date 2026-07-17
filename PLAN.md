@@ -1,6 +1,6 @@
 # Technical Foundations for Builders - Execution Plan
 
-Status: Draft for approval - 2026-07-17
+Status: Milestone 2 implemented for review - 2026-07-17
 
 ## 1. Objective
 
@@ -18,19 +18,40 @@ AGENTS.md
 PLAN.md
 STYLE_GUIDE.md
 GLOSSARY.md
+OUTLINE.md
+WORK_PACKAGES.md
 chapters/
   01-<chapter-name>.md
   02-<chapter-name>.md
   ...
-research/
-  <topic-or-chapter-notes>.md
+further/
+  01-<chapter-name>.md
+  02-<chapter-name>.md
+  ...
+reviews/
+  milestone-<number>-audit.md
+scripts/
+  check_docs.py
 ```
 
-`README.md` is the canonical map of the guide. Each concept has one canonical entry within a chapter file. Other mentions link to that entry instead of duplicating its explanation.
+`README.md` is the reader-facing map of the guide. It should make the whole territory visible without displaying the complete concept inventory. `OUTLINE.md` is the editorial source of truth for chapter boundaries, disclosure tiers and canonical homes. Each concept has one canonical entry within a first-pass or further-territory chapter file. Other mentions link to that entry instead of duplicating its explanation.
 
 Use standard Markdown links such as `[binary](chapters/01-computing-foundations.md#binary-numbers)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
 
 Do not introduce a site generator, database, CMS, or structured content schema during the first milestones. Reconsider this only if the Markdown repository exposes a concrete limitation.
+
+Raw research notes and original source material live in the separate private companion repository, `digital-mercenaries-ltd/technical-foundations-for-builders-private`. This public repository receives only deliberately edited reader-facing material and non-sensitive review records.
+
+### 2.1 Progressive disclosure
+
+Every retained candidate receives one treatment:
+
+1. **First pass:** a complete awareness-level entry in `chapters/`.
+2. **Further territory:** an optional awareness-level entry in `further/`.
+3. **Recognition only:** a short explanation within a related entry, including products, organisations, named schemes, laws and jargon where appropriate.
+4. **External or omitted:** a link or omission when more TFB coverage would add weight without useful understanding.
+
+The README map, first-pass chapters and further-territory pages are three different browsing depths. External references provide depth beyond TFB; they are not a fourth internal curriculum.
 
 ## 3. Editorial unit
 
@@ -48,7 +69,9 @@ Each concept entry uses this default shape:
 
 Relevant internal and external links should also be embedded naturally throughout the explanation. The final sections are curated navigation, not a duplicate list of every inline link.
 
-Use a soft initial budget of 250-500 words per concept, excluding resource lists. Milestone 1 will determine whether that range is appropriate; clarity and sufficient superficial teaching take priority over a rigid limit.
+Use a soft initial budget of 250-500 words per concept, excluding resource lists. Milestone 1 showed that this range can support concrete awareness-level teaching; clarity takes priority over a rigid limit.
+
+Concepts do not need equal-sized entries or to occupy the same level of abstraction. Use the full template for durable mechanisms. Use shorter dated landscape items for current products, vendors, organisations, protocols and schemes when name recognition is useful. Use related observations, historical asides and cultural jargon where they make a mechanism memorable.
 
 ## 4. Document SDLC
 
@@ -58,6 +81,7 @@ Every content batch moves through the same lifecycle.
 
 - Define the chapter's purpose and audience assumptions.
 - List its concepts and assign one canonical home to each.
+- Assign each candidate to first pass, further territory, recognition only, or external/omitted.
 - Record dependencies: which concepts must be introduced before others can rely on them.
 - Identify boundaries with neighbouring chapters.
 
@@ -66,7 +90,8 @@ Every content batch moves through the same lifecycle.
 - Search for authoritative and accessible sources.
 - Prefer standards, specifications, original papers, official documentation, and established teaching material for factual claims.
 - Use Wikipedia, the Jargon File, Hacker Laws, respected books and courses, MDN, educational vendor material, and strong explanatory articles for orientation and further reading.
-- Save concise research notes with source links under `research/`; do not paste unfiltered research into chapter drafts.
+- Save concise research notes with source links in the private companion repository; do not copy raw notes or original reference files into the public guide.
+- Separate durable mechanism research from time-sensitive landscape research and record ISO-8601 review dates for the latter.
 
 ### 4.3 Draft
 
@@ -101,8 +126,10 @@ The primary critic should not be the agent that wrote the draft.
 - Validate internal links, external links, and heading anchors.
 - Run Markdown linting and spelling checks.
 - Check that every entry contains the required editorial elements.
+- Check that every retained topic has one tier and canonical home in `OUTLINE.md`.
 - Recheck sources for claims that are current, contested, security-sensitive, or easy to misstate.
 - Require human approval at each milestone gate before increasing the production batch size.
+- Run `python3 scripts/check_docs.py`; the expected result is `Documentation checks passed.`
 
 ## 5. Agent and model strategy
 
@@ -140,7 +167,7 @@ The external [`documentation-writer`](https://www.skills.sh/github/awesome-copil
 
 ## 6. Milestones
 
-### Milestone 1 - Editorial and structural prototype
+### Milestone 1 - Editorial and structural prototype (complete)
 
 Deliver only enough material to test the form:
 
@@ -162,15 +189,16 @@ Acceptance gate: the user approves or revises the audience promise, chapter gran
 
 Stop after presenting Milestone 1. Do not draft later chapters until the user approves the revised form.
 
-### Milestone 2 - Outline and editorial system freeze
+### Milestone 2 - Tiered outline and editorial system (implemented for review)
 
-- Apply Milestone 1 feedback.
-- Finalise chapter names, boundaries, concept lists, and concept dependencies.
-- Finalise the style guide, source policy, glossary rules, and review rubrics.
-- Add lightweight automated Markdown, spelling, internal-link, and duplicate-heading checks.
-- Turn approved chapters or bounded concept batches into independently assignable issues.
+- Apply Milestone 1 feedback and the progressive-disclosure decision.
+- Finalise chapter names, boundaries, first-pass selections, further territory and recognition-only landscape material in `OUTLINE.md`.
+- Preserve the approved Chapter 1 prototype while using it to calibrate the tiered structure.
+- Finalise the style guide, source policy, glossary rules and review rubrics for durable concepts, current landscape material, laws, practitioner stories and hacker folklore.
+- Add lightweight automated structural, internal-link, anchor and duplicate-heading checks.
+- Record independently assignable, issue-ready batches in `WORK_PACKAGES.md`; publish them to `digital-mercenaries-ltd/technical-foundations-for-builders` after Milestone 2 approval.
 
-Acceptance gate: the complete taxonomy and production rules are stable enough for parallel drafting.
+Acceptance gate: the user approves or revises the tiering, first-pass selections, treatment of current products and organisations, use of humour and historical material, and the production rules before parallel drafting begins.
 
 ### Milestone 3 - First complete chapter batch
 
@@ -226,6 +254,35 @@ A concept entry is ready only when:
 - it does not duplicate another entry's canonical explanation;
 - removing more text would damage the reader's initial mental model.
 
-## 8. Immediate next action after approval
+### 7.1 Current landscape item
 
-Execute Milestone 1 locally. Repository publication remains separate until GitHub access to the `dml` account is available or a different owner is confirmed.
+A product, vendor, organisation, protocol, standard or scheme item is ready only when:
+
+- its category, role and important responsibility boundaries are clear;
+- it is connected to the durable concepts it implements, publishes or influences;
+- inclusion is orientation rather than an endorsement or popularity claim;
+- time-sensitive claims have suitable sources and an ISO-8601 review date;
+- commercial claims, comparisons and limitations are attributed appropriately.
+
+### 7.2 Related observation or hacker folklore
+
+A law, maxim, practitioner story or cultural term is ready only when:
+
+- the underlying mechanism is explained in plain language;
+- the entry remains understandable without the memorable label or joke;
+- important scope, exceptions and evidential status are stated;
+- the original source or a reliable history is linked where available;
+- humour adds recognition without substituting for diagnosis or belittling the reader.
+
+### 7.3 Historical checklist or case study
+
+A historical artefact is ready only when:
+
+- its origin and date are clear;
+- its durable ideas link to their canonical homes;
+- dated assumptions and rhetorical absolutes are qualified;
+- it is presented as context or a conversation aid, not proof, certification or a universal process.
+
+## 8. Immediate next action after Milestone 2 approval
+
+After Milestone 2 approval, publish the work packages as issues in `digital-mercenaries-ltd/technical-foundations-for-builders`. Complete WP-01 by finishing the Chapter 1 first pass around the approved calibration entries. Then create the Chapter 2 first-pass file and Chapter 1 further-territory files as the next controlled drafting batch.

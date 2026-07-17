@@ -4,15 +4,15 @@ Computers store and transform information by giving meaning to physical states. 
 
 The aim is recognition, not manual calculation. You should finish these entries able to distinguish a value from its representation, understand why the same bits can mean different things and recognise when a low-level detail may explain high-level behaviour.
 
-## Chapter map
+## Calibration map
 
-The Milestone 1 prototype contains three completed entries:
+The calibration draft contains three completed entries used to test depth, voice and structure:
 
 1. [Bits and bytes](#bits-and-bytes)
 2. [Binary numbers](#binary-numbers)
 3. [Hexadecimal and octal](#hexadecimal-and-octal)
 
-Later entries will cover Boolean logic; integers and overflow; floating-point precision; text and Unicode; processors; memory and storage; operating systems; processes and threads; time; latency and throughput; caching; compression; serialisation and data formats.
+The [tiered Chapter 1 outline](../OUTLINE.md#1-computing-foundations) records the intended first pass, optional further territory and current reference landscape. It keeps bits and bytes on the first pass and places binary, hexadecimal and octal in further territory without discarding their approved prose. It also distinguishes processor and memory caching from application and distributed caching.
 
 ## Bits and bytes
 
@@ -172,4 +172,6 @@ Octal is less common, but it remains visible in Unix-style permissions because r
 
 ## Chapter status
 
-Only the first three concepts are drafted for Milestone 1. The remaining entries will not be written until the structure, depth, voice, links and source choices have been reviewed.
+Only the first three concepts are drafted. Milestone 2 preserves them as the calibration set while the progressive-disclosure structure and complete tiered outline are reviewed.
+
+[Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 1 plan](../OUTLINE.md#1-computing-foundations)

@@ -8,7 +8,9 @@ The problem TFB addresses is not a shortage of tutorials. It is **not knowing wh
 
 TFB supplies that missing map. It introduces the major areas of modern computing, teaches the headline mechanics of each concept, explains why builders encounter it, warns about common pitfalls and provides routes to deeper material. It aims for awareness and a useful initial mental model, not detail or mastery.
 
-> **Project status:** Milestone 1 editorial prototype. The outline is deliberately broad, while only the first three entries of Chapter 1 have been drafted. The structure, depth and voice are awaiting review before more content is produced.
+Awareness is only the beginning. Knowing that authentication matters is different from being able to find a missing authorisation check, repair it safely and prove that the repair works. TFB helps turn vague concerns and invisible constraints into recognisable mechanisms, better questions and clearer signals that deeper investigation or experienced help is required.
+
+> **Project status:** Milestone 2 editorial system, awaiting review. The reader-facing map, progressive-disclosure model and tiered content outline have been drafted. The first three Chapter 1 entries remain the calibration set; later chapter prose has not been produced.
 
 ## Who this is for
 
@@ -19,11 +21,36 @@ In this guide:
 - **Vibe coding** means building software with AI without an established technical background. The phrase is used descriptively, not dismissively.
 - **Agentic engineering** means using AI agents as part of an engineering process while bringing existing technical judgement to the work.
 
-Both groups can use TFB, but it is the first group that most needs help exposing blind spots. Once a builder knows that a concept exists, project-aware AI can explain it in the context of their own system, help investigate whether it matters and assist with implementation. That works only after the missing question has become visible.
+Both groups can use TFB, but it is the first group that most needs help exposing blind spots. Once a builder knows that a concept exists, project-aware AI can help explain where it appears and how to investigate it. AI output is the start of that investigation, not proof that the system is correct.
 
-## What this guide does
+## What belongs in TFB
 
-Each concept entry is designed to answer:
+TFB is organised around durable concepts, but it is a living guide for contemporary builders rather than a document intended to remain unchanged for decades. Useful awareness also includes current products, vendors, organisations, protocols, standards, assurance schemes, named laws and professional language.
+
+The material therefore appears at different levels:
+
+- a mechanism such as binary representation or database isolation;
+- a current technology such as Kubernetes, PostgreSQL or the Model Context Protocol;
+- an organisation or source of authority such as the Internet Engineering Task Force or Open Worldwide Application Security Project (OWASP);
+- a standard, scheme or report such as Cyber Essentials, International Organization for Standardization/International Electrotechnical Commission (ISO/IEC) 27001 or a System and Organization Controls (SOC) 2 report;
+- a memorable law, practitioner story or piece of hacker folklore such as the law of leaky abstractions, *heisenbug* or *yak shaving*.
+
+These subjects do not need equal-sized entries. Their treatment depends on what the target reader needs to understand or recognise now. Time-sensitive material is dated and reviewed as the landscape changes.
+
+## How the guide avoids overwhelm
+
+TFB uses progressive disclosure. The rule is: **reduce the number of concepts on the first pass, not the quality of their explanations.**
+
+1. **Map the territory:** use this README to see the whole field in a short sitting.
+2. **Take a first pass:** read a limited set of properly explained concepts in `chapters/`.
+3. **Browse further territory:** once those pages are drafted, selectively open optional awareness-level material in `further/` as it becomes relevant.
+4. **Go deeper elsewhere:** follow a few strong external resources when awareness is no longer enough.
+
+The [tiered content outline](OUTLINE.md) records which topics belong at each level. It is intentionally more detailed than this page.
+
+## What each concept explains
+
+Each full concept entry is designed to answer:
 
 1. What is it?
 2. How does it work at a basic level?
@@ -54,352 +81,125 @@ A selection of the closest existing resources each solves a useful but different
 
 TFB sits between a map, a field guide and a compact conceptual handbook. It complements these projects rather than replacing them. Its contribution is not a larger list of links. It is the selection, explanation and connection of what a builder should at least have heard of.
 
-The claims behind this comparison are recorded separately in the compact [alternatives research note](research/project-alternatives.md).
+The public links in the table identify the alternatives being compared. Working notes and original source material remain in the private editorial repository.
 
 ## How to use TFB
 
 Start with the chapter map below. Read the introductions to understand what each area contributes to a modern system, then browse whichever concepts are unfamiliar. The chapters have a sensible order, but they are not a required curriculum.
 
-Follow links as you would in a wiki. A link inside an explanation supplies context at the point where it becomes useful. The **Related concepts**, **Deeper concepts** and **Further reading** sections at the end of an entry offer deliberate next steps.
+Follow links as you would in a wiki. A link inside an explanation supplies context at the point where it becomes useful. **Related concepts**, **Deeper concepts** and **Further reading** provide deliberate next steps without turning every page into a catalogue.
 
-When a concept appears relevant, give an AI assistant suitable context about your project and ask it to explain where the concept appears, what risks it creates and what evidence would show that it has been handled correctly. Treat that response as the start of an investigation, not proof that the system is sound.
+When a concept appears relevant, give an AI assistant suitable context about your project and ask it to explain where the concept appears, what risks it creates and what evidence would show that it has been handled correctly. Ask where the answer came from. For consequential security, legal, financial, privacy or operational decisions, verify the answer against authoritative sources or experienced help.
 
 ## Map of the territory
 
 The chapters move from the physical representation of information towards the organisational judgement needed to build and operate software:
 
-1. **Foundations:** [Computing foundations](#chapter-1-computing-foundations) explains how information is represented and machines act on it; [Programming foundations](#chapter-2-programming-foundations) explains how people express behaviour as code.
-2. **Construction:** [Software engineering](#chapter-3-software-engineering) covers changeable code; [the Internet, web and APIs](#chapter-4-the-internet-web-and-application-programming-interfaces) covers communication; [data and databases](#chapter-5-data-and-databases) covers durable information; [architecture and distributed systems](#chapter-6-architecture-and-distributed-systems) covers components and partial failure.
-3. **Production:** [Infrastructure, cloud and delivery](#chapter-7-infrastructure-cloud-and-delivery) covers where software runs; [operations, reliability and observability](#chapter-8-operations-reliability-and-observability) covers keeping it useful; [security, privacy and identity](#chapter-9-security-privacy-and-identity) covers misuse and responsible data handling.
-4. **Purpose and accountability:** [Product, experience and analytics](#chapter-10-product-experience-and-analytics) covers usefulness and learning; [governance, compliance and commercial readiness](#chapter-11-governance-compliance-and-commercial-readiness) covers control, evidence and trust.
-5. **Modern practice and judgement:** [AI-assisted engineering](#chapter-12-ai-assisted-engineering) covers what changes when AI participates; [laws, heuristics and engineering judgement](#chapter-13-laws-heuristics-and-engineering-judgement) covers compact reasoning tools.
+1. **Foundations:** computing and programming explain how information and code behave.
+2. **Construction:** software engineering, the web, data and architecture explain how systems are assembled and changed.
+3. **Production:** infrastructure, operations and security explain how systems run, fail and recover.
+4. **Purpose and accountability:** product and governance explain why systems exist and how trust is demonstrated.
+5. **Modern practice and judgement:** AI-assisted engineering and named mental models connect the whole field.
 
-Security, reliability, privacy, cost and maintainability cut across every layer. They are given their own chapters so their ideas can be introduced coherently, not because they happen only at one point in a system.
+Security, reliability, privacy, cost and maintainability cut across every layer. They receive dedicated chapters so their ideas can be introduced coherently, not because they happen only in one part of a system.
 
-## Chapter 1: Computing foundations
+### 1. Computing foundations
 
-**Purpose:** build the lowest-level mental model needed by the rest of TFB: how information becomes physical states, how machines represent and transform it, and why finite resources create practical constraints.
+Computers store representations of information and transform them using finite resources. This chapter explains bits, number systems, text, processors, memory, storage, operating systems and clocks so that limits such as overflow, encoding failures and latency stop looking arbitrary.
 
-You do not need to design a processor or perform arithmetic in binary by hand. You do need enough understanding to recognise why encodings break, numbers overflow, decimal values lose precision, memory differs from storage and apparently small operations can have large performance costs.
+[Read the Chapter 1 calibration draft](chapters/01-computing-foundations.md) · [Browse the tiered Chapter 1 plan](OUTLINE.md#1-computing-foundations)
 
-The [Chapter 1 prototype](chapters/01-computing-foundations.md) contains the first three completed entries:
+### 2. Programming foundations
 
-1. [Bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes) - the small units from which digital information is built.
-2. [Binary numbers](chapters/01-computing-foundations.md#binary-numbers) - representing quantities with two digits.
-3. [Hexadecimal and octal](chapters/01-computing-foundations.md#hexadecimal-and-octal) - compact ways to write binary-shaped values.
+Source code gives instructions to runtimes using values, types, state, control flow, functions and data structures. This chapter gives builders enough of that model to recognise the structure of generated code, understand errors and ask causal debugging questions.
 
-The planned remainder of the chapter is:
+[Browse the tiered Chapter 2 plan](OUTLINE.md#2-programming-foundations)
 
-- Boolean values and logic
-- Integers, signed numbers and overflow
-- Floating-point numbers and precision
-- Text, Unicode and character encodings
-- Central processing unit (CPU) instructions and execution
-- Registers, memory and random-access memory (RAM)
-- Persistent storage
-- Files and file systems
-- Input, output and devices
-- Operating systems and system calls
-- Programs, processes and threads
-- Time and clocks
-- Latency and throughput
-- Processor and memory caches
-- Compression
-- Serialisation and data formats
+### 3. Software engineering
 
-## Chapter 2: Programming foundations
+Software engineering is how intent becomes change that can be understood, tested, reviewed and recovered. This chapter covers requirements, modularity, interfaces, testing, version control, build feedback, code review, technical debt and the hidden knowledge that makes whole-system rewrites dangerous.
 
-**Purpose:** explain how people express behaviour in software and how source code becomes a running program. This chapter introduces the building blocks that AI-generated code is made from, so a builder can recognise structure, state, dependencies and failure rather than treating code as an opaque result.
+[Browse the tiered Chapter 3 plan](OUTLINE.md#3-software-engineering)
 
-The emphasis is not on learning one language's syntax. It is on durable ideas that recur across languages and tools: values have types, control flow selects what happens next, functions package behaviour, state changes over time, data structures shape what operations are easy, and runtimes impose rules that generated code cannot escape.
+### 4. The Internet, web and application programming interfaces
 
-Planned concepts:
+Browsers and services communicate through layered protocols and behavioural contracts. This chapter connects Internet Protocol, Domain Name System, Hypertext Transfer Protocol and browser technologies with semantic Hypertext Markup Language (HTML), progressive enhancement, compatibility, application programming interfaces and the organisations that define or document them.
 
-- Source code and programming languages
-- Syntax, semantics and behaviour
-- Compilers, interpreters and runtimes
-- Values and types
-- Variables and state
-- Expressions and operators
-- Conditions, loops and control flow
-- Functions, parameters and return values
-- Scope and lifetime
-- Collections and data structures
-- Algorithms and complexity
-- Iteration and recursion
-- Mutability, immutability and side effects
-- Errors and exceptions
-- Objects, interfaces and composition
-- Modules, packages and dependencies
-- Concurrency and asynchronous programming
-- Debugging
+[Browse the tiered Chapter 4 plan](OUTLINE.md#4-the-internet-web-and-application-programming-interfaces)
 
-## Chapter 3: Software engineering
+### 5. Data and databases
 
-How code is organised and changed by people over time. Planned concepts:
+Data needs structure, meaning and rules that remain valid as many users and processes change it. This chapter introduces schemas, relational and non-relational databases, constraints, queries, indexes, transactions, migrations, consistency and the lifecycle of stored information.
 
-- Functional and non-functional requirements
-- Modularity and separation of concerns
-- Abstraction and information hiding
-- Interfaces and contracts
-- Cohesion and coupling
-- Composition, inheritance and dependency injection
-- Application programming interface (API) design and versioning
-- Design patterns
-- Automated testing and the testing pyramid
-- Version control, branches and merges
-- Code review
-- Continuous integration
-- Refactoring
-- Technical debt
-- Documentation and architecture decisions
-- Maintainability and legacy code
+[Browse the tiered Chapter 5 plan](OUTLINE.md#5-data-and-databases)
 
-## Chapter 4: The Internet, web and application programming interfaces
+### 6. Architecture and distributed systems
 
-How software communicates across networks and how browsers, servers and services meet. Planned concepts:
+Architecture describes consequential boundaries and relationships within a system. Once components communicate over a network, timeouts, retries, duplicated messages, partial failure and uncertain state become normal design concerns rather than rare edge cases.
 
-- The Internet and the web
-- Packets and Internet Protocol addresses
-- Transmission Control Protocol (TCP), User Datagram Protocol (UDP), ports and sockets
-- Domain Name System (DNS)
-- Uniform Resource Locators (URLs), Uniform Resource Identifiers (URIs) and domain names
-- Hypertext Transfer Protocol (HTTP) requests and responses
-- HTTP methods, status codes and headers
-- Hypertext Transfer Protocol Secure (HTTPS), Transport Layer Security (TLS) and certificates
-- How a browser loads a page
-- Hypertext Markup Language (HTML), Cascading Style Sheets (CSS) and JavaScript
-- Client-server systems
-- APIs, remote procedure calls and representational state transfer (REST)
-- GraphQL
-- Cookies and sessions
-- Same-origin policy and Cross-Origin Resource Sharing (CORS)
-- Reverse proxies
-- Content delivery networks
-- WebSockets and server-sent events
-- Webhooks
+[Browse the tiered Chapter 6 plan](OUTLINE.md#6-architecture-and-distributed-systems)
 
-## Chapter 5: Data and databases
+### 7. Infrastructure, cloud and delivery
 
-How systems represent, preserve, query and change information. Planned concepts:
+Software runs on physical resources even when a platform hides most of them. This chapter explains environments, servers, containers, cloud regions, managed services, build artefacts, deployment, rollback, shared responsibility, cost and the coupling created by products such as Kubernetes, Vercel or Supabase.
 
-- Data models and schemas
-- Relational databases and Structured Query Language (SQL)
-- Tables, rows, columns and keys
-- Relationships and joins
-- Normalisation and denormalisation
-- Constraints and data integrity
-- Create, read, update and delete operations
-- Indexes and query planning
-- Transactions and atomicity, consistency, isolation and durability (ACID)
-- Isolation levels and concurrency control
-- Schema migrations
-- Non-relational (NoSQL) database families
-- Consistency and eventual consistency
-- Data import and export
-- Data retention and archival
-- Online transaction and analytical processing
-- Warehouses, lakes and analytics stores
-- Event logs and audit trails
+[Browse the tiered Chapter 7 plan](OUTLINE.md#7-infrastructure-cloud-and-delivery)
 
-## Chapter 6: Architecture and distributed systems
+### 8. Operations, reliability and observability
 
-How components are divided, connected and made to behave as one system despite partial failure. Planned concepts:
+A deployed system still needs owners, evidence and recovery paths. This chapter covers reliability targets, logs, metrics, traces, health checks, alerting, incidents, performance, capacity, backups and disaster recovery—the work that makes production behaviour understandable rather than surprising.
 
-- System boundaries and components
-- Monoliths and modular monoliths
-- Services and microservices
-- Stateful and stateless components
-- Synchronous and asynchronous communication
-- Messages, queues and streams
-- Events and publish-subscribe systems
-- Idempotency
-- Timeouts, retries and exponential backoff
-- Distributed replication and partitioning
-- Sharding
-- Designing around network partitions
-- Consensus and leader election
-- Application and distributed caching
-- Load balancing
-- Rate limiting and backpressure
-- Failure domains and blast radius
-- Graceful degradation
+[Browse the tiered Chapter 8 plan](OUTLINE.md#8-operations-reliability-and-observability)
 
-## Chapter 7: Infrastructure, cloud and delivery
+### 9. Security, privacy and identity
 
-Where software runs and how changes reach production. Planned concepts:
+Security is the control of trust, authority and damage. This chapter introduces threat boundaries, authentication, authorisation, least privilege, cryptography, input and output trust, browser and file attacks, supply-chain risk and responsible handling of personal data.
 
-- Development, test, staging and production environments
-- Configuration
-- Physical servers and virtual machines
-- Containers, images and registries
-- Container orchestration and Kubernetes
-- Cloud regions and availability zones
-- Compute, storage and managed services
-- Serverless computing
-- Infrastructure as code
-- Virtual networks, subnets and firewalls
-- Build artefacts
-- Continuous delivery and deployment
-- Deployment strategies
-- Rollback
-- Feature flags
-- Environment parity
-- Artefact repositories and release promotion
-- Capacity and cloud cost
+[Browse the tiered Chapter 9 plan](OUTLINE.md#9-security-privacy-and-identity)
 
-## Chapter 8: Operations, reliability and observability
+### 10. Product, experience and analytics
 
-How people keep production systems useful, understandable and recoverable. Planned concepts:
+Technical correctness is not enough if software solves the wrong problem or excludes its users. This chapter connects product discovery, the prototype-production gap, usability, accessibility, responsive design, analytics, experiments, prioritisation, support signals and the incentives hidden inside metrics.
 
-- Production readiness
-- Reliability, availability and durability
-- Service-level indicators, objectives and agreements
-- Monitoring
-- Logs, metrics and traces
-- Observability
-- Health checks
-- Alerting and on-call work
-- Operational incident response and severity
-- Blameless postmortems
-- Runbooks
-- Capacity planning
-- Performance measurement and bottlenecks
-- Redundancy and failover
-- Backups and restore testing
-- Disaster recovery
-- Recovery point and recovery time objectives
-- Resilience and chaos testing
-- Customer support and escalation
+[Browse the tiered Chapter 10 plan](OUTLINE.md#10-product-experience-and-analytics)
 
-## Chapter 9: Security, privacy and identity
+### 11. Governance, compliance and commercial readiness
 
-How systems resist misuse, limit damage and handle people's data responsibly. Planned concepts:
+Organisations must show who is responsible, which obligations apply and what evidence supports their claims. This chapter distinguishes laws, standards, certifications, assurance reports and frameworks before orienting readers to examples such as Cyber Essentials, ISO/IEC 27001 and SOC 2.
 
-- Assets, adversaries and attack surfaces
-- Threat modelling and trust boundaries
-- Authentication and authorisation
-- Identities, roles and permissions
-- Least privilege
-- Secrets management
-- Encryption in transit and at rest
-- Hashing, salting and password storage
-- Keys, certificates and public-key infrastructure
-- Input validation and output encoding
-- Injection attacks
-- Cross-site scripting and request forgery
-- Open Worldwide Application Security Project (OWASP) guidance
-- Dependency and supply-chain security
-- Vulnerability management and patching
-- Security testing
-- Audit logging
-- Personal-data classification, minimisation and deletion
-- Privacy and data-protection principles
-- Security incident response
+[Browse the tiered Chapter 11 plan](OUTLINE.md#11-governance-compliance-and-commercial-readiness)
 
-## Chapter 10: Product, experience and analytics
+### 12. AI-assisted engineering
 
-Why the software exists, how people experience it and how teams learn whether it is useful. Planned concepts:
+AI changes the speed and interface of software creation, not the underlying responsibility for the result. This chapter covers models, prompting, code generation, agents, the Model Context Protocol, permissions, evaluations, independent verification, prompt injection, provider dependency and generated-code ownership.
 
-- Users, customers and stakeholders
-- Problem framing and Jobs to Be Done
-- Product-market fit
-- Minimum viable products
-- Discovery and delivery
-- User experience and usability
-- Accessibility
-- Requirements, stories and acceptance criteria
-- Events and product analytics
-- Funnels, activation and retention
-- Key performance and North Star metrics
-- Cohort analysis
-- Experiments and A/B (split) testing
-- Experiment assignment and exposure
-- Feedback and support signals
-- Prioritisation and opportunity cost
-- Metric gaming and unintended incentives
+[Browse the tiered Chapter 12 plan](OUTLINE.md#12-ai-assisted-engineering)
 
-## Chapter 11: Governance, compliance and commercial readiness
+### 13. Laws, heuristics and engineering judgement
 
-How a software organisation demonstrates control, meets commitments and earns trust beyond the product itself. Planned concepts:
+Experienced practitioners use compact models to notice recurring patterns in systems and organisations. This chapter separates theorems, empirical effects, design principles, professional observations and jokes while covering leaky abstractions, system evolution, incentives, simplicity, sources of technical truth and memorable hacker folklore.
 
-- Ownership and accountability
-- Risk management
-- Policies, controls and evidence
-- Change management
-- Access reviews
-- Records and auditability
-- Data-protection roles and responsibilities
-- Third-party and vendor risk
-- Open-source licences
-- Intellectual property
-- Contracts and data-processing agreements
-- Security questionnaires
-- Service Organization Control 2 (SOC 2) and International Organization for Standardization/International Electrotechnical Commission (ISO/IEC) 27001 at a high level
-- Business continuity
-- Customer service commitments
-- Technical and commercial due diligence
-
-## Chapter 12: AI-assisted engineering
-
-What changes - and what does not - when AI participates in building software. Planned concepts:
-
-- Models, tokens and context windows
-- Prompting and context engineering
-- Code generation and review
-- Agents, tools and the Model Context Protocol
-- Permissions and sandboxing
-- Human oversight
-- Evaluations
-- Hallucination and misplaced confidence
-- Prompt injection
-- Data leakage and privacy
-- Non-determinism and reproducibility
-- Model and provider dependency
-- AI service economics and responsiveness
-- Provenance, copyright and licensing
-- Generated-code ownership and maintenance
-- Why conventional engineering controls still apply
-
-## Chapter 13: Laws, heuristics and engineering judgement
-
-Compact ideas that help experienced engineers reason about trade-offs, organisations and failure. Planned concepts:
-
-- Mental models and trade-offs
-- Conway's Law
-- Gall's Law
-- Brooks' Law
-- Goodhart's and Campbell's Laws
-- Chesterton's Fence
-- Pareto's Principle
-- Hanlon's Razor and Murphy's Law
-- Hofstadter's and Parkinson's Laws
-- The consistency-availability-partition (CAP) theorem and its PACELC extension
-- The law of leaky abstractions
-- Simplicity and accidental complexity
-- Optimising for change and understanding
-- Local optimisation and system effects
-- Making illegal states impossible
-- Separating policy from implementation
-- Explicit and implicit behaviour
+[Browse the tiered Chapter 13 plan](OUTLINE.md#13-laws-heuristics-and-engineering-judgement)
 
 ## Supporting documents
 
+- [Tiered content outline](OUTLINE.md) - canonical chapter boundaries, first-pass selections and further territory.
 - [Glossary](GLOSSARY.md) - short definitions linked to canonical entries.
 - [Style guide](STYLE_GUIDE.md) - the editorial contract for contributors and agents.
 - [Execution plan](PLAN.md) - milestones and document lifecycle.
-- [Milestone 1 audit](reviews/milestone-1-audit.md) - independent review findings and verification results.
-- [Source conversation](Technical%20Foundations%20for%20Founders.md) - the cleaned Markdown reference from which the project emerged.
+- [Issue-ready work packages](WORK_PACKAGES.md) - bounded batches for later drafting.
+- [Milestone 2 audit](reviews/milestone-2-audit.md) - editorial review findings, resolutions and verification results.
+- [Milestone 1 audit](reviews/milestone-1-audit.md) - prototype review findings and verification results.
 
-## Feedback requested for Milestone 1
+## Feedback requested for Milestone 2
 
-Before more chapters are drafted, this prototype needs decisions on:
+Before parallel drafting begins, this revision needs confirmation on:
 
-- Does the audience promise describe the intended reader?
-- Are the chapter boundaries and order useful?
-- Is anything important missing or misplaced in the complete concept map?
-- Do the first three entries teach enough without becoming tutorials?
-- Is the tone clear without being patronising?
-- Are jargon, inline links and further-reading sections handled well?
+- Are the first-pass selections in each chapter the right ones?
+- Does moving binary and hexadecimal to Chapter 1 further territory make sense while preserving their approved explanations?
+- Is a first traversal of 91 entries, spread across 13 chapters, sufficiently selective?
+- Are the dated landscape sections clear enough to prevent the mixed subject levels from becoming a miscellany?
+- Are the rules for current products, organisations, humorous jargon and historical practitioner material practical enough for contributors?
+- Are the chapter boundaries stable enough for different contributors to draft without duplicating canonical explanations?
 
-No later milestone should begin until this feedback has been incorporated.
+No broad drafting milestone should begin until this feedback has been incorporated.

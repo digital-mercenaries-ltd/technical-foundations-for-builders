@@ -1,6 +1,6 @@
 # TFB Style Guide
 
-Status: Milestone 1 draft - 2026-07-17
+Status: Milestone 2 draft - 2026-07-17
 
 This is the editorial contract for Technical Foundations for Builders (TFB). It applies to human and agent contributors.
 
@@ -20,6 +20,19 @@ Do not write as if the reader is studying for an examination, changing careers o
 6. **Mental models over isolated facts.** Connect each concept to the system around it.
 7. **Independent but connected entries.** A deep link should be understandable without reading the chapter from the start.
 8. **Durable concepts, current references.** Prefer ideas that outlast today's tools.
+9. **Useful now, maintainable later.** Include current products, vendors, organisations and schemes when recognising them helps today's reader, and mark time-sensitive material for review.
+10. **Progressive disclosure.** Keep the first traversal small without weakening the explanation of what it retains.
+
+## Content layers
+
+TFB deliberately mixes ideas at different levels: binary representation, a managed platform, a standards body and an assurance scheme may all be useful things for the same builder to recognise. Do not force them into equal-sized entries. Assign each retained candidate one treatment in [OUTLINE.md](OUTLINE.md):
+
+1. **First pass:** a complete awareness-level entry on the main breadth-first traversal. Use this when a concept corrects a dangerous intuition, supports several later ideas or regularly affects ordinary production software.
+2. **Further territory:** an optional awareness-level entry for material that is important but less necessary on the initial traversal or one layer more specific.
+3. **Recognition only:** a short explanation inside a related entry. This often suits a product, vendor, organisation, standard, scheme, named law or cultural term.
+4. **External or omitted:** a link or omission when TFB would add catalogue weight without improving the reader's mental model.
+
+The governing rule is: **reduce the number of concepts covered on the first pass, not the quality of their explanation.** “Further” means optional or more specific, not advanced or exhaustive. “Go deeper” means leaving TFB for a small set of strong external resources.
 
 ## Voice and language
 
@@ -31,6 +44,7 @@ Do not write as if the reader is studying for an examination, changing careers o
 - Avoid hype, condescension, academic throat-clearing and jokes that depend on technical knowledge.
 - State trade-offs. Do not present a default as a universal law.
 - Use acronyms only after writing the name in full. Add the acronym to the glossary if it recurs.
+- Allow personality, practitioner language and humour. Explain unfamiliar jokes or jargon, and never rely on them as the factual explanation.
 
 ## Concept-entry template
 
@@ -70,9 +84,35 @@ Correct the most consequential beginner misunderstandings.
 - [Descriptive source title](https://example.com/) - what the source adds.
 ```
 
+The template defines editorial functions, not a demand that every entry have the same length or level of abstraction. A narrow but important scheme may need a shorter entry than a foundational mechanism. A current product profile may need a dated orientation rather than the full concept template.
+
+## Other content forms
+
+### Current landscape item
+
+Use for a product, vendor, organisation, protocol, framework or scheme whose name a contemporary builder is likely to encounter.
+
+- State what category it belongs to and what responsibility it has.
+- Connect it to the durable concepts it implements, publishes or influences.
+- Identify important boundaries, incentives or coupling where relevant.
+- Add `Reviewed: YYYY-MM-DD` when the description can become stale.
+- Do not present inclusion as an endorsement or popularity ranking.
+
+### Related observation
+
+Use for a named law, maxim or practitioner story that makes a mechanism memorable. Explain the underlying idea and its important qualification. The surrounding entry must remain understandable if the observation is removed.
+
+### From hacker folklore
+
+Use for historical jargon or humour, including terms such as *heisenbug*, *yak shaving*, *bikeshedding* and *PEBKAC/PEBCAK*. Give the plain meaning and the real mechanism or behaviour behind the joke. Irreverence is acceptable; using a joke instead of investigating a system or interface failure is not.
+
+### Historical field checklist or case study
+
+Use a dated checklist or case when its original form is part of its value. Explain where it came from, distribute its underlying concepts to their canonical homes and state what has dated or requires qualification. A checklist is a conversation aid, not a certification or proof of readiness.
+
 ## Depth and length
 
-The Milestone 1 working range is 250-500 words per concept, excluding the resource lists. It is a calibration range, not a quota.
+The working range is 250-500 words for a normal awareness-level concept entry, excluding the resource lists. It is a calibration range, not a quota. Short landscape items and asides may be much smaller. First-pass chapters should normally contain approximately five to eight principal entries and remain readable in one sitting.
 
 An entry is deep enough when a reader can:
 
@@ -83,6 +123,8 @@ An entry is deep enough when a reader can:
 - identify what to investigate next.
 
 Stop before derivations, exhaustive variants, historical catalogues, language-specific recipes or implementation instructions unless one is essential to the initial model.
+
+Do not solve breadth by putting every candidate on the first pass. Move optional concepts to further territory, name them briefly for recognition or link externally.
 
 ## Examples
 
@@ -132,7 +174,17 @@ Match the source to the claim:
 
 Further reading should usually contain two to four items. Say what each source offers. A short, purposeful list is better than an “awesome” list.
 
-For facts that are current, contested, security-sensitive or easy to misstate, record the research and verification date in the research note using ISO-8601 format.
+For facts that are current, contested, security-sensitive or easy to misstate, record the research and verification date in a note in the private companion repository using ISO-8601 format.
+
+For current products, vendors, organisations, standards and schemes:
+
+- prefer the maintainer, publisher or responsible organisation for identity, scope and current status;
+- use independent evidence for comparative claims, adoption, performance or criticism;
+- record a review date in the private research note and on a landscape item when staleness would mislead;
+- distinguish a product from its category, a standards body from documentation, and a certification from an assurance report;
+- keep historical examples dated rather than silently modernising them.
+
+TFB is a living document. Currentness is a maintenance responsibility, not a reason to omit useful contemporary names.
 
 ## Canonical concepts and redundancy
 
@@ -143,6 +195,8 @@ Every concept has one canonical home. When another entry needs the idea:
 - do not silently create a second definition.
 
 If two entries repeatedly need the same explanation, reconsider their boundary or extract a shared foundational concept.
+
+One concept may have examples at several levels. That is not duplication when the canonical mechanism remains in one place and each product, standard or story contributes distinct orientation.
 
 ## Glossary
 
@@ -160,11 +214,13 @@ Use a diagram only when it makes a relationship, hierarchy or sequence materiall
 
 ## Agent workflow
 
-- Give research agents bounded concept clusters and require cited notes before drafting sensitive material.
+- Give research agents bounded concept clusters and require cited private notes before drafting sensitive material.
 - Give drafting agents the chapter purpose, audience assumptions, concept dependencies, source note and this guide.
 - Do not let parallel agents edit the same chapter file.
 - Have a different agent critique the draft for accuracy, grounding, relevance and redundancy.
 - Let one lead editor integrate changes and protect canonical definitions.
+- Require the outline tier, content form and canonical home in every drafting brief.
+- Separate durable claims from current landscape claims so that time-sensitive material can be reviewed independently.
 
 Agent-written prose receives the same factual and editorial review as human-written prose.
 

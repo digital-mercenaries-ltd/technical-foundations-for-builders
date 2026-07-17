@@ -1,8 +1,8 @@
 # Glossary
 
-Status: Milestone 1 seed - 2026-07-17
+Status: Milestone 2 seed - 2026-07-17
 
-This alphabetical index defines terms used by the first three drafted concepts. It will grow with the guide. Definitions stay short and link to the canonical explanation rather than duplicating it.
+This alphabetical index defines terms used by the drafted concepts and reader-facing navigation. It will grow with the guide. Definitions stay short and link to a published canonical explanation rather than to an outline placeholder.
 
 ## B
 
@@ -49,6 +49,10 @@ An unambiguous name for an eight-bit byte, commonly used in Internet standards; 
 ### Positional number system
 
 A way of writing numbers in which a digit's value depends on its position, as explained in [Binary numbers](chapters/01-computing-foundations.md#binary-numbers).
+
+### Progressive disclosure
+
+Presenting a small first view and making additional detail optional so that breadth does not create immediate overwhelm; see [How the guide avoids overwhelm](README.md#how-the-guide-avoids-overwhelm).
 
 ## U
 
