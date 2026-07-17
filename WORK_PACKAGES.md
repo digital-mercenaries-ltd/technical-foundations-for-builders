@@ -1,6 +1,6 @@
-# TFB issue-ready work packages
+# Technical Foundations for Builders issue-ready work packages
 
-Status: Milestone 2 draft - 2026-07-17
+Status: Milestone 2 approved - 2026-07-17
 
 These are bounded drafting and integration batches for publication to the `digital-mercenaries-ltd/technical-foundations-for-builders` GitHub issue tracker after Milestone 2 approval. They are not a required reading order.
 
@@ -11,7 +11,7 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 - Private research notes identify durable claims, current landscape claims and suitable sources; public deliverables contain only edited conclusions and appropriate source links.
 - Each topic retains its assigned disclosure tier and canonical home.
 - First-pass prose establishes mechanics, relevance and pitfalls without becoming a tutorial.
-- Current products, organisations, standards and schemes include an ISO-8601 review date where staleness matters.
+- Current products, organisations, standards and schemes include an ISO 8601 review date where staleness matters.
 - Jargon and historical material explain the mechanism and context behind the memorable name.
 - Internal links, anchors and document structure pass `python3 scripts/check_docs.py`.
 - A separate reviewer checks accuracy, jargon grounding, redundancy and fit with the target reader.
@@ -19,6 +19,8 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 ## Editorial-system package
 
 ### WP-00: Integrate Milestone 2 review
+
+**Status:** Complete on 2026-07-17.
 
 **Depends on:** user review of the current milestone.
 
@@ -28,15 +30,19 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 ### WP-01: Complete the Chapter 1 first pass
 
+**Issue:** [#1](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/1)
+
+**Status:** Draft complete; awaiting Milestone 3 owner review - 2026-07-17.
+
 **Depends on:** WP-00.
 
-**Scope:** retain the three calibrated entries, draft the remaining first-pass concepts assigned to Chapter 1 and integrate the chapter as one mental model.
+**Scope:** preserve the three calibrated explanations; relocate binary and hexadecimal/octal unchanged to the Chapter 1 further-territory page; draft eight first-pass entries covering representation, integer limits, floating point, text, machine resources, running programs, time and performance; repair incoming links; and integrate the page as one mental model.
 
-### WP-02A: Draft Chapter 1 numeric further territory
+### WP-02A: Expand Chapter 1 numeric further territory
 
 **Depends on:** WP-01.
 
-**Scope:** binary and hexadecimal notation; Boolean and bitwise operations; decimal money and units; randomness and entropy.
+**Scope:** after WP-01 has established the page and relocated the approved entries, add Boolean and bitwise operations, decimal money and units, randomness and entropy. Do not redraft binary or hexadecimal notation.
 
 ### WP-02B: Draft Chapter 1 machine further territory
 
@@ -52,9 +58,13 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 ### WP-03: Draft the Chapter 2 first pass
 
+**Issue:** [#2](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/2)
+
+**Status:** Draft complete; awaiting Milestone 3 owner review - 2026-07-17.
+
 **Depends on:** WP-00 and the terminology established by WP-01.
 
-**Scope:** programming languages, values and types, state, control flow, functions, data structures, errors and diagnosis, modules and dependencies. Include a compact hacker-folklore debugging aside.
+**Scope:** draft eight first-pass entries covering languages and runtimes, values and types, state, control flow and functions, data structures, modules and dependencies, error handling, and diagnosis. Include a compact hacker-folklore debugging aside.
 
 ### WP-04: Draft Chapter 2 further territory
 
@@ -70,11 +80,11 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Scope:** requirements, modularity, abstraction, verification, version control, build feedback, review and evolutionary change. Use Joel Spolsky material as dated practitioner context where assigned.
 
-### WP-06: Draft Chapter 4 - Internet, web and APIs
+### WP-06: Draft Chapter 4 - Internet, web and application programming interfaces
 
 **Depends on:** WP-01 and WP-03.
 
-**Scope:** request path, network protocols, HTTP and TLS, browser foundations, APIs, browser state, progressive enhancement and compatibility. Verify current organisations and browser-platform material.
+**Scope:** request path, network protocols, Hypertext Transfer Protocol (HTTP), Transport Layer Security (TLS), browser foundations, application programming interfaces, browser state, progressive enhancement and compatibility. Verify current organisations and browser-platform material.
 
 ### WP-07: Draft Chapter 5 - data and databases
 
@@ -124,11 +134,11 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 ## Modern practice and judgement packages
 
-### WP-14: Draft Chapter 12 - AI-assisted engineering
+### WP-14: Draft Chapter 12 - artificial intelligence-assisted engineering
 
 **Depends on:** WP-05 through WP-11.
 
-**Scope:** models, prompting, code generation, agents, tools, permissions, independent evaluation, AI-specific attacks, providers and retained engineering responsibility. Date product and protocol landscape material.
+**Scope:** models, prompting, code generation, agents, tools, permissions, independent evaluation, artificial intelligence-specific attacks, providers and retained engineering responsibility. Date product and protocol landscape material.
 
 ### WP-15: Draft Chapter 13 - laws, heuristics and judgement
 
@@ -153,7 +163,7 @@ Each row is an independently publishable issue. Its exact topic list is the corr
 | **WP-F09** | Chapter 9 further territory | WP-11 |
 | **WP-F10** | Chapter 10 further territory | WP-12 |
 | **WP-F11** | Chapter 11 further territory and scheme profiles | WP-13 |
-| **WP-F12** | Chapter 12 further territory and AI landscape profiles | WP-14 |
+| **WP-F12** | Chapter 12 further territory and artificial intelligence landscape profiles | WP-14 |
 | **WP-F13** | Chapter 13 further territory, cross-links and cultural asides | WP-15 |
 
 ### WP-17: Whole-guide integration and currentness review

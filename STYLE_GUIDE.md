@@ -1,6 +1,6 @@
 # TFB Style Guide
 
-Status: Milestone 2 draft - 2026-07-17
+Status: Milestone 2 approved - 2026-07-17
 
 This is the editorial contract for Technical Foundations for Builders (TFB). It applies to human and agent contributors.
 

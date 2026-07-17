@@ -4,15 +4,20 @@ Computers store and transform information by giving meaning to physical states. 
 
 The aim is recognition, not manual calculation. You should finish these entries able to distinguish a value from its representation, understand why the same bits can mean different things and recognise when a low-level detail may explain high-level behaviour.
 
-## Calibration map
+## Chapter map
 
-The calibration draft contains three completed entries used to test depth, voice and structure:
+The first pass begins with bits and bytes, then builds toward the number, text, machine, time and performance models that later chapters rely on:
 
 1. [Bits and bytes](#bits-and-bytes)
-2. [Binary numbers](#binary-numbers)
-3. [Hexadecimal and octal](#hexadecimal-and-octal)
+2. [Integer ranges and overflow](#integer-ranges-and-overflow)
+3. [Floating-point approximation](#floating-point-approximation)
+4. [Text, Unicode and character encodings](#text-unicode-and-character-encodings)
+5. [Processors, memory and persistent storage](#processors-memory-and-persistent-storage)
+6. [Operating systems and running programs](#operating-systems-and-running-programs)
+7. [Time, clocks, dates and time zones](#time-clocks-dates-and-time-zones)
+8. [Latency and throughput](#latency-and-throughput)
 
-The [tiered Chapter 1 outline](../OUTLINE.md#1-computing-foundations) records the intended first pass, optional further territory and current reference landscape. It keeps bits and bytes on the first pass and places binary, hexadecimal and octal in further territory without discarding their approved prose. It also distinguishes processor and memory caching from application and distributed caching.
+Optional explanations of [binary numbers](../further/01-computing-foundations.md#binary-numbers) and [hexadecimal and octal](../further/01-computing-foundations.md#hexadecimal-and-octal) are available as further territory.
 
 ## Bits and bytes
 
@@ -45,9 +50,10 @@ The Hypertext Transfer Protocol (HTTP) uses the more precise word [**octet**](..
 
 ### Related concepts in TFB
 
-- [Binary numbers](#binary-numbers) - how a bit pattern can represent a quantity.
-- [Hexadecimal and octal](#hexadecimal-and-octal) - compact ways to write groups of bits.
-- Planned: text encodings, data types, files, network protocols and cryptography.
+- [Binary numbers](../further/01-computing-foundations.md#binary-numbers) - how a bit pattern can represent a quantity.
+- [Hexadecimal and octal](../further/01-computing-foundations.md#hexadecimal-and-octal) - compact ways to write groups of bits.
+- [Integer ranges and overflow](#integer-ranges-and-overflow) - why a fixed representation cannot hold every whole number.
+- [Text, Unicode and character encodings](#text-unicode-and-character-encodings) - how numbers and bytes represent written text.
 
 ### Deeper concepts
 
@@ -62,116 +68,288 @@ The Hypertext Transfer Protocol (HTTP) uses the more precise word [**octet**](..
 - [NIST: Byte](https://csrc.nist.gov/glossary/term/byte) - the concise standards-linked definition.
 - [NIST: Prefixes for binary multiples](https://physics.nist.gov/cuu/Units/binary.html) - the difference between units such as MB and MiB.
 
-## Binary numbers
+## Integer ranges and overflow
 
-*Writing quantities with two digits instead of ten.*
-
-### What they are
-
-Binary is a [**positional number system in base 2**](../GLOSSARY.md#positional-number-system). It uses only `0` and `1`. Each place is worth twice the place to its right, just as each place in ordinary decimal notation is worth ten times the place to its right.
-
-To read `101101` as an unsigned binary number, add the place values whose digit is `1`:
-
-```text
-binary digits:  1   0   1   1   0   1
-place values:  32  16   8   4   2   1
-included:       32   0   8   4   0   1  = 45
-```
-
-Therefore `101101₂` and `45₁₀` are two representations of the same quantity. Leading zeroes do not change the value, so `00101101₂` is also 45, but they can communicate a fixed width of eight bits. [Harvard CS50 introduces the same place-value model](https://cs50.harvard.edu/x/notes/0/#binary).
-
-A fixed group of *n* bits, treated as a non-negative integer, has `2ⁿ` patterns and can represent values from 0 through `2ⁿ - 1`. This is why technical limits and capacities so often appear near powers of two.
-
-### Why a builder needs to know this
-
-Programming languages expose binary notation and operations. Python, for example, uses the prefix `0b`, so decimal 45 can be written as `0b101101` ([Python's integer-literal syntax](https://docs.python.org/3/reference/lexical_analysis.html#integer-literals)). Individual bits are also used as on/off flags: several permissions or settings can be packed into one value and manipulated position by position with **bitwise operations**.
-
-The model helps explain integer limits, memory sizes, colour components, permissions, network addressing and the compact hexadecimal notation used in logs and identifiers. You rarely need to convert large values by hand; you need to recognise what the representation implies.
-
-### Pitfalls
-
-- **Digits alone do not reveal the base.** `101` means one hundred and one in decimal but five in binary. Label non-decimal values when context is unclear.
-- **A pattern is not automatically unsigned.** A type or format decides whether bits represent an unsigned integer, a signed integer that may be negative, text, flags or something else.
-- **Pattern count and maximum value differ by one.** Eight bits have 256 patterns, but the largest unsigned value is 255.
-- **Width depends on the executing environment or format.** Python integers can grow to available memory, while JavaScript bitwise operations on ordinary numbers convert values to 32-bit integers ([MDN's bitwise AND description](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_AND#description)).
-- **Bitwise and logical operations are different.** One acts on bit positions; the other makes truth-value decisions.
-
-### Related concepts in TFB
-
-- [Bits and bytes](#bits-and-bytes) - the storage units used by the notation.
-- [Hexadecimal and octal](#hexadecimal-and-octal) - readable shorthand for grouped binary digits.
-- Planned: Boolean logic, integer overflow, data types and permissions.
-
-### Deeper concepts
-
-- Two's complement and signed integers - how fixed-width binary represents negative values.
-- Fixed-width overflow - what happens when a result exceeds the available patterns.
-- Bit masks, shifts and Boolean algebra - how programs inspect and move individual bit positions.
-- Floating-point representation - how binary systems approximate fractional values.
-
-### Further reading
-
-- [Harvard CS50: Binary](https://cs50.harvard.edu/x/notes/0/#binary) - a visual beginner-level explanation.
-- [Python: Integer literals](https://docs.python.org/3/reference/lexical_analysis.html#integer-literals) - real-world notation for binary, octal and hexadecimal values.
-- [MDN: Bitwise operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#bitwise_operators) - where binary positions appear in JavaScript, including important width rules.
-
-## Hexadecimal and octal
-
-*Compact notations that line up neatly with groups of binary digits.*
+*A whole number may be unlimited in mathematics but limited in software.*
 
 ### What they are
 
-**Hexadecimal**, usually shortened to **hex**, is base 16. It uses `0` to `9`, then `A` to `F` for values ten to fifteen. **Octal** is base 8 and uses `0` to `7`.
+An integer is a whole number. An **integer representation** is a finite set of patterns used to store such numbers. An unsigned field of *n* bits has `2ⁿ` patterns, representing values from `0` through `2ⁿ - 1`. An unsigned eight-bit field therefore stops at `255`; it has no pattern for `256`.
 
-These bases are useful because they align exactly with binary groups. One hex digit represents four bits because `2⁴ = 16`; one octal digit represents three bits because `2³ = 8`.
-
-```text
-binary:       0010 1101
-hex groups:     2    D    -> 0x2D
-decimal:                 45
-
-binary:         101 101
-octal groups:     5   5    -> 0o55
-decimal:                  45
-```
-
-You can check the positional values directly: `0x2D = 2×16 + 13 = 45`, while `0o55 = 5×8 + 5 = 45`. A byte fits exactly into two hex digits, from `00` to `FF`. The prefixes `0x` and `0o` are common programming-language labels for hex and octal; they are not part of the mathematical value. [Python documents `0b`, `0o` and `0x` together](https://docs.python.org/3/reference/lexical_analysis.html#integer-literals).
+When a calculation produces a result outside the representation's range, **integer overflow** occurs. What happens next depends on the type and interface. Some operations wrap around, some report an error and some languages provide integers that grow until another resource limit is reached. Java, for example, specifies fixed-width integer types and defined wraparound behaviour for ordinary operations, while Python's `int` has unlimited precision at the language level ([Java Language Specification](https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-4.html#jls-4.2.2); [Python numeric types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)). A database column, file format or application programming interface can still impose a smaller range.
 
 ### Why a builder needs to know this
 
-Hex is a compact human-readable view of binary data. You will see it in logs, identifiers, hashes (fixed-size fingerprints of data), memory tools and communication formats. Cascading Style Sheets (CSS) colours use two hex digits for each red, green and blue component, so `#FF0000` means maximum red with no green or blue ([CSS Color 4 hex notation](https://www.w3.org/TR/css-color-4/#hex-notation)). Internet Protocol version 6 (IPv6) addresses also write their 16-bit pieces in hex ([IPv6 address syntax](https://www.rfc-editor.org/rfc/rfc3986.html#section-3.2.2)).
-
-Octal is less common, but it remains visible in Unix-style permissions because read, write and execute are three on/off choices. Three bits map to one octal digit, so `7` corresponds to binary `111`. The [GNU Coreutils permissions guide](https://www.gnu.org/software/coreutils/manual/html_node/Numeric-Modes.html) explains how a mode such as `755` represents three permission groups.
+Ranges appear in counters, identifiers, timestamps, file sizes, database columns and protocol fields. A value can work inside one component and fail, wrap or be rejected when it crosses into another. Ask which representation, range and overflow rule applies at every boundary that handles important quantities.
 
 ### Pitfalls
 
-- **The same digits change value with the base.** `10` is decimal ten, binary two, octal eight or hexadecimal sixteen.
-- **Hex text is not raw bytes.** The two text characters `2D` are a printable representation; decoding them as base 16 produces one byte. [Internet standard RFC 4648 defines this base16 mapping](https://www.rfc-editor.org/rfc/rfc4648.html#section-8).
-- **Permission modes are not decimal.** Unix mode `755` is octal; reading it as seven hundred and fifty-five gives the wrong model.
-- **Leading-zero rules vary by language.** Use explicit prefixes such as `0o` instead of relying on legacy notation.
-- **Grouping prevents mistakes.** Convert hex in four-bit groups and octal in three-bit groups rather than applying decimal digit intuition.
+- A value being called an “integer” does not tell you its range.
+- Moving a value into a wider type cannot repair overflow that has already occurred.
+- A larger range delays a boundary; it does not remove all resource limits.
+- Negative values require a signed representation, whose range differs from an unsigned one of the same size.
 
 ### Related concepts in TFB
 
-- [Bits and bytes](#bits-and-bytes) - why two hex digits fit one byte.
-- [Binary numbers](#binary-numbers) - the underlying representation being grouped.
-- Planned: CSS colours, Unix permissions, IP addresses, hashes and cryptography.
+- [Bits and bytes](#bits-and-bytes) - the finite patterns from which integer representations are built.
+- [Binary numbers](../further/01-computing-foundations.md#binary-numbers) - how those patterns can express quantities.
+- [Floating-point approximation](#floating-point-approximation) - a different compromise for representing numbers.
 
 ### Deeper concepts
 
-- Base-N encoding versus numeric notation - how printable encodings differ from writing a number in another base.
-- Bit masks and permission flags - how grouped bits represent independent choices.
-- Byte dumps and endianness - how tools display the order of bytes in memory or files.
-- Unicode code-point, universally unique identifier (UUID) and hash notation - common conventions that use hex-shaped text.
+- Two's complement - the common representation of signed integers.
+- Numeric types at system boundaries - how languages, databases and protocols convert or reject values.
+- Decimal quantities and money - where range and domain-specific rounding rules meet.
 
 ### Further reading
 
-- [RFC 4648: Base16 encoding](https://www.rfc-editor.org/rfc/rfc4648.html#section-8) - the standard mapping between bytes and printable hex.
-- [W3C CSS Color 4: Hex notation](https://www.w3.org/TR/css-color-4/#hex-notation) - a familiar use of byte-sized hex components.
-- [GNU Coreutils: Numeric modes](https://www.gnu.org/software/coreutils/manual/html_node/Numeric-Modes.html) - the practical connection between octal and Unix permissions.
+- [Java Language Specification: primitive numeric types](https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-4.html#jls-4.2) - a concrete example of fixed ranges and specified overflow behaviour.
+- [Python: numeric types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex) - a contrasting language-level integer model.
+
+## Floating-point approximation
+
+*A very large range of numbers is represented with finite precision.*
+
+### What it is
+
+A **floating-point** format stores a sign, a significant part and a scale, rather like scientific notation. This allows one fixed-size value to represent both very small and very large numbers, but only a finite selection of them. When the exact result of a calculation is not in that selection, it is rounded to a nearby representable value. The Institute of Electrical and Electronics Engineers (IEEE) 754 standard defines widely used binary and decimal floating-point formats and their arithmetic ([IEEE 754-2019](https://standards.ieee.org/ieee/754/6210/)).
+
+Many everyday decimal fractions have no finite binary representation. In common binary floating-point environments, `0.1 + 0.2` therefore produces the representable value nearest the exact mathematical result, rather than exact `0.3`. Display formatting may hide or reveal the difference; it does not change the stored value. Python's [floating-point tutorial](https://docs.python.org/3/tutorial/floatingpoint.html) works through this representation error.
+
+### Why a builder needs to know this
+
+Floating-point values appear in measurements, graphics, statistics and many programming-language number types. Their approximations can affect equality checks, repeated calculations, totals and values exchanged between components. The useful question is not whether floating point is “accurate”, but whether its range, precision and rounding behaviour suit the decision being made.
+
+### Pitfalls
+
+- Floating point is not random or universally inaccurate. Many values and operations are exact; others require defined rounding.
+- “Always compare with a tolerance” is not a complete rule. A suitable tolerance depends on the domain, scale and calculation, and some comparisons must be exact.
+- More display digits do not add information that was never stored.
+- Decimal or fixed-point representations can preserve chosen base-ten quantities, but they still have ranges and rounding rules.
+
+### Related concepts in TFB
+
+- [Integer ranges and overflow](#integer-ranges-and-overflow) - another consequence of finite numeric representations.
+- [Bits and bytes](#bits-and-bytes) - the underlying storage patterns.
+
+### Deeper concepts
+
+- Rounding modes and accumulated error - how a sequence of approximations affects a result.
+- Decimal and fixed-point arithmetic - alternatives for domains with base-ten rules.
+- Numerical analysis - methods for reasoning about stable calculations.
+
+### Further reading
+
+- [Python: Floating-Point Arithmetic—Issues and Limitations](https://docs.python.org/3/tutorial/floatingpoint.html) - an accessible worked explanation of binary approximation and display.
+- [IEEE 754-2019](https://standards.ieee.org/ieee/754/6210/) - the standard owner's overview of floating-point formats and arithmetic.
+
+## Text, Unicode and character encodings
+
+*Written text passes through several layers before becoming stored bytes.*
+
+### What they are
+
+Unicode assigns a **code point**, written like `U+0041`, to an encoded character. A **character encoding** then defines how numbered text elements are represented for storage or transmission. Unicode Transformation Format 8-bit (UTF-8), for example, uses one to four bytes for each Unicode scalar value ([Unicode Standard, UTF-8 definition](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-3/#G7404)).
+
+These layers mean that bytes, code points and visible characters are different units. The letter `é` can be represented as one code point or as `e` followed by a combining accent. Those sequences may look the same while differing internally. Unicode calls a sequence intended to behave as one user-perceived character a **grapheme cluster** ([Unicode text segmentation](https://www.unicode.org/reports/tr29/tr29-47.html#Grapheme_Cluster_Boundaries)). It also defines normalisation forms that can make specified equivalent sequences use a common representation.
+
+### Why a builder needs to know this
+
+Encoding appears at file, network, database and application programming interface boundaries. Text units matter when code limits input length, moves a cursor, truncates a label, compares identifiers or signs a message. A builder needs to ask which encoding a boundary expects and which unit an interface counts.
+
+### Pitfalls
+
+- A byte is not a character, and a code point is not reliably a user-perceived character.
+- Unicode is a standard for text elements and related algorithms; UTF-8 is one encoding of Unicode values.
+- “Plain text” still has an encoding and usually other conventions, such as line endings.
+- Visually identical text can differ as bytes or code points, affecting comparison, search and file names.
+- Normalisation is not a universal cleaning operation. Different forms preserve different distinctions.
+
+### Related concepts in TFB
+
+- [Bits and bytes](#bits-and-bytes) - the container used by byte-oriented encodings.
+- [Integer ranges and overflow](#integer-ranges-and-overflow) - another example of values being constrained by a representation.
+
+### Deeper concepts
+
+- Text segmentation and normalisation - rules for user-perceived characters and equivalent sequences.
+- Internationalisation - bidirectional text, collation, locale-sensitive casing and formatting.
+- Security confusables - different characters that can appear deceptively similar.
+
+### Further reading
+
+- [Unicode Standard, Chapter 1](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-1/) - the standard's model of characters, glyphs and text elements.
+- [Unicode Standard Annex #29](https://www.unicode.org/reports/tr29/) - maintained rules for grapheme, word and sentence boundaries.
+- [Joel Spolsky: The Absolute Minimum Every Software Developer Must Know About Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) - a memorable historical introduction, best read alongside the maintained Unicode material.
+
+## Processors, memory and persistent storage
+
+*Running software depends on resources with different jobs and lifetimes.*
+
+### What they are
+
+A **processor**, or central processing unit (CPU), follows machine instructions and performs calculations. It uses **memory**, commonly random-access memory (RAM), as working space for active programs and data. **Persistent storage** retains files and other data across ordinary process and machine restarts. Harvard's [CS50 overview of computer hardware](https://cs50.harvard.edu/ap/2026/curriculum/technology/references/how_computers_work.pdf) gives an accessible first model of these roles.
+
+The boundaries are layered rather than absolute. An operating system normally gives a running program a virtual address space, maps that space to physical memory and can map files into it. It may move memory pages between RAM and backing storage. File writes can also pass through memory buffers before reaching a storage device. The Portable Operating System Interface (POSIX) defines `fsync()` as a request to transfer a file's data to its associated storage device, while leaving some details to the implementation ([POSIX `fsync`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/fsync.html)). A successful high-level “save” therefore needs a documented durability meaning.
+
+### Why a builder needs to know this
+
+This model explains why a program can run out of memory while disk space remains, why a restart loses in-memory state and why storage access can dominate elapsed time. It also exposes a critical production question: at what point would saved data survive a process crash, machine failure or storage failure?
+
+### Pitfalls
+
+- Memory and storage are not interchangeable terms.
+- Virtual memory is not merely “extra RAM on disk”; it also provides address translation and isolation.
+- Persistent does not mean indestructible. Devices, file systems, operators and sites can fail.
+- A returned write operation is not automatically proof that every layer has made the data durable.
+
+### Related concepts in TFB
+
+- [Operating systems and running programs](#operating-systems-and-running-programs) - the software layer that manages these resources.
+- [Latency and throughput](#latency-and-throughput) - two ways resource constraints become visible.
+- [Bits and bytes](#bits-and-bytes) - the units used to describe memory and storage.
+
+### Deeper concepts
+
+- Virtual memory, paging and memory mapping - how address spaces relate to memory and files.
+- Processor and memory caches - faster layers that change performance behaviour.
+- File systems, replication and backups - different parts of making data durable and recoverable.
+
+### Further reading
+
+- [CS50: How Computers Work](https://cs50.harvard.edu/ap/2026/curriculum/technology/references/how_computers_work.pdf) - a one-page model of processors, RAM, storage and operating systems.
+- [Linux kernel: Memory Management](https://www.kernel.org/doc/html/latest/admin-guide/mm/index.html) - operating-system documentation for virtual memory and paging.
+- [POSIX: `fsync`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/fsync.html) - the specified persistence request and its implementation boundary.
+
+## Operating systems and running programs
+
+*An operating system turns stored programs into managed running work.*
+
+### What they are
+
+A **program** is stored instructions and associated data. A **process** is a running instance of a program with resources managed by an **operating system**. The operating system manages hardware and supplies common facilities such as files, networking, memory, device access, process creation and permissions. The same program can run as several processes, and one application can use several programs or processes.
+
+A **thread** is one flow of control within a process. Threads normally share their process's memory and resources while retaining their own execution state. The operating system schedules runnable processes and threads onto available processors. This can interleave several flows so that they make progress concurrently; actual simultaneous execution depends on the available processing resources.
+
+```text
+stored program -> operating system starts it -> process owns resources
+                                            -> one or more threads execute work
+```
+
+Microsoft's [processes and threads overview](https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads) gives one concrete platform model; the [Portable Operating System Interface (POSIX) thread specification](https://pubs.opengroup.org/onlinepubs/9799919799/functions/V2_chap02.html#tag_16_09) defines the corresponding shared-address-space model on POSIX systems.
+
+### Why a builder needs to know this
+
+Deployments start and stop processes. Logs and monitoring report process or thread failures. Resource limits apply to running work, and concurrent threads can change shared memory. The model helps you ask whether a crash affected one process or a whole machine, whether state survives a restart and whether apparently separate work shares failure-prone state.
+
+### Pitfalls
+
+- An application, program and process do not always correspond one-to-one.
+- A thread is not an isolated process. Shared memory allows efficient cooperation and creates data-race risks.
+- “At the same time” can mean interleaved concurrency or physical parallelism.
+- An operating system is not only a graphical desktop. Servers, containers and embedded systems also depend on operating-system services.
+
+### Related concepts in TFB
+
+- [Processors, memory and persistent storage](#processors-memory-and-persistent-storage) - the resources managed for running programs.
+- [Latency and throughput](#latency-and-throughput) - measurements affected by scheduling and shared resources.
+
+### Deeper concepts
+
+- Concurrency and synchronisation - coordinating work that can overlap.
+- Process isolation, permissions and system calls - boundaries between programs and the operating system.
+- Containers and virtual machines - additional ways to package or isolate running workloads.
+
+### Further reading
+
+- [Microsoft: About Processes and Threads](https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads) - a clear resource-sharing and scheduling model.
+- [POSIX: threads](https://pubs.opengroup.org/onlinepubs/9799919799/functions/V2_chap02.html#tag_16_09) - a standards definition of threads within a process.
+- [National Institute of Standards and Technology: operating system](https://csrc.nist.gov/glossary/term/operating_system) - a concise definition linked to formal sources.
+
+## Time, clocks, dates and time zones
+
+*Software must distinguish human calendar intent from instants and elapsed time.*
+
+### What they are
+
+An **instant** is one point on a timeline. A **local date and time**, such as 09:00 on a calendar, expresses civil time. A **Coordinated Universal Time (UTC) offset**, such as `+01:00`, relates one local time to UTC for a particular instant. A **time zone**, such as `Europe/London`, is a maintained set of rules mapping local times to offsets across dates. [Request for Comments (RFC) 9557](https://www.rfc-editor.org/rfc/rfc9557.html#section-1.2) explains why an offset alone cannot answer questions such as “what instant is 09:00 here next month?”: regional rules can change.
+
+Software also uses different clocks. A **wall clock** answers “what civil or system time is it?” and can be corrected. A **monotonic clock** measures elapsed time without jumping backwards when the wall clock changes. Use differences between monotonic readings for durations; its arbitrary origin does not represent a calendar timestamp.
+
+For example, `2026-07-17T12:00:00Z` identifies an instant. `2026-07-17T13:00:00+01:00[Europe/London]` preserves local civil intent and the regional rule set. They answer related but different questions.
+
+### Why a builder needs to know this
+
+Dates and clocks appear in appointments, recurring jobs, expiry, retries, billing periods, logs and performance measurements. Before choosing a library type or database column, decide whether the value represents human calendar intent, an observed instant or elapsed time.
+
+### Pitfalls
+
+- A UTC offset is not a time zone. `+01:00` does not say when a region changes its clocks.
+- Local times can be repeated or skipped when an offset changes.
+- “Every 24 hours” and “at 09:00 every local day” describe different schedules.
+- A calendar month is not a fixed number of seconds.
+- Wall clocks can be corrected, so they are unsafe for some elapsed-time measurements and relative timeouts.
+- Time-zone rules are maintained data, not unchanging laws of nature.
+
+### Related concepts in TFB
+
+- [Integer ranges and overflow](#integer-ranges-and-overflow) - timestamps also use finite representations.
+- [Latency and throughput](#latency-and-throughput) - latency requires a defined elapsed-time measurement.
+
+### Deeper concepts
+
+- Ambiguous and nonexistent local times - the effects of offset changes.
+- Distributed ordering and clock synchronisation - why machines may disagree about time.
+- Calendar systems and leap seconds - additional rules beyond this initial model.
+
+### Further reading
+
+- [RFC 9557: Date and Time on the Internet](https://www.rfc-editor.org/rfc/rfc9557.html) - distinctions between timestamps, offsets and named time zones.
+- [Internet Assigned Numbers Authority: Time zone and daylight saving time data](https://data.iana.org/time-zones/tz-link.html) - the maintained database and its location-based identifiers.
+- [Portable Operating System Interface: monotonic-clock timeout guidance](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_cond_clockwait.html) - why elapsed-time measurements should not depend on wall-clock adjustments.
+
+## Latency and throughput
+
+*One measures time per operation; the other measures completed work per unit time.*
+
+### What they are
+
+**Latency** is how long one operation or piece of work takes from a defined start to a defined finish. **Throughput** is how much work completes per unit time. They use different dimensions: milliseconds per request and requests per second, for example.
+
+If one image conversion takes 200 milliseconds, that is latency. If a worker pool completes 50 conversions per second, that is throughput. Adding workers may increase throughput without making one conversion faster; queueing or contention can even increase its latency. The two measures are related by the system and workload, but they are not simple inverses.
+
+Both definitions require boundaries. A useful measurement says where timing begins and ends, what counts as completed work and under what load. [Request for Comments (RFC) 1242's network-device definitions](https://www.rfc-editor.org/rfc/rfc1242.html) are specialised examples of this discipline. Google's [Site Reliability Engineering examples](https://sre.google/sre-book/service-level-objectives/#indicators-in-practice) apply latency and throughput to services and data pipelines.
+
+### Why a builder needs to know this
+
+Calling a system “fast” hides the question that matters. Interactive users often feel latency, while imports, uploads and batch jobs may be constrained by throughput. Both influence capacity and cost, but improving one does not guarantee an improvement in the other.
+
+### Pitfalls
+
+- Latency and throughput are not automatically inverses; parallelism, batching and queues break that intuition.
+- An average can hide a slow tail. Percentiles can reveal how often users experience much slower operations.
+- Offered work, completed work and theoretical capacity are different quantities.
+- A measurement without units, workload and boundaries is not reusable evidence.
+
+### Related concepts in TFB
+
+- [Processors, memory and persistent storage](#processors-memory-and-persistent-storage) - constrained resources influence both measures.
+- [Operating systems and running programs](#operating-systems-and-running-programs) - scheduling and shared work affect observed performance.
+- [Time, clocks, dates and time zones](#time-clocks-dates-and-time-zones) - latency depends on measuring elapsed time with a suitable clock.
+
+### Deeper concepts
+
+- Capacity, saturation and queueing - how demand changes waiting time and completed work.
+- Percentiles and distributions - how to describe experiences hidden by an average.
+- Performance testing - producing measurements that represent realistic workloads.
+
+### Further reading
+
+- [Google Site Reliability Engineering: Service Level Objectives](https://sre.google/sre-book/service-level-objectives/#indicators-in-practice) - latency, throughput and distributions in production services.
+- [RFC 1242: Benchmarking Terminology](https://www.rfc-editor.org/rfc/rfc1242.html) - precise examples of why measurement boundaries matter.
 
 ## Chapter status
 
-Only the first three concepts are drafted. Milestone 2 preserves them as the calibration set while the progressive-disclosure structure and complete tiered outline are reviewed.
+The Chapter 1 first pass now contains eight awareness-level entries. Optional number-notation explanations remain in [further territory](../further/01-computing-foundations.md).
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 1 plan](../OUTLINE.md#1-computing-foundations)

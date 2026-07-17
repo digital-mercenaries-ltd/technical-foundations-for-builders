@@ -75,6 +75,20 @@ Each concept should normally answer:
 
 Use standard GitHub Markdown links in a wiki-like way: link relevant terms and sources at the point where they help, rather than collecting all links at the end.
 
+## Agent skills
+
+### Issue tracker
+
+Track work in GitHub Issues for `digital-mercenaries-ltd/technical-foundations-for-builders`. External pull requests are not a request or triage surface. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the standard `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human` and `wontfix` roles. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Treat this as a single-context repository. Use root-level domain documentation and system-wide architecture decisions if they are added later. See `docs/agents/domain.md`.
+
 ## Scope guardrails
 
 - Do not design this as job training, interview preparation, or an academic CS course.

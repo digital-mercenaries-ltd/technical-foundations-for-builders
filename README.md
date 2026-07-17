@@ -10,7 +10,7 @@ TFB supplies that missing map. It introduces the major areas of modern computing
 
 Awareness is only the beginning. Knowing that authentication matters is different from being able to find a missing authorisation check, repair it safely and prove that the repair works. TFB helps turn vague concerns and invisible constraints into recognisable mechanisms, better questions and clearer signals that deeper investigation or experienced help is required.
 
-> **Project status:** Milestone 2 editorial system, awaiting review. The reader-facing map, progressive-disclosure model and tiered content outline have been drafted. The first three Chapter 1 entries remain the calibration set; later chapter prose has not been produced.
+> **Project status:** Milestone 2 was approved on 2026-07-17. The complete Chapter 1 and Chapter 2 first-pass drafts are now under Milestone 3 review.
 
 ## Who this is for
 
@@ -66,6 +66,8 @@ TFB is not an academic computer-science curriculum, job-training roadmap, certif
 
 A selection of the closest existing resources each solves a useful but different problem:
 
+*Alternatives reviewed: 2026-07-17. Recheck current course and roadmap descriptions when this date becomes stale.*
+
 | Resource | Its centre of gravity | What remains missing for this audience |
 | --- | --- | --- |
 | [roadmap.sh](https://roadmap.sh/about) | Role- and skill-based learning paths, now including [AI Product Builder](https://roadmap.sh/ai-product-builder) and [Vibe Coding](https://roadmap.sh/vibe-coding) | One unified, non-sequential map for a working builder |
@@ -107,13 +109,13 @@ Security, reliability, privacy, cost and maintainability cut across every layer.
 
 Computers store representations of information and transform them using finite resources. This chapter explains bits, number systems, text, processors, memory, storage, operating systems and clocks so that limits such as overflow, encoding failures and latency stop looking arbitrary.
 
-[Read the Chapter 1 calibration draft](chapters/01-computing-foundations.md) · [Browse the tiered Chapter 1 plan](OUTLINE.md#1-computing-foundations)
+[Read Chapter 1](chapters/01-computing-foundations.md) · [Browse optional Chapter 1 territory](further/01-computing-foundations.md) · [Browse the tiered Chapter 1 plan](OUTLINE.md#1-computing-foundations)
 
 ### 2. Programming foundations
 
 Source code gives instructions to runtimes using values, types, state, control flow, functions and data structures. This chapter gives builders enough of that model to recognise the structure of generated code, understand errors and ask causal debugging questions.
 
-[Browse the tiered Chapter 2 plan](OUTLINE.md#2-programming-foundations)
+[Read Chapter 2](chapters/02-programming-foundations.md) · [Browse the tiered Chapter 2 plan](OUTLINE.md#2-programming-foundations)
 
 ### 3. Software engineering
 
@@ -173,7 +175,7 @@ Organisations must show who is responsible, which obligations apply and what evi
 
 AI changes the speed and interface of software creation, not the underlying responsibility for the result. This chapter covers models, prompting, code generation, agents, the Model Context Protocol, permissions, evaluations, independent verification, prompt injection, provider dependency and generated-code ownership.
 
-[Browse the tiered Chapter 12 plan](OUTLINE.md#12-ai-assisted-engineering)
+[Browse the tiered Chapter 12 plan](OUTLINE.md#12-artificial-intelligence-assisted-engineering)
 
 ### 13. Laws, heuristics and engineering judgement
 
@@ -191,15 +193,14 @@ Experienced practitioners use compact models to notice recurring patterns in sys
 - [Milestone 2 audit](reviews/milestone-2-audit.md) - editorial review findings, resolutions and verification results.
 - [Milestone 1 audit](reviews/milestone-1-audit.md) - prototype review findings and verification results.
 
-## Feedback requested for Milestone 2
+## Milestone 2 decision
 
-Before parallel drafting begins, this revision needs confirmation on:
+Approved on 2026-07-17:
 
-- Are the first-pass selections in each chapter the right ones?
-- Does moving binary and hexadecimal to Chapter 1 further territory make sense while preserving their approved explanations?
-- Is a first traversal of 91 entries, spread across 13 chapters, sufficiently selective?
-- Are the dated landscape sections clear enough to prevent the mixed subject levels from becoming a miscellany?
-- Are the rules for current products, organisations, humorous jargon and historical practitioner material practical enough for contributors?
-- Are the chapter boundaries stable enough for different contributors to draft without duplicating canonical explanations?
+- use the 94-entry first traversal established during Milestone 3, below the 95-entry planning guardrail;
+- move binary and hexadecimal to Chapter 1 further territory without rewriting their approved explanations;
+- retain dated landscape material, contemporary products and organisations;
+- allow qualified practitioner stories and hacker folklore;
+- test actual reading time, conceptual load and entry bundling during Milestone 3 before increasing the production batch size.
 
-No broad drafting milestone should begin until this feedback has been incorporated.
+Milestone 3 is limited to the Chapter 1 and Chapter 2 first-pass pages plus relocation of the two existing numeric entries. It does not draft all optional further-territory topics.

@@ -1,12 +1,12 @@
 # Technical Foundations for Builders - Execution Plan
 
-Status: Milestone 2 implemented for review - 2026-07-17
+Status: Milestone 2 approved; Milestone 3 draft ready for review - 2026-07-17
 
 ## 1. Objective
 
 Create a broad, concise, contextual guide that helps non-technical builders discover the concepts and mental models they do not yet know to ask about.
 
-TFB should teach each concept superficially enough to establish a useful initial mental model. It should explain basic mechanics and headline examples, then direct the reader to related concepts and stronger resources for depth. It is not a task-oriented manual or a route to mastery.
+Technical Foundations for Builders (TFB) should teach each concept superficially enough to establish a useful initial mental model. It should explain basic mechanics and headline examples, then direct the reader to related concepts and stronger resources for depth. It is not a task-oriented manual or a route to mastery.
 
 ## 2. Initial delivery architecture
 
@@ -36,9 +36,9 @@ scripts/
 
 `README.md` is the reader-facing map of the guide. It should make the whole territory visible without displaying the complete concept inventory. `OUTLINE.md` is the editorial source of truth for chapter boundaries, disclosure tiers and canonical homes. Each concept has one canonical entry within a first-pass or further-territory chapter file. Other mentions link to that entry instead of duplicating its explanation.
 
-Use standard Markdown links such as `[binary](chapters/01-computing-foundations.md#binary-numbers)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
+Use standard Markdown links such as `[binary](further/01-computing-foundations.md#binary-numbers)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
 
-Do not introduce a site generator, database, CMS, or structured content schema during the first milestones. Reconsider this only if the Markdown repository exposes a concrete limitation.
+Do not introduce a site generator, database, content management system (CMS), or structured content schema during the first milestones. Reconsider this only if the Markdown repository exposes a concrete limitation.
 
 Raw research notes and original source material live in the separate private companion repository, `digital-mercenaries-ltd/technical-foundations-for-builders-private`. This public repository receives only deliberately edited reader-facing material and non-sensitive review records.
 
@@ -73,7 +73,7 @@ Use a soft initial budget of 250-500 words per concept, excluding resource lists
 
 Concepts do not need equal-sized entries or to occupy the same level of abstraction. Use the full template for durable mechanisms. Use shorter dated landscape items for current products, vendors, organisations, protocols and schemes when name recognition is useful. Use related observations, historical asides and cultural jargon where they make a mechanism memorable.
 
-## 4. Document SDLC
+## 4. Document software development lifecycle
 
 Every content batch moves through the same lifecycle.
 
@@ -89,9 +89,9 @@ Every content batch moves through the same lifecycle.
 
 - Search for authoritative and accessible sources.
 - Prefer standards, specifications, original papers, official documentation, and established teaching material for factual claims.
-- Use Wikipedia, the Jargon File, Hacker Laws, respected books and courses, MDN, educational vendor material, and strong explanatory articles for orientation and further reading.
+- Use Wikipedia, the Jargon File, Hacker Laws, respected books and courses, MDN Web Docs, educational vendor material, and strong explanatory articles for orientation and further reading.
 - Save concise research notes with source links in the private companion repository; do not copy raw notes or original reference files into the public guide.
-- Separate durable mechanism research from time-sensitive landscape research and record ISO-8601 review dates for the latter.
+- Separate durable mechanism research from time-sensitive landscape research and record ISO 8601 review dates for the latter.
 
 ### 4.3 Draft
 
@@ -174,7 +174,7 @@ Deliver only enough material to test the form:
 - Draft `README.md` containing:
   - the TFB purpose and intended reader;
   - the awareness-first editorial promise;
-  - instructions for using TFB with deeper resources or project-aware AI;
+  - instructions for using TFB with deeper resources or project-aware artificial intelligence;
   - the proposed top-level map;
   - fuller introductions and topic lists for the first two chapters;
   - names and concept lists for every remaining chapter.
@@ -189,7 +189,7 @@ Acceptance gate: the user approves or revises the audience promise, chapter gran
 
 Stop after presenting Milestone 1. Do not draft later chapters until the user approves the revised form.
 
-### Milestone 2 - Tiered outline and editorial system (implemented for review)
+### Milestone 2 - Tiered outline and editorial system (approved 2026-07-17)
 
 - Apply Milestone 1 feedback and the progressive-disclosure decision.
 - Finalise chapter names, boundaries, first-pass selections, further territory and recognition-only landscape material in `OUTLINE.md`.
@@ -200,11 +200,13 @@ Stop after presenting Milestone 1. Do not draft later chapters until the user ap
 
 Acceptance gate: the user approves or revises the tiering, first-pass selections, treatment of current products and organisations, use of humour and historical material, and the production rules before parallel drafting begins.
 
-### Milestone 3 - First complete chapter batch
+### Milestone 3 - First complete first-pass chapter batch
 
-- Finish Chapter 1 and Chapter 2 through the full document SDLC.
+- Finish the Chapter 1 and Chapter 2 first-pass pages through the full document lifecycle.
+- Relocate the approved binary and hexadecimal/octal entries unchanged to Chapter 1 further territory and repair their incoming links.
+- Do not draft every optional Chapter 1 and Chapter 2 further-territory topic in this milestone.
 - Test cross-chapter linking, glossary maintenance, source verification, and integration.
-- Measure actual entry length, review effort, duplication, and correction rate.
+- Measure actual entry length, estimated reading time, conceptual bundling, review effort, duplication, and correction rate.
 - Adjust batch size and the editorial template based on evidence.
 
 Acceptance gate: two complete chapters demonstrate a repeatable quality level.
@@ -283,6 +285,6 @@ A historical artefact is ready only when:
 - dated assumptions and rhetorical absolutes are qualified;
 - it is presented as context or a conversation aid, not proof, certification or a universal process.
 
-## 8. Immediate next action after Milestone 2 approval
+## 8. Current Milestone 3 action
 
-After Milestone 2 approval, publish the work packages as issues in `digital-mercenaries-ltd/technical-foundations-for-builders`. Complete WP-01 by finishing the Chapter 1 first pass around the approved calibration entries. Then create the Chapter 2 first-pass file and Chapter 1 further-territory files as the next controlled drafting batch.
+Publish WP-01 and WP-03 as issues in `digital-mercenaries-ltd/technical-foundations-for-builders`. Complete WP-01 first so Chapter 2 can rely on the terminology established by Chapter 1. Defer the remaining optional further-territory packages until the calibration review is complete.

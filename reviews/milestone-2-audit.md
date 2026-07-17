@@ -2,7 +2,7 @@
 
 Date: 2026-07-17
 
-- Baseline: `2a07e14`
+- Baseline: `3b98a18`
 
 ## Scope reviewed
 
@@ -35,7 +35,7 @@ A closure check then found four smaller inconsistencies. It separated in-process
 
 The public repository now contains the guide, contributor instructions, work plan, checks and review records. Original source files and raw research notes are held in the separate private companion repository. The reviewed changes to two research notes were preserved there before their public working copies were removed.
 
-The public remote's existing history predates this boundary and still contains earlier copies of some source and research files. Removing those historical objects would require a separate, explicitly approved history rewrite and coordinated force-push; Milestone 2 does not perform that destructive operation.
+Before the Milestone 2 commit was published, the public remote history was rewritten to remove the original source and raw research files. The public branch no longer contains those paths in its reachable history. The private companion repository remains their canonical home.
 
 The final workflow check also replaced obsolete references to a pending `dml` repository with the existing `digital-mercenaries-ltd/technical-foundations-for-builders` repository. Milestone 2 approval, not repository availability, is the gate for publishing the work packages as issues.
 
@@ -60,10 +60,20 @@ The specification review checked the result against the requested audience, prog
 - The temporary 63 MB package cache used for Markdown and spelling checks was deleted after verification.
 - The working tree was checked for whitespace errors before commit.
 
-## Human approval still required
+## Approval and closure
 
-- Confirm the 91-entry first traversal is selective enough.
-- Confirm the assignment of binary and hexadecimal to further territory while retaining their approved prose.
-- Revise any first-pass selection or chapter boundary that feels wrong for the target reader.
-- Confirm the maintenance burden for dated products, organisations, schemes and standards is acceptable.
-- Confirm the Milestone 2 editorial system before Chapter 2 or later chapter prose is drafted.
+Milestone 2 was approved on 2026-07-17. The owner accepted the mixed-level editorial model, current landscape maintenance, qualified humour and practitioner material, and the 91-entry traversal as a provisional guardrail.
+
+Milestone 3 drafting later exposed three overloaded labels. They were split into separate entries for integer overflow and floating point, time and performance, and error handling and diagnosis. This raised the current first traversal to 94 entries without changing the 95-entry planning guardrail. The change is measured in the Milestone 3 audit rather than treated as a retroactive Milestone 2 decision.
+
+The closure pass:
+
+- clarified that WP-01 relocates the existing binary and hexadecimal/octal prose unchanged and that WP-02A does not redraft it;
+- limited Milestone 3 to the Chapter 1 and Chapter 2 first-pass pages plus that relocation;
+- dated the alternatives comparison;
+- expanded acronyms in the editorial documents;
+- corrected this audit after the public-history rewrite.
+
+Milestone 3 must test actual reading time and conceptual bundling before the production batch size increases.
+
+The approved Milestone 3 slices were published as [WP-01](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/1) and [WP-03](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/2).

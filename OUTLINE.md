@@ -1,6 +1,6 @@
 # TFB tiered content outline
 
-Status: Milestone 2 draft for review - 2026-07-17
+Status: Milestone 2 approved - 2026-07-17
 
 This is the editorial source of truth for the scope of **Technical Foundations for Builders** (TFB). The [README](README.md) is the short reader-facing map. This file records what belongs on the first pass, what belongs in optional further territory and which names should initially appear for recognition or landscape orientation.
 
@@ -15,7 +15,7 @@ The guide intentionally includes material at different levels of abstraction. A 
 
 Each durable mechanism has one canonical home. Products, vendors, organisations, standards, schemes, laws and stories may appear beside that mechanism or receive a dated landscape entry when knowing the name is itself useful.
 
-The current planning guardrail is no more than 95 principal entries across the complete first traversal. Raising it requires an explicit editorial review rather than filling every chapter to its local maximum.
+The current outline contains 94 principal entries across the complete first traversal, below a planning guardrail of 95. Milestone 3 raised the approved Milestone 2 count from 91 by splitting three overloaded labels: integer overflow from floating point, time from performance, and error handling from diagnosis. Raising the guardrail itself requires an explicit editorial review rather than filling every chapter to its local maximum.
 
 ## 1. Computing foundations
 
@@ -24,13 +24,15 @@ The current planning guardrail is no more than 95 principal entries across the c
 ### First pass
 
 1. Bits, bytes and representation
-2. Integer ranges, overflow and floating-point approximation
-3. Text, Unicode and character encodings
-4. Processors, memory and persistent storage
-5. Operating systems, programs, processes and threads
-6. Dates, time zones, clocks, latency and throughput
+2. Integer ranges and overflow
+3. Floating-point approximation
+4. Text, Unicode and character encodings
+5. Processors, memory and persistent storage
+6. Operating systems and running programs
+7. Time, clocks, dates and time zones
+8. Latency and throughput
 
-Bits and bytes, binary numbers, and hexadecimal and octal are the approved Milestone 1 calibration set. The tiering places the latter two in further territory, but their drafted explanations should be preserved when the files are reorganised.
+Bits and bytes, binary numbers, and hexadecimal and octal are the approved Milestone 1 calibration set. Milestone 3 keeps bits and bytes here and relocates the latter two entries unchanged to Chapter 1 further territory, leaving links from the first-pass page where they help.
 
 ### Further territory
 
@@ -52,7 +54,7 @@ Bits and bytes, binary numbers, and hexadecimal and octal are the approved Miles
 
 *Landscape selection reviewed: 2026-07-17; verify current status before publication.*
 
-Unicode Consortium, Unicode Standard, UTF-8, American Standard Code for Information Interchange (ASCII), International Organization for Standardization (ISO), Institute of Electrical and Electronics Engineers (IEEE), National Institute of Standards and Technology (NIST), decimal and binary prefixes, x86-64, Arm, solid-state drives and object storage.
+Unicode Consortium, Unicode Standard, Unicode Transformation Format 8-bit (UTF-8), American Standard Code for Information Interchange (ASCII), International Organization for Standardization (ISO), Institute of Electrical and Electronics Engineers (IEEE), National Institute of Standards and Technology (NIST), decimal and binary prefixes, x86-64, Arm, solid-state drives and object storage.
 
 **Boundary:** number and text representation live here; language type systems live in Chapter 2, database representations in Chapter 5 and cryptographic use in Chapter 9.
 
@@ -67,8 +69,9 @@ Unicode Consortium, Unicode Standard, UTF-8, American Standard Code for Informat
 3. Variables, state, mutability and side effects
 4. Control flow, functions and scope
 5. Collections, data structures and algorithmic cost
-6. Errors, exceptions, cleanup, debugging and diagnosis
-7. Modules, packages and dependencies
+6. Modules, packages and dependencies
+7. Errors, exceptions and cleanup
+8. Debugging and diagnosis
 
 ### Further territory
 
@@ -89,7 +92,7 @@ Unicode Consortium, Unicode Standard, UTF-8, American Standard Code for Informat
 
 JavaScript, TypeScript, Python, Java, Kotlin, C#, Go, Rust, Swift, PHP, Ruby, Node.js, Deno, Bun, npm, Python Package Index (PyPI), Maven Central, NuGet, crates.io, integrated development environments and language servers.
 
-**From hacker folklore:** *heisenbug*, *Bohr bug*, *shotgun debugging*, *voodoo programming*, *phase of the moon* and *PEBKAC/PEBCAK* can make debugging behaviours memorable. Explain the real issue—observer effects, hidden state or lack of a causal model—rather than using the joke as the diagnosis.
+**From hacker folklore:** *heisenbug*, *Bohr bug*, *shotgun debugging*, *voodoo programming*, *phase of the moon*, “problem exists between keyboard and chair” (PEBKAC) and “problem exists between chair and keyboard” (PEBCAK) can make debugging behaviours memorable. Explain the real issue—observer effects, hidden state or lack of a causal model—rather than using the joke as the diagnosis.
 
 **Boundary:** language mechanics live here; organising and changing a codebase over time lives in Chapter 3.
 
@@ -124,7 +127,7 @@ JavaScript, TypeScript, Python, Java, Kotlin, C#, Go, Rust, Swift, PHP, Ruby, No
 
 *Landscape selection reviewed: 2026-07-17; verify current status before publication.*
 
-Git, GitHub, GitLab, Bitbucket, pull requests, trunk-based development, conventional commits, GitHub Actions, GitLab CI/CD, Jenkins and common code-quality services.
+Git, GitHub, GitLab, Bitbucket, pull requests, trunk-based development, conventional commits, GitHub Actions, GitLab continuous integration and continuous delivery (CI/CD), Jenkins and common code-quality services.
 
 **Historical practice:** the Joel Test (2000) may appear as a dated field checklist after its underlying ideas have been explained. Joel Spolsky's writing on daily builds, bug reports and rewrites supplies memorable cases, not universal process rules.
 
@@ -148,7 +151,7 @@ Git, GitHub, GitLab, Bitbucket, pull requests, trunk-based development, conventi
 
 - Hypertext Transfer Protocol methods, status codes, headers, caching and content negotiation
 - Representational State Transfer, remote procedure calls and GraphQL
-- OpenAPI, JSON Schema and generated clients
+- OpenAPI, JavaScript Object Notation (JSON) Schema and generated clients
 - Reverse proxies, content delivery networks and gateways
 - WebSockets, server-sent events and webhooks
 - Browser rendering models, web performance and Core Web Vitals
@@ -216,17 +219,17 @@ PostgreSQL, MySQL, MariaDB, SQLite, Microsoft SQL Server, Oracle Database, Mongo
 
 ### Further territory
 
-- C4 and Unified Modeling Language notation
+- C4 model context, container, component and code views, and Unified Modeling Language notation
 - Reference architectures, viewpoints and stakeholder views
 - Domain-driven design and bounded contexts
 - Event storming and event-driven architecture
 - Delivery guarantees, duplicate messages and ordering
 - Transactional outbox, sagas and compensating actions
 - Sharding, consensus and leader election
-- CAP theorem and PACELC
+- Consistency, availability and partition tolerance (CAP) theorem, and “partition: availability or consistency; else: latency or consistency” (PACELC)
 - Distributed caching and cache invalidation
 - Circuit breakers, bulkheads, load shedding and retry budgets
-- Architecture frameworks including TOGAF, Zachman and ArchiMate
+- Architecture frameworks including The Open Group Architecture Framework (TOGAF), Zachman and ArchiMate
 
 ### Recognition and landscape
 
@@ -269,7 +272,7 @@ Kafka, RabbitMQ, Amazon Simple Queue Service, Google Pub/Sub, Redis, content-del
 
 Amazon Web Services, Microsoft Azure, Google Cloud, Cloudflare, Vercel, Netlify, Heroku, Render, Fly.io, Supabase, Firebase, Terraform and OpenTofu.
 
-Named stack profiles such as LAMP, MERN, T3 and Next.js–Vercel–Supabase may receive dated landscape entries. They should show request flow, state, trust boundaries, managed responsibility and coupling rather than act as endorsements.
+Named stack profiles such as Linux–Apache–MySQL–PHP (LAMP), MongoDB–Express–React–Node.js (MERN), T3 and Next.js–Vercel–Supabase may receive dated landscape entries. They should show request flow, state, trust boundaries, managed responsibility and coupling rather than act as endorsements.
 
 **Boundary:** architectural decomposition lives in Chapter 6; operating and recovering the deployed system lives in Chapter 8; contracts and vendor assurance live in Chapter 11.
 
@@ -398,13 +401,13 @@ Figma, Storybook, Google Analytics, PostHog, Mixpanel, Amplitude, feature-flag a
 ### Further territory
 
 - Cyber Essentials and Cyber Essentials Plus
-- ISO/IEC 27001 and related management-system standards
+- International Organization for Standardization/International Electrotechnical Commission (ISO/IEC) 27001 and related management-system standards
 - System and Organization Controls (SOC) reports, including SOC 2 Types 1 and 2
 - Payment Card Industry Data Security Standard
-- NIST Cybersecurity Framework, CIS Controls and Cloud Controls Matrix
+- National Institute of Standards and Technology (NIST) Cybersecurity Framework, Center for Internet Security (CIS) Controls and Cloud Controls Matrix
 - United Kingdom and European Union data-protection regimes
 - Security questionnaires and customer assurance
-- Software bills of materials, SPDX and CycloneDX
+- Software bills of materials, Software Package Data Exchange (SPDX) and CycloneDX
 - Sector-specific obligations and regulated roles
 - Service commitments, remedies and evidence periods
 
@@ -418,7 +421,7 @@ Current schemes and organisations may receive dated entries. Always state whethe
 
 **Boundary:** technical controls live in Chapters 7–9; this chapter explains applicability, governance, evidence and external trust.
 
-## 12. AI-assisted engineering
+## 12. Artificial intelligence-assisted engineering
 
 **Purpose:** explain what changes when probabilistic models participate in engineering, and which conventional responsibilities remain with the builder.
 
@@ -442,8 +445,8 @@ Current schemes and organisations may receive dated entries. Always state whethe
 - Reproducibility, model updates and provider drift
 - Copyright, licensing and generated-code provenance
 - Local models, hosted models and hardware requirements
-- AI incident handling and abuse monitoring
-- Model API, retrieval and agent stack profiles
+- Artificial intelligence incident handling and abuse monitoring
+- Model application programming interface, retrieval and agent stack profiles
 
 ### Recognition and landscape
 
@@ -451,7 +454,7 @@ Current schemes and organisations may receive dated entries. Always state whethe
 
 OpenAI, Anthropic, Google Gemini, Meta Llama, GitHub Copilot, Cursor, Claude Code, Codex, model APIs, local inference runtimes, vector databases and evaluation platforms.
 
-The canonical distinction is not whether AI wrote the code. It is whether the person responsible can independently model, inspect, constrain, verify and recover the system. TFB supplies mechanism awareness and escalation cues, not proof of correctness.
+The canonical distinction is not whether artificial intelligence wrote the code. It is whether the person responsible can independently model, inspect, constrain, verify and recover the system. TFB supplies mechanism awareness and escalation cues, not proof of correctness.
 
 **Boundary:** ordinary programming, testing, security, delivery and operations remain canonical in their earlier chapters and are cross-linked rather than redefined here.
 
@@ -487,7 +490,7 @@ The canonical distinction is not whether AI wrote the code. It is whether the pe
 
 *Landscape selection reviewed: 2026-07-17; verify current status before publication.*
 
-Hacker Laws, the Jargon File, Joel on Software, Unix philosophy, SOLID, hacker folklore, the Bitter Lesson, *yak shaving*, *cruft*, *kludge*, *spaghetti code*, *bug-compatible*, *quick-and-dirty* and *Real Soon Now*.
+Hacker Laws, the Jargon File, Joel on Software, Unix philosophy, the single-responsibility, open–closed, Liskov-substitution, interface-segregation and dependency-inversion (SOLID) principles, hacker folklore, the Bitter Lesson, *yak shaving*, *cruft*, *kludge*, *spaghetti code*, *bug-compatible*, *quick-and-dirty* and *Real Soon Now*.
 
 Technical laws keep their canonical homes: Amdahl's Law in [Chapter 1](#1-computing-foundations), Hyrum's Law in [Chapter 4](#4-the-internet-web-and-application-programming-interfaces), CAP and PACELC in [Chapter 6](#6-architecture-and-distributed-systems), Kerckhoffs's principle in [Chapter 9](#9-security-privacy-and-identity), and Fitts' and Hick-Hyman Laws in [Chapter 10](#10-product-experience-and-analytics).
 
@@ -504,7 +507,7 @@ The guide supports selective browsing, but the first-pass traversal has a useful
 3. Networks and data provide the components used by architecture.
 4. Architecture explains what infrastructure deploys and operations observes.
 5. Security, product and governance apply constraints and purpose across the whole system.
-6. AI-assisted engineering reuses all preceding controls rather than replacing them.
+6. Artificial intelligence-assisted engineering reuses all preceding controls rather than replacing them.
 7. Laws and judgement provide compact cross-links across every chapter.
 
 Cross-links should allow a reader to enter anywhere without requiring strict sequential study.
