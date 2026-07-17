@@ -1,0 +1,404 @@
+# Technical Foundations for Builders
+
+**A breadth-first guide to the ideas behind trustworthy modern software.**
+
+Technical Foundations for Builders (TFB) is for people who can build and ship software - often with AI assistance - but have not yet encountered the breadth of concepts that experienced engineers use to reason about it.
+
+The problem TFB addresses is not a shortage of tutorials. It is **not knowing what you do not know**. If you have never heard of idempotency, transaction isolation, blast radius or least privilege, you cannot recognise when it matters or ask a useful question about it.
+
+TFB supplies that missing map. It introduces the major areas of modern computing, teaches the headline mechanics of each concept, explains why builders encounter it, warns about common pitfalls and provides routes to deeper material. It aims for awareness and a useful initial mental model, not detail or mastery.
+
+> **Project status:** Milestone 1 editorial prototype. The outline is deliberately broad, while only the first three entries of Chapter 1 have been drafted. The structure, depth and voice are awaiting review before more content is produced.
+
+## Who this is for
+
+TFB is primarily written for a non-technical or newly technical builder who already has a real project: a founder, operator, domain expert or self-taught developer using AI to create software.
+
+In this guide:
+
+- **Vibe coding** means building software with AI without an established technical background. The phrase is used descriptively, not dismissively.
+- **Agentic engineering** means using AI agents as part of an engineering process while bringing existing technical judgement to the work.
+
+Both groups can use TFB, but it is the first group that most needs help exposing blind spots. Once a builder knows that a concept exists, project-aware AI can explain it in the context of their own system, help investigate whether it matters and assist with implementation. That works only after the missing question has become visible.
+
+## What this guide does
+
+Each concept entry is designed to answer:
+
+1. What is it?
+2. How does it work at a basic level?
+3. Why does a builder need to know about it?
+4. Where does it appear?
+5. What are its pitfalls and misleading intuitions?
+6. What related or deeper concepts come next?
+7. Where can the reader learn more?
+
+TFB is not an academic computer-science curriculum, job-training roadmap, certification guide, encyclopaedia or task-by-task production manual. It is an explanation-first map that helps a working builder recognise the territory.
+
+## Why another guide?
+
+The closest existing resources each solve a useful but different problem:
+
+| Resource | Its centre of gravity | What remains missing for this audience |
+| --- | --- | --- |
+| [roadmap.sh](https://roadmap.sh/about) | Role- and skill-based learning paths, now including [AI Product Builder](https://roadmap.sh/ai-product-builder) and [Vibe Coding](https://roadmap.sh/vibe-coding) | One unified, non-sequential map for a working builder |
+| [Teach Yourself Computer Science](https://teachyourselfcs.com/) | Deep self-study of traditional CS subjects, with roughly 100-200 hours recommended per subject | Production, security, product, governance and AI-assisted work at awareness depth |
+| [MIT's Missing Semester](https://missing.csail.mit.edu/) | A compact practical course that now includes packaging, agentic coding, code quality and work beyond code | The wider conceptual and production landscape |
+| [Professional Programming](https://github.com/charlax/professional-programming) | A curated professional-development reading list | Short explanations that create awareness before further study |
+| [Developer Handbook](https://github.com/mikeroyal/Developer-Handbook/blob/main/README.md) | A broad technology, tool and resource catalogue | Tight editorial compression and a connected mental model |
+| [Mercari's production-readiness checklist](https://github.com/mercari/production-readiness-checklist) | Judging whether a microservice is ready for customer traffic | Explanations for readers who do not yet know the checklist vocabulary |
+| [System Design](https://github.com/karanpratapsingh/system-design) | Learning scalable architecture and preparing for system-design interviews | An accessible starting point and the surrounding non-architecture domains |
+| [Agents Towards Production](https://github.com/NirDiamant/agents-towards-production) | Code-first tutorials for production generative-AI agents | The conventional engineering foundations those guides often assume |
+
+TFB sits between a map, a field guide and a compact conceptual handbook. It complements these projects rather than replacing them. Its contribution is not a larger list of links. It is the selection, explanation and connection of what a builder should at least have heard of.
+
+The claims behind this comparison are recorded separately in the compact [alternatives research note](research/project-alternatives.md).
+
+## How to use TFB
+
+Start with the chapter map below. Read the introductions to understand what each area contributes to a modern system, then browse whichever concepts are unfamiliar. The chapters have a sensible order, but they are not a required curriculum.
+
+Follow links as you would in a wiki. A link inside an explanation supplies context at the point where it becomes useful. The **Related concepts**, **Deeper concepts** and **Further reading** sections at the end of an entry offer deliberate next steps.
+
+When a concept appears relevant, give an AI assistant suitable context about your project and ask it to explain where the concept appears, what risks it creates and what evidence would show that it has been handled correctly. Treat that response as the start of an investigation, not proof that the system is sound.
+
+## Map of the territory
+
+The chapters move from the physical representation of information towards the organisational judgement needed to build and operate software:
+
+1. **Foundations:** computing and programming.
+2. **Construction:** software engineering, the web, data and architecture.
+3. **Production:** infrastructure, operations and security.
+4. **Purpose and accountability:** product, governance and commercial readiness.
+5. **Modern practice and judgement:** AI-assisted engineering, laws and heuristics.
+
+Security, reliability, privacy, cost and maintainability cut across every layer. They are given their own chapters so their ideas can be introduced coherently, not because they happen only at one point in a system.
+
+## Chapter 1 - Computing foundations
+
+**Purpose:** build the lowest-level mental model needed by the rest of TFB: how information becomes physical states, how machines represent and transform it, and why finite resources create practical constraints.
+
+You do not need to design a processor or perform arithmetic in binary by hand. You do need enough understanding to recognise why encodings break, numbers overflow, decimal values lose precision, memory differs from storage and apparently small operations can have large performance costs.
+
+The [Chapter 1 prototype](chapters/01-computing-foundations.md) contains the first three completed entries:
+
+1. [Bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes) - the small units from which digital information is built.
+2. [Binary numbers](chapters/01-computing-foundations.md#binary-numbers) - representing quantities with two digits.
+3. [Hexadecimal and octal](chapters/01-computing-foundations.md#hexadecimal-and-octal) - compact ways to write binary-shaped values.
+
+The planned remainder of the chapter is:
+
+- Boolean values and logic
+- Integers, signed numbers and overflow
+- Floating-point numbers and precision
+- Text, Unicode and character encodings
+- CPU instructions and execution
+- Registers, memory and RAM
+- Persistent storage
+- Files and file systems
+- Input, output and devices
+- Operating systems and system calls
+- Programs, processes and threads
+- Time and clocks
+- Latency and throughput
+- Caches and locality
+- Compression
+- Serialisation and data formats
+
+## Chapter 2 - Programming foundations
+
+**Purpose:** explain how people express behaviour in software and how source code becomes a running program. This chapter introduces the building blocks that AI-generated code is made from, so a builder can recognise structure, state, dependencies and failure rather than treating code as an opaque result.
+
+The emphasis is not on learning one language's syntax. It is on durable ideas that recur across languages and tools: values have types, control flow selects what happens next, functions package behaviour, state changes over time, data structures shape what operations are easy, and runtimes impose rules that generated code cannot escape.
+
+Planned concepts:
+
+- Source code and programming languages
+- Syntax, semantics and behaviour
+- Compilers, interpreters and runtimes
+- Values and types
+- Variables and state
+- Expressions and operators
+- Conditions, loops and control flow
+- Functions, parameters and return values
+- Scope and lifetime
+- Collections and data structures
+- Algorithms and complexity
+- Iteration and recursion
+- Mutability, immutability and side effects
+- Errors and exceptions
+- Objects, interfaces and composition
+- Modules, packages and dependencies
+- Concurrency and asynchronous programming
+- Debugging
+
+## Chapter 3 - Software engineering
+
+How code is organised and changed by people over time. Planned concepts:
+
+- Functional and non-functional requirements
+- Modularity and separation of concerns
+- Abstraction and information hiding
+- Interfaces and contracts
+- Cohesion and coupling
+- Composition, inheritance and dependency injection
+- API design and versioning
+- Design patterns
+- Automated testing and the testing pyramid
+- Version control, branches and merges
+- Code review
+- Continuous integration
+- Refactoring
+- Technical debt
+- Documentation and architecture decisions
+- Maintainability and legacy code
+
+## Chapter 4 - The Internet, web and APIs
+
+How software communicates across networks and how browsers, servers and services meet. Planned concepts:
+
+- The Internet and the web
+- Packets and Internet Protocol addresses
+- TCP, UDP, ports and sockets
+- Domain Name System (DNS)
+- URLs, URIs and domain names
+- HTTP requests and responses
+- HTTP methods, status codes and headers
+- HTTPS, TLS and certificates
+- How a browser loads a page
+- HTML, CSS and JavaScript
+- Client-server systems
+- APIs, remote procedure calls and REST
+- GraphQL
+- Cookies and sessions
+- Same-origin policy and CORS
+- Reverse proxies and load balancers
+- Content delivery networks
+- WebSockets and server-sent events
+- Webhooks
+- Rate limits
+
+## Chapter 5 - Data and databases
+
+How systems represent, preserve, query and change information. Planned concepts:
+
+- Data models and schemas
+- Relational databases and SQL
+- Tables, rows, columns and keys
+- Relationships and joins
+- Normalisation and denormalisation
+- Constraints and data integrity
+- Create, read, update and delete operations
+- Indexes and query planning
+- Transactions and ACID
+- Isolation levels and concurrency control
+- Schema migrations
+- NoSQL database families
+- Consistency and eventual consistency
+- Replication
+- Backups and recovery
+- Online transaction and analytical processing
+- Warehouses, lakes and analytics stores
+- Event logs and audit trails
+
+## Chapter 6 - Architecture and distributed systems
+
+How components are divided, connected and made to behave as one system despite partial failure. Planned concepts:
+
+- System boundaries and components
+- Monoliths and modular monoliths
+- Services and microservices
+- Stateful and stateless components
+- Synchronous and asynchronous communication
+- Messages, queues and streams
+- Events and publish-subscribe systems
+- Idempotency
+- Timeouts, retries and exponential backoff
+- Replication and partitioning
+- Sharding
+- Consistency, availability and network partitions
+- Consensus and leader election
+- Caching
+- Load balancing
+- Rate limiting and backpressure
+- Failure domains and blast radius
+- Graceful degradation
+
+## Chapter 7 - Infrastructure, cloud and delivery
+
+Where software runs and how changes reach production. Planned concepts:
+
+- Development, test, staging and production environments
+- Configuration
+- Secrets
+- Physical servers and virtual machines
+- Containers, images and registries
+- Container orchestration and Kubernetes
+- Cloud regions and availability zones
+- Compute, storage and managed services
+- Serverless computing
+- Infrastructure as code
+- Virtual networks, subnets and firewalls
+- Build artefacts
+- Continuous delivery and deployment
+- Deployment strategies
+- Rollback
+- Feature flags
+- Environment parity
+- Dependency and software-supply-chain management
+- Capacity and cloud cost
+
+## Chapter 8 - Operations, reliability and observability
+
+How people keep production systems useful, understandable and recoverable. Planned concepts:
+
+- Production readiness
+- Reliability, availability and durability
+- Service-level indicators, objectives and agreements
+- Monitoring
+- Logs, metrics and traces
+- Observability
+- Health checks
+- Alerting and on-call work
+- Incident response and severity
+- Blameless postmortems
+- Runbooks
+- Capacity planning
+- Performance, latency and throughput
+- Redundancy and failover
+- Backups and restore testing
+- Disaster recovery
+- Recovery point and recovery time objectives
+- Resilience and chaos testing
+- Customer support and escalation
+
+## Chapter 9 - Security, privacy and identity
+
+How systems resist misuse, limit damage and handle people's data responsibly. Planned concepts:
+
+- Assets, adversaries and attack surfaces
+- Threat modelling and trust boundaries
+- Authentication and authorisation
+- Identities, roles and permissions
+- Least privilege
+- Secrets management
+- Encryption in transit and at rest
+- Hashing, salting and password storage
+- Keys, certificates and public-key infrastructure
+- Input validation and output encoding
+- Injection attacks
+- Cross-site scripting and request forgery
+- OWASP guidance
+- Dependency and supply-chain security
+- Vulnerability management and patching
+- Security testing
+- Audit logging
+- Data classification, minimisation and retention
+- Privacy and data-protection principles
+- Security incident response
+
+## Chapter 10 - Product, experience and analytics
+
+Why the software exists, how people experience it and how teams learn whether it is useful. Planned concepts:
+
+- Users, customers and stakeholders
+- Problem framing and Jobs to Be Done
+- Product-market fit
+- Minimum viable products
+- Discovery and delivery
+- User experience and usability
+- Accessibility
+- Requirements, stories and acceptance criteria
+- Events and product analytics
+- Funnels, activation and retention
+- Key performance and North Star metrics
+- Cohort analysis
+- Experiments and A/B testing
+- Feature flags as product controls
+- Feedback and support signals
+- Prioritisation and opportunity cost
+- Measurement distortions and Goodhart's Law
+
+## Chapter 11 - Governance, compliance and commercial readiness
+
+How a software organisation demonstrates control, meets commitments and earns trust beyond the product itself. Planned concepts:
+
+- Ownership and accountability
+- Risk management
+- Policies, controls and evidence
+- Change management
+- Access reviews
+- Records and auditability
+- Data-protection roles and responsibilities
+- Third-party and vendor risk
+- Open-source licences
+- Intellectual property
+- Contracts and data-processing agreements
+- Security questionnaires
+- SOC 2 and ISO/IEC 27001 at a high level
+- Business continuity
+- Customer service commitments
+- Technical and commercial due diligence
+
+## Chapter 12 - AI-assisted engineering
+
+What changes - and what does not - when AI participates in building software. Planned concepts:
+
+- Models, tokens and context windows
+- Prompting and context engineering
+- Code generation and review
+- Agents, tools and the Model Context Protocol
+- Permissions and sandboxing
+- Human oversight
+- Evaluations
+- Hallucination and misplaced confidence
+- Prompt injection
+- Data leakage and privacy
+- Non-determinism and reproducibility
+- Model and provider dependency
+- Cost and latency
+- Provenance, copyright and licensing
+- Generated-code ownership and maintenance
+- Why conventional engineering controls still apply
+
+## Chapter 13 - Laws, heuristics and engineering judgement
+
+Compact ideas that help experienced engineers reason about trade-offs, organisations and failure. Planned concepts:
+
+- Mental models and trade-offs
+- Conway's Law
+- Gall's Law
+- Brooks' Law
+- Goodhart's and Campbell's Laws
+- Chesterton's Fence
+- Pareto's Principle
+- Hanlon's Razor and Murphy's Law
+- Hofstadter's and Parkinson's Laws
+- The CAP theorem and PACELC
+- The law of leaky abstractions
+- Simplicity and accidental complexity
+- Optimising for change and understanding
+- Local optimisation and system effects
+- Making illegal states impossible
+- Separating policy from implementation
+- Explicit and implicit behaviour
+
+## Supporting documents
+
+- [Glossary](GLOSSARY.md) - short definitions linked to canonical entries.
+- [Style guide](STYLE_GUIDE.md) - the editorial contract for contributors and agents.
+- [Execution plan](PLAN.md) - milestones and document lifecycle.
+- [Source conversation](Technical%20Foundations%20for%20Founders.md) - the cleaned Markdown reference from which the project emerged.
+
+## Feedback requested for Milestone 1
+
+Before more chapters are drafted, this prototype needs decisions on:
+
+- Does the audience promise describe the intended reader?
+- Are the chapter boundaries and order useful?
+- Is anything important missing or misplaced in the complete concept map?
+- Do the first three entries teach enough without becoming tutorials?
+- Is the tone clear without being patronising?
+- Are jargon, inline links and further-reading sections handled well?
+
+No later milestone should begin until this feedback has been incorporated.
