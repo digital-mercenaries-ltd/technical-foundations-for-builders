@@ -28,7 +28,7 @@ research/
 
 `README.md` is the canonical map of the guide. Each concept has one canonical entry within a chapter file. Other mentions link to that entry instead of duplicating its explanation.
 
-Use standard Markdown links such as `[binary](chapters/01-computing.md#binary)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
+Use standard Markdown links such as `[binary](chapters/01-computing-foundations.md#binary-numbers)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
 
 Do not introduce a site generator, database, CMS, or structured content schema during the first milestones. Reconsider this only if the Markdown repository exposes a concrete limitation.
 
