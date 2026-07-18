@@ -1,6 +1,6 @@
 # Glossary
 
-Status: Milestone 4 Chapter 4 draft - 2026-07-18
+Status: Milestone 4 Chapter 5 draft - 2026-07-18
 
 This alphabetical index defines terms used by the drafted concepts and reader-facing navigation. It will grow with the guide. Definitions stay short and link to a published canonical explanation rather than to an outline placeholder.
 
@@ -18,7 +18,15 @@ An interface through which software components exchange operations or data; a ne
 
 Software techniques that produce outputs associated with human cognitive work, including the models and agents used to assist software development; see [AI-assisted engineering](README.md#12-ai-assisted-engineering).
 
+### Atomicity, consistency, isolation and durability (ACID)
+
+Four properties commonly used to describe database transactions; see [Transactions, atomicity, isolation and concurrency control](chapters/05-data-and-databases.md#transactions-atomicity-isolation-and-concurrency-control).
+
 ## B
+
+### Backfill
+
+Production data work that populates or corrects values in existing records, often as one stage of a schema change; see [Schema evolution, online migrations and backfills](chapters/05-data-and-databases.md#schema-evolution-online-migrations-and-backfills).
 
 ### Base (or radix)
 
@@ -62,6 +70,10 @@ The role that initiates an interaction with a server; the same program can be a 
 
 The degree to which the responsibilities inside a module belong together; see [Modularity, cohesion, coupling and separation of concerns](chapters/03-software-engineering.md#modularity-cohesion-coupling-and-separation-of-concerns).
 
+### Constraint
+
+A rule a database checks before accepting a stored state; see [Constraints, validation and data integrity](chapters/05-data-and-databases.md#constraints-validation-and-data-integrity).
+
 ### Continuous integration (CI)
 
 The practice of frequently integrating small changes into a shared primary branch and checking the combined result; see [Build automation, continuous integration and fast feedback](chapters/03-software-engineering.md#build-automation-continuous-integration-and-fast-feedback).
@@ -84,6 +96,26 @@ A browser-enforced HTTP protocol through which a response can permit sharing wit
 
 ## D
 
+### Data integrity
+
+The property that stored data continues to satisfy the rules needed for it to remain meaningful; see [Constraints, validation and data integrity](chapters/05-data-and-databases.md#constraints-validation-and-data-integrity).
+
+### Data lifecycle
+
+The stages through which data is created, used, changed, retained, archived and deleted; see [Non-relational databases, consistency and the data lifecycle](chapters/05-data-and-databases.md#non-relational-databases-consistency-and-the-data-lifecycle).
+
+### Data model
+
+A chosen representation of the things a system records, their properties, relationships and meaningful operations; see [Data models, schemas, identifiers and missing values](chapters/05-data-and-databases.md#data-models-schemas-identifiers-and-missing-values).
+
+### Database
+
+A system for storing and retrieving organised data under defined rules and guarantees; see [Chapter 5](chapters/05-data-and-databases.md).
+
+### Database migration
+
+A change to a database schema or stored representation; see [Schema evolution, online migrations and backfills](chapters/05-data-and-databases.md#schema-evolution-online-migrations-and-backfills).
+
 ### Domain Name System (DNS)
 
 A distributed, hierarchical system for records associated with domain names; see [DNS, domain names, URLs and URIs](chapters/04-internet-web-and-apis.md#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers).
@@ -98,11 +130,19 @@ A defined way of mapping information to another representation, such as mapping 
 
 A structured mechanism that reports an abnormal condition and changes a program's normal control flow; see [Errors, exceptions and cleanup](chapters/02-programming-foundations.md#errors-exceptions-and-cleanup).
 
+### Execution plan
+
+The database planner's selected tree of operations for producing a query result or change; see [Queries, indexes and execution plans](chapters/05-data-and-databases.md#queries-indexes-and-execution-plans).
+
 ## F
 
 ### Floating point
 
 A finite-precision number representation that covers a wide range by storing a significant part and a scale; see [Floating-point approximation](chapters/01-computing-foundations.md#floating-point-approximation).
+
+### Foreign key
+
+One or more database columns that reference a key in another row and can require the referenced row to exist; see [Relational databases, SQL, keys, relationships and joins](chapters/05-data-and-databases.md#relational-databases-structured-query-language-keys-relationships-and-joins).
 
 ## H
 
@@ -124,6 +164,14 @@ HTTP exchanged through a channel protected by Transport Layer Security; see [HTT
 
 ## I
 
+### Identifier
+
+A value that distinguishes one thing from another within a stated scope; see [Data models, schemas, identifiers and missing values](chapters/05-data-and-databases.md#data-models-schemas-identifiers-and-missing-values).
+
+### Index
+
+An additional maintained data structure that can help a database locate selected values or orderings efficiently; see [Queries, indexes and execution plans](chapters/05-data-and-databases.md#queries-indexes-and-execution-plans).
+
 ### Interface
 
 The operations and behavioural promises that another component is allowed to depend on; see [Abstraction, information hiding and interfaces](chapters/03-software-engineering.md#abstraction-information-hiding-and-interfaces).
@@ -136,11 +184,23 @@ The protocol that uses network addresses to carry packets towards destinations a
 
 A condition that must remain true in every valid state covered by a design; see [Functional requirements, quality attributes, specifications and invariants](chapters/03-software-engineering.md#functional-requirements-quality-attributes-specifications-and-invariants).
 
+### Isolation
+
+The transaction property that controls what concurrent work can observe and which combined outcomes can commit; see [Transactions, atomicity, isolation and concurrency control](chapters/05-data-and-databases.md#transactions-atomicity-isolation-and-concurrency-control).
+
 ## J
 
 ### JavaScript
 
 The common name for implementations of ECMAScript in environments such as browsers; browser Web APIs are host facilities rather than part of the core language. See [Browsers, semantic HTML, CSS and JavaScript](chapters/04-internet-web-and-apis.md#browsers-semantic-hypertext-markup-language-cascading-style-sheets-and-javascript).
+
+### JavaScript Object Notation (JSON)
+
+A text format for structured values exchanged by many files and network APIs; see [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
+
+### Join
+
+A database operation that combines rows matching a stated condition; see [Relational databases, SQL, keys, relationships and joins](chapters/05-data-and-databases.md#relational-databases-structured-query-language-keys-relationships-and-joins).
 
 ## L
 
@@ -167,6 +227,14 @@ A change to an existing mutable value or location; see [Variables, state, mutabi
 ### National Institute of Standards and Technology (NIST)
 
 A United States standards and measurement agency whose technical glossaries and publications are used throughout TFB; see its role in defining [bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes).
+
+### Non-relational database
+
+A broad category covering document, key-value, graph, time-series, search and other models that are not defined primarily by relational tables; see [Non-relational databases, consistency and the data lifecycle](chapters/05-data-and-databases.md#non-relational-databases-consistency-and-the-data-lifecycle).
+
+### Null
+
+A marker used for a missing SQL value, with special comparison behaviour; its application meaning must still be decided explicitly. See [Data models, schemas, identifiers and missing values](chapters/05-data-and-databases.md#data-models-schemas-identifiers-and-missing-values).
 
 ## O
 
@@ -196,6 +264,10 @@ A family of standards for operating-system interfaces. TFB uses it as one source
 
 A way of writing numbers in which a digit's value depends on its position, as explained in [Binary numbers](further/01-computing-foundations.md#binary-numbers).
 
+### Primary key
+
+One or more database columns that uniquely identify a relational row and cannot be null; see [Relational databases, SQL, keys, relationships and joins](chapters/05-data-and-databases.md#relational-databases-structured-query-language-keys-relationships-and-joins).
+
 ### Process
 
 A running instance of a program with resources managed by an operating system; see [Operating systems and running programs](chapters/01-computing-foundations.md#operating-systems-and-running-programs).
@@ -208,6 +280,12 @@ Presenting a small first view and making additional detail optional so that brea
 
 Starting with essential content and functionality on a chosen baseline, then adding richer presentation or behaviour where capabilities permit; see [Progressive enhancement and browser compatibility](chapters/04-internet-web-and-apis.md#progressive-enhancement-capability-detection-and-browser-compatibility).
 
+## Q
+
+### Query
+
+A request for a database result or change; see [Queries, indexes and execution plans](chapters/05-data-and-databases.md#queries-indexes-and-execution-plans).
+
 ## R
 
 ### Random-access memory (RAM)
@@ -218,6 +296,10 @@ Working memory used by active programs and data; see [Processors, memory and per
 
 Changing software's internal structure through small, behaviour-preserving steps so that it becomes easier to understand or modify; see [Refactoring, technical debt, legacy systems and evolutionary replacement](chapters/03-software-engineering.md#refactoring-technical-debt-legacy-systems-and-evolutionary-replacement).
 
+### Relational database
+
+A database that presents data through relations, commonly exposed as tables, rows and columns queried with SQL; see [Relational databases, SQL, keys, relationships and joins](chapters/05-data-and-databases.md#relational-databases-structured-query-language-keys-relationships-and-joins).
+
 ### Request for Comments (RFC)
 
 A numbered publication in the Internet technical-document series. Some RFCs define standards; others record information, experiments or current practice. Chapter 1 uses RFCs to ground [Internet byte terminology](chapters/01-computing-foundations.md#bits-and-bytes), [time representations](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones) and [performance measurements](chapters/01-computing-foundations.md#latency-and-throughput).
@@ -227,6 +309,10 @@ A numbered publication in the Internet technical-document series. Some RFCs defi
 The environment and services used while a program executes; see [Source code, programming languages and runtimes](chapters/02-programming-foundations.md#source-code-programming-languages-and-runtimes).
 
 ## S
+
+### Schema
+
+An explicit description of selected data names, types, relationships and rules; see [Data models, schemas, identifiers and missing values](chapters/05-data-and-databases.md#data-models-schemas-identifiers-and-missing-values).
 
 ### Server
 
@@ -244,6 +330,10 @@ An observable change beyond producing a function's result, such as changing shar
 
 A record of expected properties and constraints precise enough to guide construction and evaluation; see [Functional requirements, quality attributes, specifications and invariants](chapters/03-software-engineering.md#functional-requirements-quality-attributes-specifications-and-invariants).
 
+### Structured Query Language (SQL)
+
+A predominantly declarative language used to define, query and change data in relational database systems; see [Relational databases, SQL, keys, relationships and joins](chapters/05-data-and-databases.md#relational-databases-structured-query-language-keys-relationships-and-joins).
+
 ## T
 
 ### Technical debt
@@ -257,6 +347,10 @@ The amount of completed work per unit time under defined conditions; see [Latenc
 ### Time zone
 
 A maintained set of rules mapping local civil times to offsets from Coordinated Universal Time; see [Time, clocks, dates and time zones](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones).
+
+### Transaction
+
+A group of database operations treated as one logical unit under defined commit, rollback and concurrency guarantees; see [Transactions, atomicity, isolation and concurrency control](chapters/05-data-and-databases.md#transactions-atomicity-isolation-and-concurrency-control).
 
 ### Transmission Control Protocol (TCP)
 

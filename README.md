@@ -10,7 +10,7 @@ TFB supplies that missing map. It introduces the major areas of modern computing
 
 Awareness is only the beginning. Knowing that authentication matters is different from being able to find a missing authorisation check, repair it safely and prove that the repair works. TFB helps turn vague concerns and invisible constraints into recognisable mechanisms, better questions and clearer signals that deeper investigation or experienced help is required.
 
-> **Project status:** Chapter 4 was approved on 2026-07-18. Chapter 5 is the next controlled Milestone 4 batch.
+> **Project status:** Chapter 4 was approved on 2026-07-18. The reviewed Chapter 5 controlled batch is ready for owner review.
 
 ## Who this is for
 
@@ -133,7 +133,7 @@ Browsers and services communicate through layered protocols and behavioural cont
 
 Data needs structure, meaning and rules that remain valid as many users and processes change it. This chapter introduces schemas, relational and non-relational databases, constraints, queries, indexes, transactions, migrations, consistency and the lifecycle of stored information.
 
-[Browse the tiered Chapter 5 plan](OUTLINE.md#5-data-and-databases)
+[Read Chapter 5](chapters/05-data-and-databases.md) · [Browse the tiered Chapter 5 plan](OUTLINE.md#5-data-and-databases)
 
 ### 6. Architecture and distributed systems
 
@@ -190,6 +190,7 @@ Experienced practitioners use compact models to notice recurring patterns in sys
 - [Style guide](STYLE_GUIDE.md) - the editorial contract for contributors and agents.
 - [Execution plan](PLAN.md) - milestones and document lifecycle.
 - [Issue-ready work packages](WORK_PACKAGES.md) - bounded batches for later drafting.
+- [Milestone 4 Chapter 5 audit](reviews/milestone-4-chapter-5-audit.md) - research, measurements, review findings and verification for the third controlled batch.
 - [Milestone 4 Chapter 4 audit](reviews/milestone-4-chapter-4-audit.md) - research, measurements, review findings and verification for the second controlled batch.
 - [Milestone 4 Chapter 3 audit](reviews/milestone-4-chapter-3-audit.md) - research, measurements, review findings and verification for the first controlled batch.
 - [Milestone 3 audit](reviews/milestone-3-audit.md) - first-pass chapter measurements, review findings and verification results.
@@ -207,4 +208,4 @@ Milestone 3 was approved on 2026-07-17. It:
 - moved binary and hexadecimal to Chapter 1 further territory without rewriting their explanations; and
 - retained eight entries as a calibration maximum rather than a target for later chapters.
 
-The Chapter 3 and Chapter 4 Milestone 4 batches were approved on 2026-07-18. Chapter 5 is the next controlled batch; later chapters remain deferred until its research, drafting and independent review have been assessed.
+The Chapter 3 and Chapter 4 Milestone 4 batches were approved on 2026-07-18. Chapter 5 is the next controlled batch and is ready for owner review; Chapter 6 remains deferred until that review is complete.

@@ -15,6 +15,7 @@ CHAPTERS = [
     ROOT / "chapters/02-programming-foundations.md",
     ROOT / "chapters/03-software-engineering.md",
     ROOT / "chapters/04-internet-web-and-apis.md",
+    ROOT / "chapters/05-data-and-databases.md",
 ]
 WORD_RE = re.compile(r"[A-Za-z0-9]+(?:[’'-][A-Za-z0-9]+)*")
 LINK_RE = re.compile(r"\[([^]]+)]\([^)]+\)")
