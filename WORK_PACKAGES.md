@@ -88,13 +88,17 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Issue:** [#4](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/4)
 
-**Status:** Reviewed draft ready for owner review - 2026-07-18.
+**Status:** Complete; approved on 2026-07-18.
 
 **Depends on:** WP-01 and WP-03.
 
 **Scope:** request path, network protocols, Hypertext Transfer Protocol (HTTP), Transport Layer Security (TLS), browser foundations, application programming interfaces, browser state, progressive enhancement and compatibility. Verify current organisations and browser-platform material.
 
 ### WP-07: Draft Chapter 5 - data and databases
+
+**Issue:** [#5](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/5)
+
+**Status:** In progress - 2026-07-18.
 
 **Depends on:** WP-03.
 

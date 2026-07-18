@@ -355,7 +355,7 @@ Open Worldwide Application Security Project (OWASP), OWASP Top 10, OWASP Applica
 
 1. Users, customers, stakeholders, problems and Jobs to Be Done
 2. Product-market fit, minimum viable products and the prototype-production gap
-3. Discovery, delivery, requirements, stories and acceptance criteria
+3. Discovery, delivery, requirements, stories, acceptance criteria and behaviour-driven development
 4. User experience, usability, accessibility and capability-aware design
 5. Events, product analytics, metrics and trustworthy instrumentation
 6. Funnels, activation, retention, cohorts and experiments

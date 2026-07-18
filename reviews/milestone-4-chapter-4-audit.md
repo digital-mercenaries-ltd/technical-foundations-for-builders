@@ -96,4 +96,4 @@ All verification commands above were executed successfully on 2026-07-18. The me
 
 ## Gate
 
-The Chapter 4 batch has passed both independent review axes, external-link checking and the verification suite. It is ready for owner review. Chapter 5 remains deferred until that pause has occurred.
+The Chapter 4 batch passed both independent review axes, external-link checking and the verification suite. The owner approved it on 2026-07-18. Chapter 5 may now begin as the next controlled batch.

@@ -10,7 +10,7 @@ TFB supplies that missing map. It introduces the major areas of modern computing
 
 Awareness is only the beginning. Knowing that authentication matters is different from being able to find a missing authorisation check, repair it safely and prove that the repair works. TFB helps turn vague concerns and invisible constraints into recognisable mechanisms, better questions and clearer signals that deeper investigation or experienced help is required.
 
-> **Project status:** Chapter 3 was approved on 2026-07-18. The reviewed Chapter 4 controlled batch is ready for owner review.
+> **Project status:** Chapter 4 was approved on 2026-07-18. Chapter 5 is the next controlled Milestone 4 batch.
 
 ## Who this is for
 
@@ -207,4 +207,4 @@ Milestone 3 was approved on 2026-07-17. It:
 - moved binary and hexadecimal to Chapter 1 further territory without rewriting their explanations; and
 - retained eight entries as a calibration maximum rather than a target for later chapters.
 
-The Chapter 3 Milestone 4 batch was approved on 2026-07-18. Chapter 4 is the next controlled batch; later chapters remain deferred until its research, drafting and independent review have been assessed.
+The Chapter 3 and Chapter 4 Milestone 4 batches were approved on 2026-07-18. Chapter 5 is the next controlled batch; later chapters remain deferred until its research, drafting and independent review have been assessed.
