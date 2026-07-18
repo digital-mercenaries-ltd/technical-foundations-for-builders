@@ -1,6 +1,6 @@
 # Glossary
 
-Status: Milestone 4 Chapter 3 approved - 2026-07-18
+Status: Milestone 4 Chapter 4 draft - 2026-07-18
 
 This alphabetical index defines terms used by the drafted concepts and reader-facing navigation. It will grow with the guide. Definitions stay short and link to a published canonical explanation rather than to an outline placeholder.
 
@@ -9,6 +9,10 @@ This alphabetical index defines terms used by the drafted concepts and reader-fa
 ### Abstraction
 
 A useful model and set of operations that suppress details irrelevant at that level; see [Abstraction, information hiding and interfaces](chapters/03-software-engineering.md#abstraction-information-hiding-and-interfaces).
+
+### Application programming interface (API)
+
+An interface through which software components exchange operations or data; a network API also exposes the behaviour and failure of a remote boundary. See [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
 
 ### Artificial intelligence (AI)
 
@@ -32,15 +36,27 @@ A base-2 positional number system using only `0` and `1`; see [Binary numbers](f
 
 A binary digit with one of two values, `0` or `1`; see [Bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes).
 
+### Browser engine
+
+The part of a browser product that interprets web-platform resources and turns them into an interactive page; see [Browsers, semantic HTML, CSS and JavaScript](chapters/04-internet-web-and-apis.md#browsers-semantic-hypertext-markup-language-cascading-style-sheets-and-javascript).
+
 ### Byte
 
 A group of eight bits; see [Bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes).
 
 ## C
 
+### Cascading Style Sheets (CSS)
+
+The web-platform language that controls presentation through a cascade of style rules; see [Browsers, semantic HTML, CSS and JavaScript](chapters/04-internet-web-and-apis.md#browsers-semantic-hypertext-markup-language-cascading-style-sheets-and-javascript).
+
 ### Central processing unit (CPU)
 
 The processor that follows machine instructions and performs calculations; see [Processors, memory and persistent storage](chapters/01-computing-foundations.md#processors-memory-and-persistent-storage).
+
+### Client
+
+The role that initiates an interaction with a server; the same program can be a client in one interaction and a server in another. See [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
 
 ### Cohesion
 
@@ -50,6 +66,10 @@ The degree to which the responsibilities inside a module belong together; see [M
 
 The practice of frequently integrating small changes into a shared primary branch and checking the combined result; see [Build automation, continuous integration and fast feedback](chapters/03-software-engineering.md#build-automation-continuous-integration-and-fast-feedback).
 
+### Cookie
+
+A name and value that a browser stores with matching rules and can attach to later requests; the application decides what the value means. See [Cookies, sessions, origins and CORS](chapters/04-internet-web-and-apis.md#cookies-sessions-browser-origins-and-cross-origin-resource-sharing).
+
 ### Coordinated Universal Time (UTC)
 
 The international time standard used as a reference for civil time and offsets; see [Time, clocks, dates and time zones](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones).
@@ -57,6 +77,16 @@ The international time standard used as a reference for civil time and offsets; 
 ### Coupling
 
 The extent to which one module depends on another module's details or behaviour; see [Modularity, cohesion, coupling and separation of concerns](chapters/03-software-engineering.md#modularity-cohesion-coupling-and-separation-of-concerns).
+
+### Cross-Origin Resource Sharing (CORS)
+
+A browser-enforced HTTP protocol through which a response can permit sharing with code from another origin; it is not authentication or general server access control. See [Cookies, sessions, origins and CORS](chapters/04-internet-web-and-apis.md#cookies-sessions-browser-origins-and-cross-origin-resource-sharing).
+
+## D
+
+### Domain Name System (DNS)
+
+A distributed, hierarchical system for records associated with domain names; see [DNS, domain names, URLs and URIs](chapters/04-internet-web-and-apis.md#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers).
 
 ## E
 
@@ -80,15 +110,37 @@ A finite-precision number representation that covers a wide range by storing a s
 
 A base-16 positional notation using digits `0` to `9` and letters `A` to `F`; see [Hexadecimal and octal](further/01-computing-foundations.md#hexadecimal-and-octal).
 
+### Hypertext Markup Language (HTML)
+
+The web-platform language that describes document structure and meaning; see [Browsers, semantic HTML, CSS and JavaScript](chapters/04-internet-web-and-apis.md#browsers-semantic-hypertext-markup-language-cascading-style-sheets-and-javascript).
+
+### Hypertext Transfer Protocol (HTTP)
+
+An application protocol that defines request and response semantics; see [HTTP, HTTPS, TLS and certificates](chapters/04-internet-web-and-apis.md#hypertext-transfer-protocol-hypertext-transfer-protocol-secure-transport-layer-security-and-certificates).
+
+### Hypertext Transfer Protocol Secure (HTTPS)
+
+HTTP exchanged through a channel protected by Transport Layer Security; see [HTTP, HTTPS, TLS and certificates](chapters/04-internet-web-and-apis.md#hypertext-transfer-protocol-hypertext-transfer-protocol-secure-transport-layer-security-and-certificates).
+
 ## I
 
 ### Interface
 
 The operations and behavioural promises that another component is allowed to depend on; see [Abstraction, information hiding and interfaces](chapters/03-software-engineering.md#abstraction-information-hiding-and-interfaces).
 
+### Internet Protocol (IP)
+
+The protocol that uses network addresses to carry packets towards destinations across interconnected networks; see [The Internet, IP, transport and ports](chapters/04-internet-web-and-apis.md#the-internet-internet-protocol-transport-ports-and-the-journey-of-a-request).
+
 ### Invariant
 
 A condition that must remain true in every valid state covered by a design; see [Functional requirements, quality attributes, specifications and invariants](chapters/03-software-engineering.md#functional-requirements-quality-attributes-specifications-and-invariants).
+
+## J
+
+### JavaScript
+
+The common name for implementations of ECMAScript in environments such as browsers; browser Web APIs are host facilities rather than part of the core language. See [Browsers, semantic HTML, CSS and JavaScript](chapters/04-internet-web-and-apis.md#browsers-semantic-hypertext-markup-language-cascading-style-sheets-and-javascript).
 
 ## L
 
@@ -126,7 +178,15 @@ A base-8 positional notation using digits `0` to `7`; see [Hexadecimal and octal
 
 An unambiguous name for an eight-bit byte, commonly used in Internet standards; see [Bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes).
 
+### Origin
+
+The browser security boundary normally formed by a URL's scheme, host and port; see [Cookies, sessions, origins and CORS](chapters/04-internet-web-and-apis.md#cookies-sessions-browser-origins-and-cross-origin-resource-sharing).
+
 ## P
+
+### Port
+
+A transport-layer number that helps an operating system direct network traffic to a service; see [The Internet, IP, transport and ports](chapters/04-internet-web-and-apis.md#the-internet-internet-protocol-transport-ports-and-the-journey-of-a-request).
 
 ### Portable Operating System Interface (POSIX)
 
@@ -143,6 +203,10 @@ A running instance of a program with resources managed by an operating system; s
 ### Progressive disclosure
 
 Presenting a small first view and making additional detail optional so that breadth does not create immediate overwhelm; see [How the guide avoids overwhelm](README.md#how-the-guide-avoids-overwhelm).
+
+### Progressive enhancement
+
+Starting with essential content and functionality on a chosen baseline, then adding richer presentation or behaviour where capabilities permit; see [Progressive enhancement and browser compatibility](chapters/04-internet-web-and-apis.md#progressive-enhancement-capability-detection-and-browser-compatibility).
 
 ## R
 
@@ -163,6 +227,14 @@ A numbered publication in the Internet technical-document series. Some RFCs defi
 The environment and services used while a program executes; see [Source code, programming languages and runtimes](chapters/02-programming-foundations.md#source-code-programming-languages-and-runtimes).
 
 ## S
+
+### Server
+
+The role that listens for and responds to a client's interaction; see [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
+
+### Session
+
+Application state associated with a sequence of interactions, often recovered through an identifier stored in a cookie; see [Cookies, sessions, origins and CORS](chapters/04-internet-web-and-apis.md#cookies-sessions-browser-origins-and-cross-origin-resource-sharing).
 
 ### Side effect
 
@@ -186,6 +258,14 @@ The amount of completed work per unit time under defined conditions; see [Latenc
 
 A maintained set of rules mapping local civil times to offsets from Coordinated Universal Time; see [Time, clocks, dates and time zones](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones).
 
+### Transmission Control Protocol (TCP)
+
+A transport protocol that provides a reliable, ordered byte stream while a connection lasts; see [The Internet, IP, transport and ports](chapters/04-internet-web-and-apis.md#the-internet-internet-protocol-transport-ports-and-the-journey-of-a-request).
+
+### Transport Layer Security (TLS)
+
+A protocol that authenticates a secure-channel peer and protects data confidentiality and integrity in transit; see [HTTP, HTTPS, TLS and certificates](chapters/04-internet-web-and-apis.md#hypertext-transfer-protocol-hypertext-transfer-protocol-secure-transport-layer-security-and-certificates).
+
 ### Type
 
 A classification that helps determine which values and operations a program permits and how those operations behave; see [Values, types and conversions](chapters/02-programming-foundations.md#values-types-and-conversions).
@@ -203,6 +283,14 @@ A numbered unit that Unicode encodings can represent; one visible character may 
 ### Unicode Transformation Format 8-bit (UTF-8)
 
 A variable-length Unicode encoding that uses one to four bytes for each Unicode scalar value; see [Text, Unicode and character encodings](chapters/01-computing-foundations.md#text-unicode-and-character-encodings).
+
+### Uniform Resource Identifier (URI)
+
+The general standards term for an identifier using URI syntax; in browser work, Uniform Resource Locator is usually the more useful operational term. See [DNS, domain names, URLs and URIs](chapters/04-internet-web-and-apis.md#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers).
+
+### Uniform Resource Locator (URL)
+
+An address whose components describe how to access a resource, including a scheme, host and path; see [DNS, domain names, URLs and URIs](chapters/04-internet-web-and-apis.md#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers).
 
 ### Unsigned integer
 

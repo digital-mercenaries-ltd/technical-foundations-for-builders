@@ -23,7 +23,7 @@ Measurements come from `python3 scripts/measure_docs.py`. It counts visible Mark
 | Measure | Chapter 3 |
 | --- | ---: |
 | Principal entries | 7 |
-| Complete page words | 3,994 |
+| Complete page words | 3,989 |
 | Estimated complete-page reading time | 20 minutes |
 | Shortest entry prose | 367 words |
 | Longest entry prose | 436 words |

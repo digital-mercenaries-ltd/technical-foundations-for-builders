@@ -88,7 +88,7 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Issue:** [#4](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/4)
 
-**Status:** In progress - 2026-07-18.
+**Status:** Reviewed draft ready for owner review - 2026-07-18.
 
 **Depends on:** WP-01 and WP-03.
 

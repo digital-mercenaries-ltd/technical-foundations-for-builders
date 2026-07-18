@@ -10,7 +10,7 @@ TFB supplies that missing map. It introduces the major areas of modern computing
 
 Awareness is only the beginning. Knowing that authentication matters is different from being able to find a missing authorisation check, repair it safely and prove that the repair works. TFB helps turn vague concerns and invisible constraints into recognisable mechanisms, better questions and clearer signals that deeper investigation or experienced help is required.
 
-> **Project status:** Chapter 3 was approved on 2026-07-18. Milestone 4 continues with Chapter 4 as the next controlled batch.
+> **Project status:** Chapter 3 was approved on 2026-07-18. The reviewed Chapter 4 controlled batch is ready for owner review.
 
 ## Who this is for
 
@@ -127,7 +127,7 @@ Software engineering is how intent becomes change that can be understood, tested
 
 Browsers and services communicate through layered protocols and behavioural contracts. This chapter connects Internet Protocol, Domain Name System, Hypertext Transfer Protocol and browser technologies with semantic Hypertext Markup Language (HTML), progressive enhancement, compatibility, application programming interfaces and the organisations that define or document them.
 
-[Browse the tiered Chapter 4 plan](OUTLINE.md#4-the-internet-web-and-application-programming-interfaces)
+[Read Chapter 4](chapters/04-internet-web-and-apis.md) · [Browse the tiered Chapter 4 plan](OUTLINE.md#4-the-internet-web-and-application-programming-interfaces)
 
 ### 5. Data and databases
 
@@ -190,6 +190,7 @@ Experienced practitioners use compact models to notice recurring patterns in sys
 - [Style guide](STYLE_GUIDE.md) - the editorial contract for contributors and agents.
 - [Execution plan](PLAN.md) - milestones and document lifecycle.
 - [Issue-ready work packages](WORK_PACKAGES.md) - bounded batches for later drafting.
+- [Milestone 4 Chapter 4 audit](reviews/milestone-4-chapter-4-audit.md) - research, measurements, review findings and verification for the second controlled batch.
 - [Milestone 4 Chapter 3 audit](reviews/milestone-4-chapter-3-audit.md) - research, measurements, review findings and verification for the first controlled batch.
 - [Milestone 3 audit](reviews/milestone-3-audit.md) - first-pass chapter measurements, review findings and verification results.
 - [Milestone 2 audit](reviews/milestone-2-audit.md) - editorial review findings, resolutions and verification results.
