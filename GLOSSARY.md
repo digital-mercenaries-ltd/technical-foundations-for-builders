@@ -1,6 +1,6 @@
 # Glossary
 
-Status: Milestone 4 Chapter 5 draft - 2026-07-18
+Status: Milestone 4 Chapter 6 draft - 2026-07-31
 
 This alphabetical index defines terms used by the drafted concepts and reader-facing navigation. It will grow with the guide. Definitions stay short and link to a published canonical explanation rather than to an outline placeholder.
 
@@ -13,6 +13,10 @@ A useful model and set of operations that suppress details irrelevant at that le
 ### Application programming interface (API)
 
 An interface through which software components exchange operations or data; a network API also exposes the behaviour and failure of a remote boundary. See [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
+
+### Architecture
+
+The consequential structure of a system: its parts, responsibilities, state, boundaries and dependencies; see [System context, boundaries, components and architecture views](chapters/06-architecture-and-distributed-systems.md#system-context-boundaries-components-and-architecture-views).
 
 ### Artificial intelligence (AI)
 
@@ -27,6 +31,10 @@ Four properties commonly used to describe database transactions; see [Transactio
 ### Backfill
 
 Production data work that populates or corrects values in existing records, often as one stage of a schema change; see [Schema evolution, online migrations and backfills](chapters/05-data-and-databases.md#schema-evolution-online-migrations-and-backfills).
+
+### Backpressure
+
+A signal from a constrained consumer towards producers asking them to slow, pause or fail early; see [Load balancing, admission control and overload](chapters/06-architecture-and-distributed-systems.md#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation).
 
 ### Base (or radix)
 
@@ -116,6 +124,14 @@ A system for storing and retrieving organised data under defined rules and guara
 
 A change to a database schema or stored representation; see [Schema evolution, online migrations and backfills](chapters/05-data-and-databases.md#schema-evolution-online-migrations-and-backfills).
 
+### Deadline
+
+The point after which an overall result is no longer worth waiting for; see [Deadlines, timeouts, cancellation, retries and idempotency](chapters/06-architecture-and-distributed-systems.md#end-to-end-deadlines-and-time-budgets-timeouts-cancellation-retries-and-idempotency).
+
+### Distributed system
+
+A system whose independently running components communicate and can fail or become unreachable separately; see [Partial failure and the fallacies of distributed computing](chapters/06-architecture-and-distributed-systems.md#partial-failure-and-the-fallacies-of-distributed-computing).
+
 ### Domain Name System (DNS)
 
 A distributed, hierarchical system for records associated with domain names; see [DNS, domain names, URLs and URIs](chapters/04-internet-web-and-apis.md#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers).
@@ -126,6 +142,10 @@ A distributed, hierarchical system for records associated with domain names; see
 
 A defined way of mapping information to another representation, such as mapping Unicode values to bytes with UTF-8; see [Text, Unicode and character encodings](chapters/01-computing-foundations.md#text-unicode-and-character-encodings).
 
+### Event
+
+A message that records that something happened, rather than requesting that it should happen; see [Synchronous calls, asynchronous messages, queues, streams and events](chapters/06-architecture-and-distributed-systems.md#synchronous-calls-asynchronous-messages-queues-streams-and-events).
+
 ### Exception
 
 A structured mechanism that reports an abnormal condition and changes a program's normal control flow; see [Errors, exceptions and cleanup](chapters/02-programming-foundations.md#errors-exceptions-and-cleanup).
@@ -135,6 +155,10 @@ A structured mechanism that reports an abnormal condition and changes a program'
 The database planner's selected tree of operations for producing a query result or change; see [Queries, indexes and execution plans](chapters/05-data-and-databases.md#queries-indexes-and-execution-plans).
 
 ## F
+
+### Failure domain
+
+A group of components likely to fail together because they share a dependency, location, configuration or change path; see [Load balancing, admission control and overload](chapters/06-architecture-and-distributed-systems.md#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation).
 
 ### Floating point
 
@@ -163,6 +187,10 @@ An application protocol that defines request and response semantics; see [HTTP, 
 HTTP exchanged through a channel protected by Transport Layer Security; see [HTTP, HTTPS, TLS and certificates](chapters/04-internet-web-and-apis.md#hypertext-transfer-protocol-hypertext-transfer-protocol-secure-transport-layer-security-and-certificates).
 
 ## I
+
+### Idempotency
+
+The property that repeating an operation has the same intended effect as performing it once within a stated scope; see [Deadlines, timeouts, cancellation, retries and idempotency](chapters/06-architecture-and-distributed-systems.md#end-to-end-deadlines-and-time-budgets-timeouts-cancellation-retries-and-idempotency).
 
 ### Identifier
 
@@ -208,7 +236,15 @@ A database operation that combines rows matching a stated condition; see [Relati
 
 The elapsed time from a defined start to a defined finish for one operation or piece of work; see [Latency and throughput](chapters/01-computing-foundations.md#latency-and-throughput).
 
+### Load balancing
+
+Selecting among eligible workers to distribute accepted work; it does not create capacity. See [Load balancing, admission control and overload](chapters/06-architecture-and-distributed-systems.md#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation).
+
 ## M
+
+### Monolith
+
+An application that packages several capabilities into one main deployable unit; it may still have well-separated internal modules. See [Monoliths, services, and stateful and stateless components](chapters/06-architecture-and-distributed-systems.md#monoliths-services-and-stateful-and-stateless-components).
 
 ### Module
 
@@ -227,6 +263,10 @@ A change to an existing mutable value or location; see [Variables, state, mutabi
 ### National Institute of Standards and Technology (NIST)
 
 A United States standards and measurement agency whose technical glossaries and publications are used throughout TFB; see its role in defining [bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes).
+
+### Network partition
+
+A period when groups of otherwise running components cannot communicate sufficiently to behave as one system; see [Replication, partitioning and consistency](chapters/06-architecture-and-distributed-systems.md#replication-partitioning-consistency-and-user-visible-intermediate-states).
 
 ### Non-relational database
 
@@ -251,6 +291,10 @@ An unambiguous name for an eight-bit byte, commonly used in Internet standards; 
 The browser security boundary normally formed by a URL's scheme, host and port; see [Cookies, sessions, origins and CORS](chapters/04-internet-web-and-apis.md#cookies-sessions-browser-origins-and-cross-origin-resource-sharing).
 
 ## P
+
+### Partial failure
+
+A failure in one part of a distributed operation while other parts continue or may already have changed state; see [Partial failure and the fallacies of distributed computing](chapters/06-architecture-and-distributed-systems.md#partial-failure-and-the-fallacies-of-distributed-computing).
 
 ### Port
 
@@ -286,11 +330,19 @@ Starting with essential content and functionality on a chosen baseline, then add
 
 A request for a database result or change; see [Queries, indexes and execution plans](chapters/05-data-and-databases.md#queries-indexes-and-execution-plans).
 
+### Queue
+
+A waiting structure in which work or messages remain until consumers claim them; see [Synchronous calls, asynchronous messages, queues, streams and events](chapters/06-architecture-and-distributed-systems.md#synchronous-calls-asynchronous-messages-queues-streams-and-events).
+
 ## R
 
 ### Random-access memory (RAM)
 
 Working memory used by active programs and data; see [Processors, memory and persistent storage](chapters/01-computing-foundations.md#processors-memory-and-persistent-storage).
+
+### Rate limit
+
+A bound on accepted use over time or by a stated client, operation or product; see [Load balancing, admission control and overload](chapters/06-architecture-and-distributed-systems.md#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation).
 
 ### Refactoring
 
@@ -299,6 +351,10 @@ Changing software's internal structure through small, behaviour-preserving steps
 ### Relational database
 
 A database that presents data through relations, commonly exposed as tables, rows and columns queried with SQL; see [Relational databases, SQL, keys, relationships and joins](chapters/05-data-and-databases.md#relational-databases-structured-query-language-keys-relationships-and-joins).
+
+### Replication
+
+Maintaining additional copies of state for purposes such as availability, locality or read capacity; see [Replication, partitioning and consistency](chapters/06-architecture-and-distributed-systems.md#replication-partitioning-consistency-and-user-visible-intermediate-states).
 
 ### Request for Comments (RFC)
 
@@ -318,6 +374,10 @@ An explicit description of selected data names, types, relationships and rules; 
 
 The role that listens for and responds to a client's interaction; see [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
 
+### Service
+
+An independently running component reached through a remote interface; see [Monoliths, services, and stateful and stateless components](chapters/06-architecture-and-distributed-systems.md#monoliths-services-and-stateful-and-stateless-components).
+
 ### Session
 
 Application state associated with a sequence of interactions, often recovered through an identifier stored in a cookie; see [Cookies, sessions, origins and CORS](chapters/04-internet-web-and-apis.md#cookies-sessions-browser-origins-and-cross-origin-resource-sharing).
@@ -329,6 +389,14 @@ An observable change beyond producing a function's result, such as changing shar
 ### Specification
 
 A record of expected properties and constraints precise enough to guide construction and evaluation; see [Functional requirements, quality attributes, specifications and invariants](chapters/03-software-engineering.md#functional-requirements-quality-attributes-specifications-and-invariants).
+
+### Stateful component
+
+A component that depends on retained information or stable identity across operations; see [Monoliths, services, and stateful and stateless components](chapters/06-architecture-and-distributed-systems.md#monoliths-services-and-stateful-and-stateless-components).
+
+### Stateless component
+
+A component that can handle an operation without depending on process-local history from an earlier operation; see [Monoliths, services, and stateful and stateless components](chapters/06-architecture-and-distributed-systems.md#monoliths-services-and-stateful-and-stateless-components).
 
 ### Structured Query Language (SQL)
 
@@ -347,6 +415,10 @@ The amount of completed work per unit time under defined conditions; see [Latenc
 ### Time zone
 
 A maintained set of rules mapping local civil times to offsets from Coordinated Universal Time; see [Time, clocks, dates and time zones](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones).
+
+### Timeout
+
+A limit on one wait or phase of an operation; expiry does not prove that remote work failed or stopped. See [Deadlines, timeouts, cancellation, retries and idempotency](chapters/06-architecture-and-distributed-systems.md#end-to-end-deadlines-and-time-budgets-timeouts-cancellation-retries-and-idempotency).
 
 ### Transaction
 

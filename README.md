@@ -149,7 +149,7 @@ Data needs structure, meaning and rules that remain valid as many users and proc
 
 Architecture describes consequential boundaries and relationships within a system. Once components communicate over a network, timeouts, retries, duplicated messages, partial failure and uncertain state become normal design concerns rather than rare edge cases.
 
-[Browse the tiered Chapter 6 plan](OUTLINE.md#6-architecture-and-distributed-systems)
+[Read Chapter 6](chapters/06-architecture-and-distributed-systems.md) · [Browse the tiered Chapter 6 plan](OUTLINE.md#6-architecture-and-distributed-systems)
 
 ### 7. Infrastructure, cloud and delivery
 

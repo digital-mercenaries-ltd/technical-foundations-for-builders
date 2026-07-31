@@ -376,6 +376,6 @@ Storage choice creates long-lived constraints on queries, integrity, operations 
 
 ## Chapter status
 
-The Chapter 5 first-pass draft covers the seven entries selected in the approved outline. It is awaiting owner approval. Further data-model, database-performance, concurrency, analytical-processing and lifecycle material remains optional and will be added only where it improves awareness without overloading the main traversal.
+The Chapter 5 first pass was approved on 2026-07-31. Further data-model, database-performance, concurrency, analytical-processing and lifecycle material remains optional and will be added only where it improves awareness without overloading the main traversal.
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 5 plan](../OUTLINE.md#5-data-and-databases)
