@@ -1,6 +1,6 @@
 # Milestone 4 Chapter 5 audit
 
-Status: reviewed draft ready for owner review - 2026-07-18
+Status: approved - 2026-07-31
 
 This audit covers the third controlled Milestone 4 batch against public issue [#5](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/5). The public comparison point is commit `ab48a1e`, which records Chapter 4 approval, the Chapter 5 work package and the explicit placement of behaviour-driven development in Chapter 10.
 
@@ -96,4 +96,4 @@ All verification commands above were executed successfully on 2026-07-18. The me
 
 ## Gate
 
-The Chapter 5 batch has passed both independent review axes, external-link checking and the verification suite. It is ready for owner review. Chapter 6 remains deferred until that pause has occurred.
+The Chapter 5 batch passed both independent review axes, external-link checking and the verification suite. The owner approved it on 2026-07-31. Chapter 6 may now begin as the next controlled increment.

@@ -103,6 +103,23 @@ Use the standard `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-hum
 
 Treat TFB and the planned TLB as bounded editorial contexts within one project family. The current repository content remains the TFB context until a separate TLB structure is approved. See `docs/agents/domain.md`.
 
+## Writing and editorial delivery
+
+For reusable prose, fetch and follow the [Writing Style Guide SOP](https://app.notion.com/p/3aea4c502b178183bd05dfaf0d4c2b8d). For collaboration, research, progress reporting and completion claims, fetch and follow the [AI Interaction and Collaboration Guide](https://app.notion.com/p/3aea4c502b1781acaa56e800b0ef1c15). Treat both as binding for this personal project unless an explicit project rule conflicts.
+
+TFB is primarily explanatory documentation in the Diátaxis sense. Establish each entry's claim, reader need, mechanism or evidence and consequence before drafting headings. Lead with the substantive point, use one consistent term per concept, name responsible actors, preserve causal distinctions and trade-offs, and remove generic importance claims, repetitive transitions, catalogue prose and recap conclusions. Apply the full editorial rules in `STYLE_GUIDE.md` as the project-specific contract.
+
+For planning and delivery, fetch and adapt [SOP: Adaptive Agentic Software Delivery v1.2](https://app.notion.com/p/3aea4c502b1781a888b1f8e851697813). GitHub Issues are this repository's sole canonical delivery ledger; chat, `PLAN.md`, `WORK_PACKAGES.md` and audits must not become competing live trackers. Keep the long-range chapter map shallow. Elaborate and execute one controlled chapter or reference increment at a time, then stop at its owner-review gate.
+
+Adapt the software-delivery evidence model to editorial work:
+
+- A ready chapter increment states its outcome, reader, included topics, boundaries, dependencies, source requirements, currentness risks, deterministic checks, independent reviewers and stop condition.
+- Private cited research precedes public prose. A separate drafter and independent specification and standards reviews provide evaluation outside the implementation context.
+- The evidence chain is the GitHub issue, private research commit, public chapter and audit, deterministic documentation checks, external-link results, review findings and public commit.
+- Use behaviour-driven development notation only when Given/When/Then genuinely clarifies observable behaviour. Acceptance criteria describe evidence, not drafting tasks.
+- Use the Delivery Risk Cube only as a milestone-health prompt: compare breadth, editorial fidelity and production-quality evidence with the next publication commitment. It is not TFB's organising structure or a completion score.
+- Mark a chapter issue complete only after owner approval. Do not proceed automatically into the next chapter.
+
 ## Scope guardrails
 
 - Do not design this as job training, interview preparation, or an academic CS course.

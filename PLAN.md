@@ -308,4 +308,4 @@ A historical artefact is ready only when:
 
 ## 8. Current Milestone 4 action
 
-WP-05 and [WP-06](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/4) were approved on 2026-07-18. [WP-07](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/5) has produced a researched and independently reviewed Chapter 5 first-pass draft. Pause for owner review before opening Chapter 6. Continue to defer optional further-territory packages.
+WP-05 and [WP-06](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/4) were approved on 2026-07-18. [WP-07](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/5) was approved on 2026-07-31. [WP-08](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/6) is the current controlled increment: draft and independently review the Chapter 6 first pass, then pause for owner review before opening Chapter 7. Continue to defer optional further-territory packages.

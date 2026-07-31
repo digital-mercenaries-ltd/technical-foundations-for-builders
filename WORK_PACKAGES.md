@@ -101,13 +101,17 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Issue:** [#5](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/5)
 
-**Status:** Reviewed draft ready for owner review - 2026-07-18.
+**Status:** Complete; approved on 2026-07-31.
 
 **Depends on:** WP-03.
 
 **Scope:** schemas, relational data, integrity, queries, transactions, migrations and non-relational models. Protect the boundary with distributed systems and recovery.
 
 ### WP-08: Draft Chapter 6 - architecture and distributed systems
+
+**Issue:** [#6](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues/6)
+
+**Status:** In progress - 2026-07-31.
 
 **Depends on:** WP-05, WP-06 and WP-07.
 
