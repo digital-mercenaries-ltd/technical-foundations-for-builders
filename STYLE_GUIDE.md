@@ -6,7 +6,7 @@ This is the editorial contract for Technical Foundations for Builders (TFB). It 
 
 ## Reader and purpose
 
-Write for a capable adult who has a real software project but no assumed technical education. The reader can investigate and act once they know what to investigate. Our job is to expose the concept, establish a useful initial mental model and show why it matters.
+Write for a capable adult who has a real software project but no assumed technical education. This includes non-technical and newly technical AI-assisted builders, while remaining useful to self-taught and journeyman developers with uneven breadth. The reader can investigate and act once they know what to investigate. Our job is to expose the concept, establish a useful initial mental model and show why it matters.
 
 Do not write as if the reader is studying for an examination, changing careers or following a task tutorial. Do not treat a non-technical background as a lack of intelligence.
 
@@ -22,6 +22,7 @@ Do not write as if the reader is studying for an examination, changing careers o
 8. **Durable concepts, current references.** Prefer ideas that outlast today's tools.
 9. **Useful now, maintainable later.** Include current products, vendors, organisations and schemes when recognising them helps today's reader, and mark time-sensitive material for review.
 10. **Progressive disclosure.** Keep the first traversal small without weakening the explanation of what it retains.
+11. **Agentic engineering is contemporary engineering.** Explain material changes introduced by AI models and agents without implying that they replace the underlying mechanisms or responsibilities.
 
 ## Content layers
 
@@ -33,6 +34,20 @@ TFB deliberately mixes ideas at different levels: binary representation, a manag
 4. **External or omitted:** a link or omission when TFB would add catalogue weight without improving the reader's mental model.
 
 The governing rule is: **reduce the number of concepts covered on the first pass, not the quality of their explanation.** “Further” means optional or more specific, not advanced or exhaustive. “Go deeper” means leaving TFB for a small set of strong external resources.
+
+## Agentic engineering and current practice
+
+For every concept, consider whether AI-assisted or agentic work materially changes:
+
+- how quickly the issue can arise or spread;
+- how visible the mechanism is to the responsible person;
+- what independent evidence is needed;
+- which permissions, providers, models or generated artefacts enter the trust boundary;
+- who can understand, maintain and recover the result.
+
+Mention the agentic consequence when it improves the reader's mental model. Do not append a generic “AI relevance” paragraph to every entry. Chapter 12 remains the canonical home for distinctive AI mechanisms; other chapters link there rather than redefining models, agents, context, evaluations or prompt injection.
+
+Separate durable claims from the current landscape. Current models, coding agents, protocols, provider capabilities and common practices may be named when useful, but they require suitable sources and ISO-8601 review dates. A maintenance harness may flag potentially stale material or propose updates. It does not replace factual and editorial review.
 
 ## Voice and language
 
@@ -109,6 +124,18 @@ Use for historical jargon or humour, including terms such as *heisenbug*, *yak s
 ### Historical field checklist or case study
 
 Use a dated checklist or case when its original form is part of its value. Explain where it came from, distribute its underlying concepts to their canonical homes and state what has dated or requires qualification. A checklist is a conversation aid, not a certification or proof of readiness.
+
+### Consolidated reference guide
+
+Use a reference guide to provide another route through material already selected and explained elsewhere.
+
+- Link to the canonical TFB context instead of repeating its explanation.
+- Organise institutions by function and domain; identify what authority each does and does not have.
+- Organise learning resources by theme and intended depth rather than producing one universal ranking.
+- Give every retained item a short reason for inclusion and prefer official or primary links for identity and scope.
+- Use **Start here**, **Continue** and **Reference** when prioritisation helps; do not imply that every reader needs a linear curriculum.
+- Keep the selection deliberately small and apply review dates to current organisations, editions and maintained resources.
+- Do not turn private research inventories, acquisition lists or raw source notes into public appendices.
 
 ## Depth and length
 
@@ -222,9 +249,11 @@ Use a diagram only when it makes a relationship, hierarchy or sequence materiall
 - Let one lead editor integrate changes and protect canonical definitions.
 - Require the outline tier, content form and canonical home in every drafting brief.
 - Separate durable claims from current landscape claims so that time-sensitive material can be reviewed independently.
+- Ask contributors and reviewers to check material agentic consequences across every chapter rather than deferring all AI relevance to Chapter 12.
+- Treat automatic currentness findings as review inputs, not permission to publish unattended changes.
 
 Agent-written prose receives the same factual and editorial review as human-written prose.
 
 ## Definition of done
 
-A concept entry is ready when it passes the quality rubric in [PLAN.md](PLAN.md#7-quality-rubric), its links resolve, its important claims are supported and removing more text would damage the reader's initial mental model.
+A concept entry is ready when it passes the quality rubric in [PLAN.md](PLAN.md#7-quality-rubric), its links resolve, its important claims are supported, material agentic consequences have been considered and removing more text would damage the reader's initial mental model.

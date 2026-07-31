@@ -2,7 +2,7 @@
 
 Status: Milestone 4 Chapter 3 approved; Chapter 4 in progress - 2026-07-18
 
-This is the editorial source of truth for the scope of **Technical Foundations for Builders** (TFB). The [README](README.md) is the short reader-facing map. This file records what belongs on the first pass, what belongs in optional further territory and which names should initially appear for recognition or landscape orientation.
+This is the editorial source of truth for the scope of **Technical Foundations for Builders** (TFB), Volume 1 of the project family described in [PROJECT_FAMILY.md](PROJECT_FAMILY.md). The [README](README.md) is the short reader-facing map. This file records what belongs on the first pass, what belongs in optional further territory and which names should initially appear for recognition or landscape orientation.
 
 ## How to read the outline
 
@@ -16,6 +16,14 @@ The guide intentionally includes material at different levels of abstraction. A 
 Each durable mechanism has one canonical home. Products, vendors, organisations, standards, schemes, laws and stories may appear beside that mechanism or receive a dated landscape entry when knowing the name is itself useful.
 
 The current approved outline contains 94 principal entries across the complete first traversal, below a planning guardrail of 95. Milestone 3 raised the Milestone 2 count from 91 by splitting three overloaded labels: integer overflow from floating point, time from performance, and error handling from diagnosis. Raising the guardrail itself requires an explicit editorial review rather than filling every chapter to its local maximum.
+
+## Cross-cutting context and boundaries
+
+AI assistance and agentic engineering are a pervasive context for the whole outline. Chapter 12 is the canonical home for distinctive AI mechanisms such as probabilistic output, context, agents, tool permissions, evaluations and prompt injection. Earlier chapters should still explain an agentic consequence when it materially changes behaviour, evidence, responsibility or a likely failure mode. Do not add a mechanical AI subsection when nothing important changes.
+
+The Delivery Risk Cube may be introduced as a decision lens: functional breadth, implementation fidelity and production-quality depth should be shaped by the project's next commitment. It does not replace the chapter taxonomy, create another disclosure tier or turn TFB into a maturity model.
+
+The product and governance chapters establish the interfaces required to understand trustworthy software. Deeper coverage of technology strategy, organisation-wide product ownership, delivery management, workplace information technology, business systems, budgets, sourcing and technical leadership belongs to the planned **Technical Leadership for Builders** Volume 2 and will receive a separate outline.
 
 ## 1. Computing foundations
 
@@ -119,7 +127,7 @@ JavaScript, TypeScript, Python, Java, Kotlin, C#, Go, Rust, Swift, PHP, Ruby, No
 - Test doubles, coverage and flaky tests
 - Defect tracking and reproducible reports
 - Semantic Versioning, manifests and lockfiles
-- Documentation and architecture decision records
+- Software documentation as maintained system evidence: audiences, document types, canonical sources, docs-as-code, ownership, freshness, tested examples and architecture decision records
 - Developer experience and work-in-progress limits
 - Maintainability, software rot and the second-system effect
 
@@ -129,9 +137,15 @@ JavaScript, TypeScript, Python, Java, Kotlin, C#, Go, Rust, Swift, PHP, Ruby, No
 
 Git, GitHub, GitLab, Bitbucket, pull requests, trunk-based development, conventional commits, GitHub Actions, GitLab continuous integration and continuous delivery (CI/CD), Jenkins and common code-quality services.
 
+For software documentation, teach the durable distinction between clarity and correctness and between documents serving different readers and purposes. Introduce Diátaxis's tutorials, how-to guides, reference and explanation as one useful diagnostic framework rather than a mandatory directory structure. Introduce docs-as-code, plain language, controlled language and Simplified Technical English (ASD-STE100) for recognition, while making clear that version control or simplified prose does not establish factual accuracy. Planning references: [Diátaxis](https://diataxis.fr/start-here/), [Write the Docs: Docs as Code](https://www.writethedocs.org/guide/docs-as-code/), [Google's documentation chapter in *Software Engineering at Google*](https://abseil.io/resources/swe-book/html/ch10.html), [ISO 24495-1:2023 plain language](https://www.iso.org/standard/78907.html), [ASD-STE100](https://www.asd-ste100.org/) and [GDS guidance on architecture decision records](https://gds-way.digital.cabinet-office.gov.uk/standards/architecture-decisions.html).
+
+For architecture decision records, explain the context, status, decision and consequences, including alternatives only where they clarify the trade-off. Preserve decision history by marking a record superseded rather than silently rewriting it. An ADR records rationale; it is neither a complete architecture description nor proof that the decision was sound.
+
+Possible book-length routes for the curated further-reading guide are [*Docs for Developers: An Engineer's Field Guide to Technical Writing*](https://link.springer.com/book/10.1007/978-1-4842-7217-6) and [*Documenting Software Architectures: Views and Beyond*, second edition](https://www.sei.cmu.edu/library/documenting-software-architectures-views-and-beyond-second-edition/). Select them only after balancing the complete thematic guide.
+
 **Historical practice:** the Joel Test (2000) may appear as a dated field checklist after its underlying ideas have been explained. Joel Spolsky's writing on daily builds, bug reports and rewrites supplies memorable cases, not universal process rules.
 
-**Boundary:** code construction, collaborative change and in-process library interfaces live here; network service contracts live in Chapter 4, deploying the resulting artefact in Chapter 7 and operating it in Chapter 8.
+**Boundary:** code construction, collaborative change and documentation required to understand or change a software system live here; network service contracts and their machine-readable descriptions live in Chapter 4, deploying the resulting artefact in Chapter 7 and operating it in Chapter 8. Organisation-wide knowledge management, records strategy, documentation staffing, enterprise taxonomy and tooling belong to TLB Volume 2.
 
 ## 4. The Internet, web and application programming interfaces
 
@@ -151,7 +165,7 @@ Git, GitHub, GitLab, Bitbucket, pull requests, trunk-based development, conventi
 
 - Hypertext Transfer Protocol methods, status codes, headers, caching and content negotiation
 - Representational State Transfer, remote procedure calls and GraphQL
-- OpenAPI, JavaScript Object Notation (JSON) Schema and generated clients
+- OpenAPI, JavaScript Object Notation (JSON) Schema, generated clients and generated interface reference
 - Reverse proxies, content delivery networks and gateways
 - WebSockets, server-sent events and webhooks
 - Browser rendering models, web performance and Core Web Vitals
@@ -213,9 +227,9 @@ PostgreSQL, MySQL, MariaDB, SQLite, Microsoft SQL Server, Oracle Database, Mongo
 2. Monoliths, services, and stateful and stateless components
 3. Synchronous calls, asynchronous messages, queues, streams and events
 4. Partial failure and the fallacies of distributed computing
-5. Deadlines, timeouts, cancellation, retries and idempotency
+5. End-to-end deadlines and time budgets, timeouts, cancellation, retries and idempotency
 6. Replication, partitioning, consistency and user-visible intermediate states
-7. Load balancing, rate limiting, backpressure, failure domains and graceful degradation
+7. Load balancing, admission and rate limiting, bounded queues, backpressure, overload collapse, failure domains and graceful degradation
 
 ### Further territory
 
@@ -228,7 +242,7 @@ PostgreSQL, MySQL, MariaDB, SQLite, Microsoft SQL Server, Oracle Database, Mongo
 - Sharding, consensus and leader election
 - Consistency, availability and partition tolerance (CAP) theorem, and “partition: availability or consistency; else: latency or consistency” (PACELC)
 - Distributed caching and cache invalidation
-- Circuit breakers, bulkheads, load shedding and retry budgets
+- Deadline propagation, timeout ordering, circuit breakers, bulkheads, load shedding and retry budgets
 - Architecture frameworks including The Open Group Architecture Framework (TOGAF), Zachman and ArchiMate
 
 ### Recognition and landscape
@@ -236,6 +250,8 @@ PostgreSQL, MySQL, MariaDB, SQLite, Microsoft SQL Server, Oracle Database, Mongo
 *Landscape selection reviewed: 2026-07-17; verify current status before publication.*
 
 Kafka, RabbitMQ, Amazon Simple Queue Service, Google Pub/Sub, Redis, content-delivery networks, service meshes and vendor well-architected frameworks.
+
+Teach deadlines, cancellation, retries and backpressure as connected controls on finite work rather than isolated patterns. An incoming request has a total time budget; downstream calls consume the remaining budget; expired or cancelled work should stop where possible; bounded queues, admission control and load shedding prevent unbounded accumulation; and retries can amplify the overload they are intended to survive. A call-chain or shrinking-budget diagram may help. Planning references: [gRPC deadlines and deadline propagation](https://grpc.io/docs/guides/deadlines/) and the Amazon Builders' Library on [timeouts, retries and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/).
 
 **Boundary:** language concurrency lives in Chapter 2; database transactions in Chapter 5; deployment topology in Chapter 7; reliability objectives in Chapter 8.
 
@@ -265,12 +281,15 @@ Kafka, RabbitMQ, Amazon Simple Queue Service, Google Pub/Sub, Redis, content-del
 - Graceful shutdown, readiness and old/new version coexistence
 - Control planes and data planes
 - Infrastructure as a service, platform as a service, functions as a service and backend as a service
+- Open-source foundations, project governance and project-lifecycle signals
 
 ### Recognition and landscape
 
-*Landscape selection reviewed: 2026-07-17; verify current status before publication.*
+*Landscape selection reviewed: 2026-07-31; verify current status before publication.*
 
-Amazon Web Services, Microsoft Azure, Google Cloud, Cloudflare, Vercel, Netlify, Heroku, Render, Fly.io, Supabase, Firebase, Terraform and OpenTofu.
+Amazon Web Services, Microsoft Azure, Google Cloud, Cloudflare, Vercel, Netlify, Heroku, Render, Fly.io, Supabase, Firebase, Terraform, OpenTofu, the Linux Foundation, the Cloud Native Computing Foundation (CNCF) and the CNCF Landscape.
+
+For CNCF, explain what a neutral open-source foundation and its project lifecycle can signal without treating inclusion, graduation or landscape placement as proof that a project fits a particular system. Planning references: [CNCF: Who we are](https://www.cncf.io/about/who-we-are/), [CNCF project lifecycle](https://contribute.cncf.io/projects/lifecycle/) and the maintained [CNCF Landscape](https://landscape.cncf.io/).
 
 Named stack profiles such as Linux–Apache–MySQL–PHP (LAMP), MongoDB–Express–React–Node.js (MERN), T3 and Next.js–Vercel–Supabase may receive dated landscape entries. They should show request flow, state, trust boundaries, managed responsibility and coupling rather than act as endorsements.
 
@@ -295,7 +314,7 @@ Named stack profiles such as Linux–Apache–MySQL–PHP (LAMP), MongoDB–Expr
 - Structured logging, correlation and trace context
 - Metric cardinality, telemetry sampling and sensitive data
 - Tail latency, queueing, saturation and load testing
-- Runbooks, automation and manual recovery paths
+- Runbooks, automation and manual recovery paths, including prerequisites, expected observations, stopping conditions, rollback, escalation and rehearsal
 - Redundancy, shared failure domains and failover exercises
 - Recovery point and recovery time objectives
 - Chaos and resilience testing
@@ -334,16 +353,18 @@ OpenTelemetry, Prometheus, Grafana, Datadog, New Relic, Sentry, Splunk, Elastic,
 - Cross-site scripting, cross-site request forgery and Content Security Policy
 - File upload handling, archive extraction and server-side request forgery
 - Secrets management, rotation and sensitive telemetry
-- Dependency provenance, signatures, checksums and bills of materials
+- Dependency provenance, attestations, signatures, checksums and bills of materials
 - Security testing and application-security verification
 - Privacy principles, data classification and impact assessments
 - Audit logging and forensic evidence
 
 ### Recognition and landscape
 
-*Landscape selection reviewed: 2026-07-17; verify current status before publication.*
+*Landscape selection reviewed: 2026-07-31; verify current status before publication.*
 
-Open Worldwide Application Security Project (OWASP), OWASP Top 10, OWASP Application Security Verification Standard, NIST, United Kingdom National Cyber Security Centre, Center for Internet Security, Cyber Essentials, common identity providers, password managers, passkeys, Dependabot, Snyk and software composition analysis.
+Open Worldwide Application Security Project (OWASP), OWASP Top 10, OWASP Application Security Verification Standard, NIST, United Kingdom National Cyber Security Centre, Center for Internet Security, Cyber Essentials, Open Source Security Foundation (OpenSSF), Supply-chain Levels for Software Artifacts (SLSA), common identity providers, password managers, passkeys, Dependabot, Snyk and software composition analysis.
+
+Treat OpenSSF as an institution and SLSA as one current framework for reasoning about software-artefact provenance, not as proof that a dependency or build is secure. Planning references: [OpenSSF: About](https://openssf.org/about/) and the versioned [SLSA specification](https://slsa.dev/spec/).
 
 **Boundary:** security mechanisms live here; the legal and assurance categories surrounding them live in Chapter 11.
 
@@ -382,7 +403,9 @@ Figma, Storybook, Google Analytics, PostHog, Mixpanel, Amplitude, feature-flag a
 
 **Related practitioner stories:** Joel Spolsky's *Iceberg Secret* can illustrate the invisible work beneath a polished demonstration; *Five Worlds* can illustrate that advice depends on product context.
 
-**Boundary:** implementation accessibility belongs here as a user outcome and is cross-linked from Chapter 4; organisational commitments and legal duties live in Chapter 11.
+**Related delivery heuristics:** introduce INVEST as a compact check on user-story quality and SMART as a family of checks on goals, objectives or tasks inside the first-pass discussion of requirements, stories and acceptance criteria. Treat both as prompts for conversation rather than proof that the story or objective is valuable or correct. State which expansion is being used because SMART has several established variants. Planning references: Bill Wake's original [INVEST in Good Stories, and SMART Tasks](https://xp123.com/invest-in-good-stories-and-smart-tasks/) and George T. Doran's 1981 article record, [*There's a S.M.A.R.T. Way to Write Management's Goals and Objectives*](https://openurl.ebsco.com/contentitem/gcd%3A6043491).
+
+**Boundary:** implementation accessibility belongs here as a user outcome and is cross-linked from Chapter 4; organisational commitments and legal duties live in Chapter 11. Organisation-wide product leadership, portfolio management, delivery management and market or business operations belong to TLB Volume 2.
 
 ## 11. Governance, compliance and commercial readiness
 
@@ -390,7 +413,7 @@ Figma, Storybook, Google Analytics, PostHog, Mixpanel, Amplitude, feature-flag a
 
 ### First pass
 
-1. Ownership, accountability and risk management
+1. Governance and management, ownership, accountability and risk management
 2. Laws, standards, certification schemes, assurance reports and frameworks
 3. Policies, controls, evidence, change management and auditability
 4. Data-protection roles, agreements and impact assessment
@@ -410,16 +433,22 @@ Figma, Storybook, Google Analytics, PostHog, Mixpanel, Amplitude, feature-flag a
 - Software bills of materials, Software Package Data Exchange (SPDX) and CycloneDX
 - Sector-specific obligations and regulated roles
 - Service commitments, remedies and evidence periods
+- Capability and maturity models, staged assessments and the evidence behind ratings
+- Information-technology service management, service ownership and continual improvement
 
 ### Recognition and landscape
 
-*Landscape selection reviewed: 2026-07-17; verify current status before publication.*
+*Landscape selection reviewed: 2026-07-31; verify current status before publication.*
 
-International Organization for Standardization, International Electrotechnical Commission, American Institute of Certified Public Accountants, United Kingdom National Cyber Security Centre, Information Commissioner's Office, PCI Security Standards Council, Cloud Security Alliance, regulators, accreditation bodies, certification bodies and independent auditors.
+International Organization for Standardization, International Electrotechnical Commission, American Institute of Certified Public Accountants, United Kingdom National Cyber Security Centre, Information Commissioner's Office, PCI Security Standards Council, Cloud Security Alliance, CMMI, COBIT, ISO/IEC 38500, ITIL, ISO/IEC 20000, regulators, accreditation bodies, certification bodies and independent auditors.
+
+Teach maturity and capability models as the durable concept; use CMMI only as a named example and do not imply that a rating proves product quality. Distinguish organisational maturity from capability in an individual practice area, and verify the current level definitions before publication. Planning references: [CMMI levels](https://cmmiinstitute.com/learning/appraisals/levels) and [ISO/IEC 33001 process-assessment concepts](https://www.iso.org/standard/54175.html).
+
+Teach information-technology governance and service management before naming their frameworks. Planning references: [ISO/IEC 38500:2024 governance of IT](https://www.iso.org/standard/81684.html), [ISACA's COBIT overview](https://www.isaca.org/resources/cobit), the [ISO/IEC JTC 1/SC 40 overview of IT service management and ISO/IEC 20000](https://committee.iso.org/home/jtc1sc40) and the official [ITIL framework overview](https://www.peoplecert.org/Organizations/Certifications/ITIL-Corporate-Framework).
 
 Current schemes and organisations may receive dated entries. Always state whether an item is law, guidance, a standard, a certification scheme, a control framework or an assurance report.
 
-**Boundary:** technical controls live in Chapters 7–9; this chapter explains applicability, governance, evidence and external trust.
+**Boundary:** technical controls live in Chapters 7–9; this chapter explains the applicability, governance, evidence and external trust required around a software product. Organisation-wide technology governance, workplace information technology, service management, budgets, sourcing and leadership belong canonically to TLB Volume 2; named frameworks may remain here for recognition where they help a software builder understand an external obligation or assurance request.
 
 ## 12. Artificial intelligence-assisted engineering
 
@@ -444,6 +473,7 @@ Current schemes and organisations may receive dated entries. Always state whethe
 - Test sets, graders, human evaluation and production feedback
 - Reproducibility, model updates and provider drift
 - Copyright, licensing and generated-code provenance
+- Artificial intelligence-generated documentation, source grounding, factual verification, tested examples, version scope and sensitive-data control
 - Local models, hosted models and hardware requirements
 - Artificial intelligence incident handling and abuse monitoring
 - Model application programming interface, retrieval and agent stack profiles
@@ -455,6 +485,8 @@ Current schemes and organisations may receive dated entries. Always state whethe
 OpenAI, Anthropic, Google Gemini, Meta Llama, GitHub Copilot, Cursor, Claude Code, Codex, model APIs, local inference runtimes, vector databases and evaluation platforms.
 
 The canonical distinction is not whether artificial intelligence wrote the code. It is whether the person responsible can independently model, inspect, constrain, verify and recover the system. TFB supplies mechanism awareness and escalation cues, not proof of correctness.
+
+Apply the same distinction to generated documentation. Artificial intelligence can draft, translate and restructure prose cheaply, but fluency and controlled language do not prove that a claim, command, interface, citation or version is correct. Require a responsible owner, authoritative sources, review against code, configuration, schemas and observed behaviour, testing of commands and examples, and proportionate provenance and disclosure. Planning references: [Microsoft's principles for AI-generated documentation](https://learn.microsoft.com/en-us/principles-for-ai-generated-content) and the [NIST Generative Artificial Intelligence Profile](https://doi.org/10.6028/NIST.AI.600-1).
 
 **Boundary:** ordinary programming, testing, security, delivery and operations remain canonical in their earlier chapters and are cross-linked rather than redefined here.
 
@@ -498,6 +530,20 @@ Humorous and historical terms are welcome when they help a reader remember a rea
 
 **Boundary:** named results with a clear technical home are taught in that chapter and may be collected here only as cross-links. Chapter 13 supplies cross-cutting judgement rather than becoming a miscellaneous bin.
 
+## Reference guides
+
+Reference guides consolidate navigation without becoming additional canonical explanations or an exhaustive bibliography.
+
+### Institutions and sources of authority
+
+Plan a reader-facing index organised by function and domain rather than prestige. Distinguish standards bodies, public authorities, regulators, open-source foundations, framework owners, professional bodies, certification and accreditation bodies, and commercial vendors. Each retained entry should state what the organisation publishes or governs, why a builder may encounter it, what authority it does and does not have, its canonical TFB context and an official source. Apply the living-landscape review rule where ownership, scope or status can change.
+
+### Curated further reading
+
+Plan a thematic guide to the strongest books, courses, standards, specifications and maintained online resources. Use practical priority labels such as **Start here**, **Continue** and **Reference**, with a short explanation of the value, level and limitations of each item. Select from the strongest per-entry reading rather than copying every chapter list or publishing a comprehensive canon. Verify editions, links and current scope before inclusion.
+
+The completed pages should live under `reference/` and link back to canonical chapters and entries. Chapter explanations and their local further-reading lists remain authoritative for context; reference guides provide alternative ways to browse them.
+
 ## Whole-guide dependency spine
 
 The guide supports selective browsing, but the first-pass traversal has a useful dependency direction:
@@ -507,7 +553,7 @@ The guide supports selective browsing, but the first-pass traversal has a useful
 3. Networks and data provide the components used by architecture.
 4. Architecture explains what infrastructure deploys and operations observes.
 5. Security, product and governance apply constraints and purpose across the whole system.
-6. Artificial intelligence-assisted engineering reuses all preceding controls rather than replacing them.
+6. Artificial intelligence-assisted engineering reuses all preceding controls rather than replacing them; its material consequences also appear throughout the earlier chapters.
 7. Laws and judgement provide compact cross-links across every chapter.
 
 Cross-links should allow a reader to enter anywhere without requiring strict sequential study.
@@ -522,4 +568,4 @@ Every product, vendor, organisation, protocol status, standard edition or scheme
 4. broken or superseded references;
 5. whether the name still deserves space for the target reader.
 
-Automation may later identify stale review dates and changed links. Human editorial judgement remains responsible for whether a current item still belongs.
+An automatic maintenance harness may later identify stale review dates, changed links, new editions, renamed products, deprecations and source changes, and may propose bounded updates. Human editorial judgement remains responsible for interpreting the evidence, approving the wording and deciding whether a current item still belongs.

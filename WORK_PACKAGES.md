@@ -4,6 +4,8 @@ Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-18
 
 These are bounded drafting and integration batches for publication to the `digital-mercenaries-ltd/technical-foundations-for-builders` GitHub issue tracker after Milestone 2 approval. They are not a required reading order.
 
+These packages cover TFB Volume 1 only. The planned TLB Volume 2 will receive separate work packages after its audience, outline and disclosure tiers are approved. DRC is maintained as a separate project and has no deliverables in this file.
+
 Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) and the tier assignments in [OUTLINE.md](OUTLINE.md). Research, drafting and critique should be performed by different agents or contributors where practical.
 
 ## Shared definition of done
@@ -11,6 +13,7 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 - Private research notes identify durable claims, current landscape claims and suitable sources; public deliverables contain only edited conclusions and appropriate source links.
 - Each topic retains its assigned disclosure tier and canonical home.
 - First-pass prose establishes mechanics, relevance and pitfalls without becoming a tutorial.
+- Each cluster considers whether AI-assisted or agentic work materially changes behaviour, visibility, evidence or responsibility; include the consequence where useful and omit formulaic AI commentary where it does not.
 - Current products, organisations, standards and schemes include an ISO 8601 review date where staleness matters.
 - Jargon and historical material explain the mechanism and context behind the memorable name.
 - Internal links, anchors and document structure pass `python3 scripts/check_docs.py`.
@@ -178,8 +181,14 @@ Each row is an independently publishable issue. Its exact topic list is the corr
 | **WP-F12** | Chapter 12 further territory and artificial intelligence landscape profiles | WP-14 |
 | **WP-F13** | Chapter 13 further territory, cross-links and cultural asides | WP-15 |
 
+### WP-16: Build consolidated reference guides
+
+**Depends on:** WP-01 through WP-15. It may begin from approved chapters, but final selection waits for whole-guide coverage to be visible.
+
+**Scope:** create `reference/institutions-and-authorities.md` and `reference/further-reading.md` from reviewed public material and verified sources. Organise institutions by role and domain, and distinguish their authority and outputs. Curate learning resources by theme using **Start here**, **Continue** and **Reference** priorities. Link to canonical TFB entries, avoid duplicated explanations and comprehensive catalogues, apply review dates where required, and do not publish raw research or acquisition inventories.
+
 ### WP-17: Whole-guide integration and currentness review
 
-**Depends on:** WP-01 through WP-15 and WP-F03 through WP-F13.
+**Depends on:** WP-01 through WP-16 and WP-F03 through WP-F13.
 
-**Scope:** check dependency flow, canonical ownership, glossary coverage, repeated definitions, current landscape dates, link health and the size of the first traversal.
+**Scope:** check dependency flow, canonical ownership, glossary coverage, repeated definitions, reference-guide consistency, material agentic consequences across all chapters, TFB/TLB/DRC boundaries, current landscape dates, link health and the size of the first traversal.

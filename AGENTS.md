@@ -4,16 +4,29 @@
 
 - Public name: **Technical Foundations for Builders**
 - Informal abbreviation: **TFB**
+- Volume role: **Volume 1**, focused on trustworthy software systems
+- Planned companion: **Technical Leadership for Builders** (TLB), Volume 2
+- Separate related project: **Delivery Risk Cube** (DRC)
 - GitHub repository: `technical-foundations-for-builders`
 - Site identity: use a descriptive name such as `foundationsforbuilders`; do not rely on `tfb` alone.
 
 ## Project intent
 
-Build **Technical Foundations for Builders**: a breadth-first map of the computing, engineering, product, and operational concepts needed to build trustworthy production software, with or without AI.
+Build **Technical Foundations for Builders**: a breadth-first map of the computing, engineering, product and operational concepts needed to build trustworthy production software in a world where AI assistance and agentic engineering are normal.
 
-The guide is for founders, solo builders, and other self-taught people who can already ship software but have not yet built the broad mental models usually gained through a computer-science education and years of production experience. Its immediate audience is the non-technical “vibe coder”; technically experienced people using the same tools are better described here as practising agentic engineering.
+The guide is for founders, solo builders and other self-taught people who can already ship software but have not yet built the broad mental models usually gained through a computer-science education and years of production experience. Its immediate audience includes the non-technical or newly technical “vibe coder”. It should also remain useful to journeyman developers, solopreneurs and sole technical contributors whose experience is deep in some areas but incomplete across the whole production landscape. Technically experienced people using the same tools are better described here as practising agentic engineering.
 
 The goal is awareness and better judgement, not mastery. TFB helps readers discover their unknown unknowns. Once aware of a concept or risk, they are better able to investigate it with AI, documentation or professional help. Readers should learn what a concept is, why it exists, where it fits, when it matters, what evidence would matter and when they need deeper help. Awareness is not proof that a system is correct.
+
+## Project family and audiences
+
+Read [PROJECT_FAMILY.md](PROJECT_FAMILY.md) before changing scope, audience or the relationship between the works.
+
+- **TFB** explains the technical territory beneath trustworthy software systems.
+- **TLB** is the planned Volume 2 about carrying the wider technical function of a small organisation.
+- **DRC** is a separate project that frames which imbalance or missing evidence deserves attention before the next commitment.
+
+The existing chapter outline and milestones govern TFB Volume 1. Do not add TLB's organisational territory to the current 13-chapter traversal. Give TLB its own outline and execution plan after its audience and promise receive a separate editorial review. DRC may be introduced as a useful lens, but it is not TFB's organising structure.
 
 ## Editorial principles
 
@@ -24,19 +37,20 @@ The goal is awareness and better judgement, not mastery. TFB helps readers disco
 - Teach production thinking: correctness, reliability, security, performance, maintainability, operability, recoverability, and compliance.
 - Teach each concept superficially: explain its basic mechanics and use a few headline examples, while omitting obscure detail.
 - Use plain language, diagrams where useful, pitfalls, and relevant links embedded throughout the prose.
-- Be relevant to AI-assisted builders without making AI tooling the centre of the guide.
+- Treat AI assistance and agentic engineering as a pervasive contemporary context. Keep their distinctive mechanisms canonical in the dedicated chapter, while explaining material consequences in any chapter where they change behaviour, risk, evidence or responsibility.
 - Curate a few strong references instead of collecting every available resource.
-- Treat the guide as a maintained living document. Date and periodically review material whose accuracy depends on current products, organisations, standards or practice.
+- Treat the guide as a maintained living document. Include useful current practice, date material whose accuracy depends on products, organisations, standards or practice, and allow automation to propose currentness updates without delegating editorial judgement to it.
 - Use memorable laws, practitioner stories and hacker folklore when they make a mechanism easier to remember. Explain the mechanism plainly and do not make humour carry the factual burden.
 
 ## Information architecture
 
-1. **Repository overview:** `README.md` explains the purpose and makes the whole territory visible without exposing the complete inventory.
-2. **Editorial outline:** `OUTLINE.md` records the canonical home and disclosure tier of retained topics.
-3. **First-pass chapter pages:** `chapters/` provides a breadth-first traversal through a deliberately limited selection of properly explained concepts.
-4. **Further territory:** `further/` provides optional awareness-level entries that are useful but not required for the first traversal.
-5. **Recognition and landscape material:** short mentions, current products, organisations, schemes, laws and cultural terms appear where they make another concept easier to recognise.
-6. **Glossary:** `GLOSSARY.md` gives short definitions and links back to canonical entries.
+1. **Project family:** `PROJECT_FAMILY.md` defines the distinct promises and boundaries of TFB, TLB and DRC.
+2. **Repository overview:** `README.md` explains the purpose and makes the whole territory visible without exposing the complete inventory.
+3. **Editorial outline:** `OUTLINE.md` records the canonical home and disclosure tier of retained topics.
+4. **First-pass chapter pages:** `chapters/` provides a breadth-first traversal through a deliberately limited selection of properly explained concepts.
+5. **Further territory:** `further/` provides optional awareness-level entries that are useful but not required for the first traversal.
+6. **Recognition and landscape material:** short mentions, current products, organisations, schemes, laws and cultural terms appear where they make another concept easier to recognise.
+7. **Glossary:** `GLOSSARY.md` gives short definitions and links back to canonical entries.
 
 Likely domains include computing, programming, software engineering, architecture and systems, web and networking, data, infrastructure and delivery, security and privacy, operations and reliability, product and analytics, governance and compliance, AI-assisted engineering, and laws and principles.
 
@@ -87,7 +101,7 @@ Use the standard `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-hum
 
 ### Domain docs
 
-Treat this as a single-context repository. Use root-level domain documentation and system-wide architecture decisions if they are added later. See `docs/agents/domain.md`.
+Treat TFB and the planned TLB as bounded editorial contexts within one project family. The current repository content remains the TFB context until a separate TLB structure is approved. See `docs/agents/domain.md`.
 
 ## Scope guardrails
 
@@ -95,6 +109,9 @@ Treat this as a single-context repository. Use root-level domain documentation a
 - Do not assume that a working prototype is production-ready.
 - Do not prescribe depth where awareness and a warning sign are sufficient.
 - Do not organise the initial guide around tasks, practical paths, or checklists.
+- Do not reorganise TFB around the Delivery Risk Cube or treat the cube as a universal lifecycle, maturity model or completion score.
+- Do not treat artificial intelligence as relevant only to Chapter 12, or repeat generic AI commentary when it does not materially change a concept.
+- Do not absorb general information technology, organisational technology leadership or the whole accidental-chief-technology-officer role into TFB Volume 1; those belong to the planned TLB context.
 - Do not begin implementation planning until the project intent and audience are confirmed.
 
 Historical checklists such as the Joel Test may appear as clearly labelled artefacts after their underlying concepts have been explained. They are not TFB's organising structure or proof of readiness.

@@ -2,7 +2,7 @@
 
 **A breadth-first guide to the ideas behind trustworthy modern software.**
 
-Technical Foundations for Builders (TFB) is for people who can build and ship software - often with artificial intelligence (AI) assistance - but have not yet encountered the breadth of concepts that experienced engineers use to reason about it.
+Technical Foundations for Builders (TFB) is for people who can build and ship software—often with artificial intelligence (AI) assistance or coding agents—but have not yet encountered the breadth of concepts that experienced engineers use to reason about it.
 
 The problem TFB addresses is not a shortage of tutorials. It is **not knowing what you do not know**. If you have never heard of safe repetition, protection between simultaneous data changes, limiting the reach of a failure or granting only necessary access, you cannot recognise when those ideas matter or ask useful questions about them. Engineers give these ideas names such as *idempotency*, *transaction isolation*, *blast radius* and *least privilege*.
 
@@ -14,7 +14,7 @@ Awareness is only the beginning. Knowing that authentication matters is differen
 
 ## Who this is for
 
-TFB is primarily written for a non-technical or newly technical builder who already has a real project: a founder, operator, domain expert or self-taught developer using AI to create software.
+TFB is primarily written for a non-technical or newly technical builder who already has a real project: a founder, operator, domain expert or self-taught developer using AI to create software. It should also remain useful to journeyman developers, solopreneurs and sole technical contributors who can ship but have uneven exposure to the wider production landscape.
 
 In this guide:
 
@@ -22,6 +22,16 @@ In this guide:
 - **Agentic engineering** means using AI agents as part of an engineering process while bringing existing technical judgement to the work.
 
 Both groups can use TFB, but it is the first group that most needs help exposing blind spots. Once a builder knows that a concept exists, project-aware AI can help explain where it appears and how to investigate it. AI output is the start of that investigation, not proof that the system is correct.
+
+AI-assisted work is the guide's contemporary context, not an appendix that replaces established engineering. The same underlying constraints still govern state, latency, data integrity, security, operability, recovery, cost and accountability. TFB explains those durable mechanisms and, wherever it materially matters, how agentic methods change their application, visibility or risk.
+
+## The wider project family
+
+TFB is Volume 1: the map of the software system and the ideas needed to make it trustworthy. The planned **Technical Leadership for Builders** (TLB) companion will be Volume 2: a map of the wider technical function carried by a solopreneur, sole technical employee, technical lead or accidental chief technology officer. TLB will cover organisational responsibilities such as technology strategy, product ownership, delivery, workplace information technology, business systems, governance, sourcing, budgets and continuity without inflating TFB's software-focused traversal.
+
+The **Delivery Risk Cube** (DRC) is being developed as a separate but related decision framework. It asks whether a project's functional breadth, implementation fidelity and production-quality evidence have the right shape for its next commitment. DRC provides a decision lens; TFB supplies many of the technical explanations beneath it.
+
+[Read the project-family boundaries](PROJECT_FAMILY.md).
 
 ## What belongs in TFB
 
@@ -185,6 +195,7 @@ Experienced practitioners use compact models to notice recurring patterns in sys
 
 ## Supporting documents
 
+- [Project family](PROJECT_FAMILY.md) - audiences and boundaries for TFB, TLB and DRC.
 - [Tiered content outline](OUTLINE.md) - canonical chapter boundaries, first-pass selections and further territory.
 - [Glossary](GLOSSARY.md) - short definitions linked to canonical entries.
 - [Style guide](STYLE_GUIDE.md) - the editorial contract for contributors and agents.

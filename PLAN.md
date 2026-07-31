@@ -4,9 +4,17 @@ Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-18
 
 ## 1. Objective
 
-Create a broad, concise, contextual guide that helps non-technical builders discover the concepts and mental models they do not yet know to ask about.
+Create a broad, concise, contextual guide that helps AI-assisted builders discover the concepts and mental models they do not yet know to ask about, while remaining useful to self-taught and journeyman developers whose technical breadth is uneven.
 
 Technical Foundations for Builders (TFB) should teach each concept superficially enough to establish a useful initial mental model. It should explain basic mechanics and headline examples, then direct the reader to related concepts and stronger resources for depth. It is not a task-oriented manual or a route to mastery.
+
+AI and agentic engineering are a pervasive contemporary context. The plan retains durable engineering mechanisms as the connective tissue, adds current agentic consequences where they materially change behaviour or responsibility, and maintains time-sensitive landscape material rather than avoiding it.
+
+### 1.1 Project-family boundary
+
+This execution plan governs TFB Volume 1 and its current 13-chapter software-focused traversal. The planned **Technical Leadership for Builders** (TLB) Volume 2 remains part of the same project family but will receive its own outline, disclosure tiers and execution plan after a separate scope review. Do not add TLB's organisation-wide technology strategy, workplace information technology, business systems, budgets, sourcing or leadership territory to the current milestones.
+
+The **Delivery Risk Cube** (DRC) is a separate project. TFB may explain and reference it as a decision lens, but DRC's argument, case studies, assessment method and possible book or tools are not deliverables of this plan. See [PROJECT_FAMILY.md](PROJECT_FAMILY.md).
 
 ## 2. Initial delivery architecture
 
@@ -15,6 +23,7 @@ Keep the first version as GitHub-native Markdown:
 ```text
 README.md
 AGENTS.md
+PROJECT_FAMILY.md
 PLAN.md
 STYLE_GUIDE.md
 GLOSSARY.md
@@ -28,6 +37,9 @@ further/
   01-<chapter-name>.md
   02-<chapter-name>.md
   ...
+reference/
+  institutions-and-authorities.md
+  further-reading.md
 reviews/
   milestone-<number>-audit.md
 scripts/
@@ -35,6 +47,8 @@ scripts/
 ```
 
 `README.md` is the reader-facing map of the guide. It should make the whole territory visible without displaying the complete concept inventory. `OUTLINE.md` is the editorial source of truth for chapter boundaries, disclosure tiers and canonical homes. Each concept has one canonical entry within a first-pass or further-territory chapter file. Other mentions link to that entry instead of duplicating its explanation.
+
+The `reference/` pages are reader-facing indexes, not additional disclosure tiers or canonical explanations. They consolidate institutions, sources of authority and a deliberately small thematic reading guide while linking back to the concepts that give each item context.
 
 Use standard Markdown links such as `[binary](further/01-computing-foundations.md#binary-numbers)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
 
@@ -227,7 +241,10 @@ Acceptance gate: all planned concepts have a reviewed first draft and a canonica
 
 - Review the complete guide as one connected mental model.
 - Find gaps, unnecessary overlap, contradictory definitions, orphaned concepts, and poorly grounded jargon.
+- Review every chapter for material AI-assisted and agentic consequences instead of treating Chapter 12 as the only relevant location.
+- Check that TFB, TLB and DRC boundaries remain clear and that cross-references do not duplicate canonical explanations.
 - Complete cross-links and the glossary.
+- Build the planned institutions-and-authorities and curated-further-reading reference guides from reviewed chapter material.
 - Recheck source authority, accessibility, durability, and link health.
 - Tighten for brevity without removing essential mechanics, context, examples, or pitfalls.
 
@@ -238,6 +255,7 @@ Acceptance gate: the guide is coherent and browsable as a whole, not merely a co
 - Complete final editorial, factual, and repository checks.
 - Add concise contribution and maintenance guidance.
 - Configure continuous link and Markdown checks on pull requests.
+- Establish a reviewed currentness workflow that can use automation to flag stale dates, links, versions, products and standards without publishing unattended editorial changes.
 - Publish the approved Markdown repository and create an initial tagged release.
 - Record deferred ideas separately; do not add a site generator or practical guide layer during release hardening.
 
@@ -256,6 +274,7 @@ A concept entry is ready only when:
 - further reading is small, relevant, and credible;
 - factual claims are supported by suitable sources;
 - it does not duplicate another entry's canonical explanation;
+- it considers whether AI-assisted or agentic work materially changes the mechanism, risk, evidence or responsibility and explains that consequence when useful;
 - removing more text would damage the reader's initial mental model.
 
 ### 7.1 Current landscape item
