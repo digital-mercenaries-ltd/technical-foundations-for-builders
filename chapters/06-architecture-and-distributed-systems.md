@@ -32,7 +32,7 @@ For an order system, a context view might show customers and staff using the sys
 
 ### Why a builder needs to know this
 
-A useful view exposes dependencies, responsibility and change impact. It can reveal that a local-looking feature now depends on a remote provider, queue or background worker. This matters in AI-assisted work because generated code and configuration can add such dependencies before the responsible builder has formed a model of them. The evidence should come from the code, configuration and deployed resources; a plausible diagram inferred from filenames is not proof of the running architecture.
+A useful view exposes dependencies, responsibility and change impact. It can reveal that a local-looking feature now depends on a remote provider, queue or background worker. This matters in artificial intelligence (AI)-assisted work because generated code and configuration can add such dependencies before the responsible builder has formed a model of them. The evidence should come from the code, configuration and deployed resources; a plausible diagram inferred from filenames is not proof of the running architecture.
 
 ### Pitfalls
 
@@ -110,7 +110,7 @@ Kubernetes distinguishes interchangeable stateless workloads from workloads requ
 
 In a **synchronous call**, the caller waits for a response or failure before continuing the dependent path. In **asynchronous messaging**, a producer hands off a message without requiring the final work to finish before it proceeds. The latter can separate availability and timing, but replaces an immediate answer with questions about hand-off durability, backlog, duplicates, order and eventual outcome.
 
-A **queue** holds messages until consumers claim and acknowledge work. It can distribute tasks and absorb a short mismatch between production and consumption rates, but it cannot make capacity infinite. A **stream** is a continuing, often retained sequence of records that consumers can read at their own positions and sometimes replay. Ordering may apply only within a key or partition rather than across the whole stream.
+A **queue** holds messages pending processing. Many brokered queues let consumers claim work and acknowledge completion, but removal and redelivery semantics vary. A queue can distribute tasks and absorb a short mismatch between production and consumption rates, but it cannot make capacity infinite. A **stream** is a continuing, often retained sequence of records that consumers can read at their own positions and sometimes replay. Ordering may apply only within a key or partition rather than across the whole stream.
 
 An **event** records that something happened; a **command** asks for something to happen. In the order system, `OrderPlaced` describes a past fact, while `DispatchOrder` requests an action. Using event language does not remove authority or delivery questions. The [CloudEvents specification](https://github.com/cloudevents/spec/blob/main/cloudevents/spec.md) standardises common event metadata, not the business meaning or delivery guarantee.
 
@@ -194,7 +194,7 @@ After an uncertain payment result, the safe next step might be to query by opera
 
 ### What they are
 
-A **deadline** is the point after which an overall result is no longer worth waiting for. A **timeout** bounds one wait or phase. With two seconds for checkout, the order component cannot spend the full two seconds waiting for payment and still have time to record or return an honest outcome. Each downstream call receives the remaining budget rather than a fresh full allowance.
+A **deadline** is the point after which an overall result is no longer worth waiting for. A **timeout** bounds one wait or phase. With two seconds for checkout, the order component cannot spend the full two seconds waiting for payment and still have time to record or return an honest outcome. Each downstream call should receive the remaining budget rather than a fresh full allowance.
 
 ```mermaid
 flowchart LR
@@ -205,9 +205,9 @@ flowchart LR
 
 The diagram shows a shrinking end-to-end budget. Expiry at one layer does not automatically stop work or reverse effects elsewhere.
 
-**Cancellation** asks abandoned work and its downstream calls to stop, but code must co-operate; it is not guaranteed interruption or rollback. A **retry** spends more time and capacity on another attempt. Bounded attempts, exponential backoff and random **jitter** can prevent clients from retrying together, but retries at several layers can multiply one request into many. The [Amazon Builders' Library](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) connects these mechanisms and their overload risk.
+**Cancellation** asks abandoned work and its downstream calls to stop, but code must co-operate; it is not guaranteed interruption or rollback. A **retry** spends more time and capacity on another attempt. Bounded attempts, exponential backoff and random **jitter** can reduce the chance of clients retrying together, but retries at several layers can multiply one request into many. The [Amazon Builders' Library](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) connects these mechanisms and their overload risk.
 
-An operation is **idempotent** when repeating it has the same intended effect as doing it once within a defined scope. A server might record a unique operation key with a payment outcome and return that outcome for repeats. This can protect an uncertain retry, but it does not make repeated work free or guarantee success. [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2) defines idempotent HTTP methods and limits when clients may retry automatically.
+An operation is **idempotent** when repeating it has the same intended effect as doing it once within a defined scope. A server might record a unique operation key with a payment outcome and return that outcome for repeats. The receiving system must bind the key to the operation and matching parameters, then use one authoritative record to co-ordinate concurrent attempts; adding a key to a request changes nothing by itself. This can protect an uncertain retry, but it does not make repeated work free or guarantee success. [Request for Comments (RFC) 9110](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2) defines idempotent Hypertext Transfer Protocol methods and limits when clients may retry automatically.
 
 ### Why a builder needs to know this
 
@@ -250,7 +250,7 @@ Defaults can be hidden in generated clients, gateways and software development k
 
 A **consistency model** describes the observations a system permits: whether a completed write must be visible to a later read, whether readers can temporarily see different versions and how concurrent writes are ordered. “Strong” and “eventual” name families of guarantees, not complete product requirements.
 
-The consistency, availability and partition tolerance (**CAP**) result is often shortened misleadingly to “pick any two”. Its useful first-pass claim applies during a partition: a replicated data system cannot both respond without error to every request and preserve the single-copy consistency property formalised by the theorem. Gilbert and Lynch explain the theorem's scope in [*Perspectives on the CAP Theorem*](https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer2.pdf). This consistency is also different from **ACID consistency**, which means that a committed database transaction preserves valid-state rules.
+The consistency, availability and partition tolerance (**CAP**) result is often shortened misleadingly to “pick any two”. Its useful first-pass claim applies during a partition: a replicated data system cannot guarantee both that every request received by a non-failing component eventually gets a non-error response and that all operations behave as though they use one current copy. Gilbert and Lynch explain the theorem's scope in [*Perspectives on the CAP Theorem*](https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer2.pdf). This consistency is also different from **atomicity, consistency, isolation and durability (ACID) consistency**, which means that a committed database transaction preserves valid-state rules.
 
 ### Why a builder needs to know this
 
@@ -276,7 +276,7 @@ The same matters when an agent reads stale state and then issues a conflicting w
 
 - Consensus, leader election and quorums - agreeing on ordered state across independently failing components.
 - Read-your-writes and causal consistency - consistency models tied to a user's or operation's prior observations.
-- PACELC - considering latency and consistency trade-offs during ordinary operation as well as partitions.
+- Partition: availability or consistency; else: latency or consistency (PACELC) - considering latency and consistency trade-offs during ordinary operation as well as partitions.
 
 ### Further reading
 
@@ -290,7 +290,7 @@ The same matters when an agent reads stale state and then issues a conflicting w
 
 ### What they are
 
-A **load balancer** chooses among eligible workers using routing, health and load information. It can spread uneven demand and avoid an evidently failed worker, but it does not create capacity. Moving work away from one worker can overload the survivors.
+A **load balancer** chooses among eligible workers using some combination of routing, health and load information. It can spread uneven demand and avoid an evidently failed worker, but it does not create capacity. Moving work away from one worker can overload the survivors.
 
 **Admission control** rejects or defers work before it consumes more scarce resources. A **rate limit** bounds use over time or by client, operation or product. A **bounded queue** caps waiting work so that overload becomes an explicit rejection or drop policy rather than unbounded memory and delay. **Backpressure** communicates downstream capacity towards producers so they slow, pause or fail early.
 
@@ -331,6 +331,6 @@ One user request can fan out into several service, model and tool calls, each wi
 
 ## Chapter status
 
-The Chapter 6 first-pass draft covers the seven entries selected in the approved outline. Further architecture-modelling, distributed-coordination and overload-control material remains optional and will be added only where it improves awareness without overloading the main traversal.
+The researched and independently reviewed Chapter 6 first-pass draft covers the seven entries selected in the approved outline. It is awaiting owner review. Further architecture-modelling, distributed-coordination and overload-control material remains optional and will be added only where it improves awareness without overloading the main traversal.
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 6 plan](../OUTLINE.md#6-architecture-and-distributed-systems)
