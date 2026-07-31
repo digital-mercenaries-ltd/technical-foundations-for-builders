@@ -6,6 +6,8 @@ status: working reference
 scope: source-first synthesis of prior project discussions
 ---
 
+<!-- markdownlint-disable MD025 MD029 -->
+
 # Foundational Resources, Laws, Heuristics and Mental Models for Agentic Software Delivery
 
 ## 1. Purpose and scope
@@ -56,7 +58,7 @@ A mature harness should retrieve and reconcile several such cards rather than bl
 ## 3. Resource map at a glance
 
 | Resource family | Main contribution | Typical use in an agentic harness |
-|---|---|---|
+| --- | --- | --- |
 | Pragmatic software craft | Everyday judgement, feedback, adaptability and maintainability | General implementation and review prompts |
 | Refactoring and code quality | Change mechanics, code smells and test-supported improvement | Refactoring agents and maintainability critics |
 | Domain and enterprise architecture | Boundaries, models, integration and structural patterns | Architecture synthesis and decomposition |
@@ -137,7 +139,7 @@ Agentic use:
 - require language- and repository-specific conventions to override generic stylistic advice;
 - evaluate readability at the level of the whole change, not merely function length.
 
-### 4.4 *The Mythical Man-Month* — Frederick P. Brooks Jr.
+### 4.4 *The Mythical Man-Month* — Frederick P. Brooks Jr
 
 This contributes enduring observations about coordination, conceptual integrity and the limits of adding labour to late projects.
 
@@ -1078,7 +1080,7 @@ A harness seeking inventive solutions must expose these facts to the proposing a
 A useful checklist:
 
 | Dimension | Question |
-|---|---|
+| --- | --- |
 | Functional | Does it produce the required outcome? |
 | Numerical | How precise and stable must the result be? |
 | Temporal | Must it be correct immediately, eventually or by a deadline? |
@@ -1099,7 +1101,7 @@ A useful checklist:
 The harness should never retrieve a slogan and mechanically enforce it. Most useful principles have a counter-principle:
 
 | Principle | Counterweight or tension |
-|---|---|
+| --- | --- |
 | DRY | Avoid premature abstraction; tolerate local duplication |
 | YAGNI | Preserve options for expensive or irreversible change |
 | KISS | Do not externalise complexity onto users or operators |
