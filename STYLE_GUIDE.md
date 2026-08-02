@@ -121,6 +121,11 @@ Use for a named law, maxim or practitioner story that makes a mechanism memorabl
 
 Use for historical jargon or humour, including terms such as *heisenbug*, *yak shaving*, *bikeshedding* and *PEBKAC/PEBCAK*. Give the plain meaning and the real mechanism or behaviour behind the joke. Irreverence is acceptable; using a joke instead of investigating a system or interface failure is not.
 
+- Put the term in the chapter that owns its underlying mechanism; Chapter 13 may collect only recognition and cross-links.
+- Retain it only when the intended reader is reasonably likely to encounter it and it improves mechanism awareness, corrects a misunderstanding or helps them follow a technical conversation.
+- Label historical terminology as historical when it is no longer recommended practice.
+- Do not apply infrastructure metaphors such as *cattle* to people.
+
 ### Historical field checklist or case study
 
 Use a dated checklist or case when its original form is part of its value. Explain where it came from, distribute its underlying concepts to their canonical homes and state what has dated or requires qualification. A checklist is a conversation aid, not a certification or proof of readiness.
@@ -135,6 +140,7 @@ Use a reference guide to provide another route through material already selected
 - Give every retained item a short reason for inclusion and prefer official or primary links for identity and scope.
 - Use **Start here**, **Continue** and **Reference** when prioritisation helps; do not imply that every reader needs a linear curriculum.
 - Keep the selection deliberately small and apply review dates to current organisations, editions and maintained resources.
+- Treat the online reference page as the fuller living form. Select a concise, prioritised subset for printed appendices or back matter only after the chapters are visible.
 - Do not turn private research inventories, acquisition lists or raw source notes into public appendices.
 
 ## Depth and length

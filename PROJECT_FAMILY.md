@@ -46,6 +46,7 @@ TLB's unit of concern is the **organisation's technical capability**. Likely ter
 - product ownership, user research and experience;
 - planning, estimation, capacity, delivery and organisational change;
 - business systems, internal processes and integration;
+- application and service portfolio management, rationalisation and lifecycle;
 - workplace information technology, identity, devices and software-as-a-service administration;
 - data ownership, governance and organisational analytics;
 - security, privacy, compliance and external assurance;
@@ -105,3 +106,11 @@ Cross-reference rather than duplicate a full explanation. A topic may appear in 
 - **DRC use:** a Wardley map may supply optional context about dependencies, novelty and strategic movement before the next commitment. It is not a DRC axis, maturity score, risk register or substitute for technical and product evidence.
 
 Planning references: [GDS guidance on architecture decision records](https://gds-way.digital.cabinet-office.gov.uk/standards/architecture-decisions.html), [Wardley Mapping introduction](https://learnwardleymapping.com/introduction) and Simon Wardley's freely available [mapping book](https://learnwardleymapping.com/book/).
+
+### Gartner TIME application-portfolio model
+
+- **TLB canonical home:** teach the durable practice of application portfolio management: maintain an inventory, relate applications to business capabilities and users, assess business, technical and cost fitness, expose dependencies and lifecycle constraints, and make explicit investment and retirement decisions. Introduce Gartner's TIME model—**Tolerate, Invest, Migrate and Eliminate**—as one named categorisation framework, not as an automatic verdict or permanent label. Review decisions as needs, costs, risks and available alternatives change.
+- **TFB treatment:** recognition or an external cross-reference from legacy-system evolution, managed services, vendor coupling, portability and exit planning. TFB should explain the technical evidence that makes migration, continued operation or retirement safe, but should not absorb organisation-wide application inventory and portfolio governance.
+- **DRC use:** the intended TIME direction can help state the next commitment. DRC can then ask whether the project has an appropriate shape and evidence for that direction—for example, migration compatibility and rollback evidence or elimination, data-retention and dependency-removal evidence. A TIME category is not a DRC axis, maturity level, readiness score or substitute for validating the decision.
+
+Do not infer that **Migrate** means cloud migration or that **Eliminate** means immediate deletion. Migration may replace, consolidate or move a capability, while elimination requires deliberate user, dependency, data, contractual, compliance and recovery decisions. Planning references, reviewed 2026-07-31: [Gartner's public enterprise-applications overview of the TIME method and its fitness dimensions](https://www.gartner.com/en/information-technology/topics/enterprise-apps) and [SAP LeanIX's TIME framework overview](https://www.leanix.net/en/wiki/apm/gartner-time-model).

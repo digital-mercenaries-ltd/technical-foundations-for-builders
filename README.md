@@ -167,7 +167,7 @@ A deployed system still needs owners, evidence and recovery paths. This chapter 
 
 Security is the control of trust, authority and damage. This chapter introduces threat boundaries, authentication, authorisation, least privilege, cryptography, input and output trust, browser and file attacks, supply-chain risk and responsible handling of personal data.
 
-[Browse the tiered Chapter 9 plan](OUTLINE.md#9-security-privacy-and-identity)
+[Browse the tiered Chapter 9 plan](OUTLINE.md#9-security-privacy-and-identity) · [Use the authentication and credential-management reference](reference/authentication-and-credential-management.md)
 
 ### 10. Product, experience and analytics
 
@@ -195,6 +195,7 @@ Experienced practitioners use compact models to notice recurring patterns in sys
 
 ## Supporting documents
 
+- [Authentication and credential management](reference/authentication-and-credential-management.md) - four human account patterns with separate rules for memorised credentials, MFA, recovery and non-human identities.
 - [Project family](PROJECT_FAMILY.md) - audiences and boundaries for TFB, TLB and DRC.
 - [Tiered content outline](OUTLINE.md) - canonical chapter boundaries, first-pass selections and further territory.
 - [Glossary](GLOSSARY.md) - short definitions linked to canonical entries.

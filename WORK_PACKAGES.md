@@ -123,7 +123,7 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Depends on:** WP-08.
 
-**Scope:** environments, compute models, cloud and managed services, shared responsibility, artefacts, deployment safety, capacity, cost and exit planning. Include selected dated platform and stack profiles.
+**Scope:** environments, compute models, provider-neutral cloud primitives, cloud and managed services, shared responsibility, artefacts, infrastructure as code, deployment safety, capacity, cost and exit planning. Explain the boundaries among API gateways and adjacent edge components through the Chapter 4 cross-link, and recognise recurring technical building blocks for software-as-a-service products without absorbing organisation-wide SaaS administration. Include selected dated platform and stack profiles.
 
 ### WP-10: Draft Chapter 8 - operations, reliability and observability
 
@@ -149,7 +149,7 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Depends on:** WP-09 through WP-12.
 
-**Scope:** accountability, category distinctions, controls and evidence, data-protection governance, third parties, intellectual property, contracts, continuity and assurance. Verify jurisdiction, editions, scope and terminology.
+**Scope:** general risk management, accountability, category distinctions, controls and evidence, data-protection governance, third parties, intellectual property, contracts, continuity and assurance. Teach the objective-to-residual-risk loop and distinguish risk, issue, control, mitigation, remediation and contingency before applying it to particular risk domains. Verify jurisdiction, editions, scope and terminology.
 
 ## Modern practice and judgement packages
 
@@ -163,7 +163,7 @@ Every package must follow [PLAN.md](PLAN.md), [STYLE_GUIDE.md](STYLE_GUIDE.md) a
 
 **Depends on:** the canonical mechanisms in WP-01 through WP-14.
 
-**Scope:** sources of technical truth, leaky abstractions, evolution, organisations, incentives, simplicity and system effects. Collect cross-links to technical laws in their natural chapters. Use Hacker Laws, the Jargon File and Joel Spolsky as qualified source collections and practitioner context.
+**Scope:** sources of technical truth, leaky abstractions, evolution, organisations, incentives, simplicity and system effects. Collect cross-links to technical laws and cultural terminology in their natural chapters. Use Hacker Laws, the Jargon File and Joel Spolsky as qualified source collections and practitioner context. Retain folklore only when it improves recognition of a real mechanism or technical conversation, and qualify dated or harmful terminology.
 
 ## Whole-guide packages
 
@@ -189,7 +189,7 @@ Each row is an independently publishable issue. Its exact topic list is the corr
 
 **Depends on:** WP-01 through WP-15. It may begin from approved chapters, but final selection waits for whole-guide coverage to be visible.
 
-**Scope:** create `reference/institutions-and-authorities.md` and `reference/further-reading.md` from reviewed public material and verified sources. Organise institutions by role and domain, and distinguish their authority and outputs. Curate learning resources by theme using **Start here**, **Continue** and **Reference** priorities. Link to canonical TFB entries, avoid duplicated explanations and comprehensive catalogues, apply review dates where required, and do not publish raw research or acquisition inventories.
+**Scope:** maintain `reference/authentication-and-credential-management.md` and create `reference/institutions-and-authorities.md` and `reference/further-reading.md` from reviewed public material and verified sources. Keep the authentication page aligned with the Chapter 7 and Chapter 9 explanations, distinguish its four-pattern TFB synthesis from institutional requirements, and recheck its security-sensitive claims and dated product examples. Organise institutions by role and domain, and distinguish their authority and outputs. Curate learning resources by theme using **Start here**, **Continue** and **Reference** priorities. Use `docs/complete_software_engineer_canon_standards_refactored.csv` and `docs/foundational_resources_principles_agentic_sdlc.md` as editorial inputs, not automatic appendices; promote only deliberately selected, reader-facing material and review the files against the public/private research boundary. Maintain fuller living reference pages online and prepare only concise, prioritised selections for possible printed appendices or back matter after the chapters are visible. Link to canonical TFB entries, avoid duplicated explanations and comprehensive catalogues, apply review dates where required, and do not publish raw research or acquisition inventories.
 
 ### WP-17: Whole-guide integration and currentness review
 

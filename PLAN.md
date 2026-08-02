@@ -38,6 +38,7 @@ further/
   02-<chapter-name>.md
   ...
 reference/
+  authentication-and-credential-management.md
   institutions-and-authorities.md
   further-reading.md
 reviews/
@@ -48,7 +49,7 @@ scripts/
 
 `README.md` is the reader-facing map of the guide. It should make the whole territory visible without displaying the complete concept inventory. `OUTLINE.md` is the editorial source of truth for chapter boundaries, disclosure tiers and canonical homes. Each concept has one canonical entry within a first-pass or further-territory chapter file. Other mentions link to that entry instead of duplicating its explanation.
 
-The `reference/` pages are reader-facing indexes, not additional disclosure tiers or canonical explanations. They consolidate institutions, sources of authority and a deliberately small thematic reading guide while linking back to the concepts that give each item context.
+The `reference/` pages are reader-facing navigation and decision aids, not additional disclosure tiers or canonical explanations. They consolidate a practical authentication model, institutions, sources of authority and a deliberately small thematic reading guide while linking back to the concepts that give each item context. Treat these Markdown pages as the fuller living references. A later book edition may select concise, prioritised versions as appendices or back matter; it should not reproduce every online page automatically. Make that selection after the chapters are visible, and retain the canonical explanation in the chapter or further-territory entry.
 
 Use standard Markdown links such as `[binary](further/01-computing-foundations.md#binary-numbers)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
 
@@ -244,7 +245,7 @@ Acceptance gate: all planned concepts have a reviewed first draft and a canonica
 - Review every chapter for material AI-assisted and agentic consequences instead of treating Chapter 12 as the only relevant location.
 - Check that TFB, TLB and DRC boundaries remain clear and that cross-references do not duplicate canonical explanations.
 - Complete cross-links and the glossary.
-- Build the planned institutions-and-authorities and curated-further-reading reference guides from reviewed chapter material.
+- Maintain the authentication-and-credential-management decision reference and build the planned institutions-and-authorities and curated-further-reading guides from reviewed chapter material.
 - Recheck source authority, accessibility, durability, and link health.
 - Tighten for brevity without removing essential mechanics, context, examples, or pitfalls.
 

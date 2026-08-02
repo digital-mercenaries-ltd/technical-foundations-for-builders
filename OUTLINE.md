@@ -137,6 +137,8 @@ JavaScript, TypeScript, Python, Java, Kotlin, C#, Go, Rust, Swift, PHP, Ruby, No
 
 Git, GitHub, GitLab, Bitbucket, pull requests, trunk-based development, conventional commits, GitHub Actions, GitLab continuous integration and continuous delivery (CI/CD), Jenkins and common code-quality services.
 
+Treat *pigs and chickens* as dated Scrum folklore that a reader may still encounter, not as current role terminology or a recommended division between people who are “committed” and “involved”. Explain accountability and participation directly. The metaphor was removed from the Scrum Guide in 2011 after it had been used to create unhelpful barriers and power dynamics. Planning references: the official [Scrum Guide revision history](https://scrumguides.org/revisions.html) and Scrum.org's contemporary explanation of [chickens and pigs](https://www.scrum.org/resources/chickens-and-pigs).
+
 For software documentation, teach the durable distinction between clarity and correctness and between documents serving different readers and purposes. Introduce Diátaxis's tutorials, how-to guides, reference and explanation as one useful diagnostic framework rather than a mandatory directory structure. Introduce docs-as-code, plain language, controlled language and Simplified Technical English (ASD-STE100) for recognition, while making clear that version control or simplified prose does not establish factual accuracy. Planning references: [Diátaxis](https://diataxis.fr/start-here/), [Write the Docs: Docs as Code](https://www.writethedocs.org/guide/docs-as-code/), [Google's documentation chapter in *Software Engineering at Google*](https://abseil.io/resources/swe-book/html/ch10.html), [ISO 24495-1:2023 plain language](https://www.iso.org/standard/78907.html), [ASD-STE100](https://www.asd-ste100.org/) and [GDS guidance on architecture decision records](https://gds-way.digital.cabinet-office.gov.uk/standards/architecture-decisions.html).
 
 For architecture decision records, explain the context, status, decision and consequences, including alternatives only where they clarify the trade-off. Preserve decision history by marking a record superseded rather than silently rewriting it. An ADR records rationale; it is neither a complete architecture description nor proof that the decision was sound.
@@ -166,7 +168,7 @@ Possible book-length routes for the curated further-reading guide are [*Docs for
 - Hypertext Transfer Protocol methods, status codes, headers, caching and content negotiation
 - Representational State Transfer, remote procedure calls and GraphQL
 - OpenAPI, JavaScript Object Notation (JSON) Schema, generated clients and generated interface reference
-- Reverse proxies, content delivery networks and gateways
+- Reverse proxies, load balancers, API gateways, content delivery networks, web application firewalls and service meshes
 - WebSockets, server-sent events and webhooks
 - Browser rendering models, web performance and Core Web Vitals
 - Web Platform Baseline, feature policies and compatibility data
@@ -175,9 +177,11 @@ Possible book-length routes for the curated further-reading guide are [*Docs for
 
 ### Recognition and landscape
 
-*Landscape selection reviewed: 2026-07-17; verify current status before publication.*
+*Landscape selection reviewed: 2026-08-02; verify current status before publication.*
 
 MDN Web Docs, World Wide Web Consortium (W3C), Web Hypertext Application Technology Working Group (WHATWG), Internet Engineering Task Force (IETF), RFC Editor, Internet Assigned Numbers Authority (IANA), Internet Corporation for Assigned Names and Numbers (ICANN), Chrome, Safari, Firefox, Edge, Chromium, WebKit and Gecko.
+
+Teach an API gateway as a runtime boundary that routes API calls and may apply authentication, quotas, rate limits, transformations, observability and lifecycle policy. Distinguish it from a reverse proxy, load balancer, ingress controller, web application firewall, content-delivery network and service mesh; products may combine these roles, but the concepts are not interchangeable. A gateway does not remove the backend's responsibility for authorisation, correct contracts or safe overload behaviour. Recognise [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html), [Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts), [Google Cloud API Gateway](https://docs.cloud.google.com/api-gateway/docs/architecture-overview) and [Cloudflare API Shield](https://developers.cloudflare.com/api-shield/) as current examples with overlapping but different scopes. Keep API contracts canonical here; place managed-service responsibility in Chapter 7, overload control in Chapter 6 and API security in Chapter 9.
 
 **Boundary:** the mechanics of communication live here; distributed coordination and partial failure live in Chapter 6, web attacks in Chapter 9 and interface usability in Chapter 10.
 
@@ -262,9 +266,9 @@ Teach deadlines, cancellation, retries and backpressure as connected controls on
 ### First pass
 
 1. Development, test, staging and production environments
-2. Configuration, secrets delivery and environment parity
+2. Configuration, workload identity, secrets delivery and environment parity
 3. Physical servers, virtual machines, containers and serverless computing
-4. Cloud regions, managed services, shared responsibility and self-hosting
+4. Cloud regions, provider-neutral service primitives, managed services, shared responsibility and self-hosting
 5. Build artefacts, registries and infrastructure as code
 6. Continuous delivery, deployment compatibility, rollback and irreversible change
 7. Capacity, quotas, pricing, vendor coupling, portability and exit planning
@@ -280,6 +284,7 @@ Teach deadlines, cancellation, retries and backpressure as connected controls on
 - Reproducible builds, provenance and software bills of materials
 - Graceful shutdown, readiness and old/new version coexistence
 - Control planes and data planes
+- Workload identities, short-lived credentials and secrets-manager integration
 - Infrastructure as a service, platform as a service, functions as a service and backend as a service
 - Open-source foundations, project governance and project-lifecycle signals
 
@@ -289,9 +294,17 @@ Teach deadlines, cancellation, retries and backpressure as connected controls on
 
 Amazon Web Services, Microsoft Azure, Google Cloud, Cloudflare, Vercel, Netlify, Heroku, Render, Fly.io, Supabase, Firebase, Terraform, OpenTofu, the Linux Foundation, the Cloud Native Computing Foundation (CNCF) and the CNCF Landscape.
 
+Introduce cloud services through a provider-neutral map before naming products: identity and policy; networking and edge; compute; storage and databases; messaging and integration; configuration and secrets; observability and operations; and build and delivery. A compact comparison should help readers translate among Amazon Web Services, Microsoft Azure, Google Cloud, Cloudflare and specialised platforms without implying exact equivalence. Explain that managed services move operational work and change the responsibility boundary; they do not remove responsibility.
+
+For infrastructure as code, cover desired state, dependency graphs, plan or preview, state, drift, idempotence, secret handling, review of destructive changes and the limits of rollback. State may contain sensitive material and is part of the control boundary. Planning references: Terraform's explanations of [state](https://developer.hashicorp.com/terraform/language/state) and [resource drift](https://developer.hashicorp.com/terraform/tutorials/state/resource-drift).
+
+For software-as-a-service products, provide recognition of recurring technical building blocks such as tenants or organisations, roles and entitlements, billing, API keys, webhooks, audit trails, single sign-on and System for Cross-domain Identity Management (SCIM). Route their mechanics to Chapters 4, 5, 9 and 10 rather than creating a second explanation here. Organisation-wide selection, procurement, administration and integration of business software-as-a-service belong to TLB.
+
 For CNCF, explain what a neutral open-source foundation and its project lifecycle can signal without treating inclusion, graduation or landscape placement as proof that a project fits a particular system. Planning references: [CNCF: Who we are](https://www.cncf.io/about/who-we-are/), [CNCF project lifecycle](https://contribute.cncf.io/projects/lifecycle/) and the maintained [CNCF Landscape](https://landscape.cncf.io/).
 
 Named stack profiles such as Linux–Apache–MySQL–PHP (LAMP), MongoDB–Express–React–Node.js (MERN), T3 and Next.js–Vercel–Supabase may receive dated landscape entries. They should show request flow, state, trust boundaries, managed responsibility and coupling rather than act as endorsements.
+
+Use *pets and cattle* only as historical shorthand for unique, manually tended servers versus replaceable members of an automated pool. Pair it with *snowflake server*, *phoenix server* and *immutable server*, and explain the real questions: where state lives, whether an instance can be rebuilt, what replacement depends on and how failure is detected. Do not extend the metaphor to people. Planning references: Randy Bias's history of [pets versus cattle](https://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/) and Martin Fowler's [immutable server](https://martinfowler.com/bliki/ImmutableServer.html) entry.
 
 **Boundary:** architectural decomposition lives in Chapter 6; operating and recovering the deployed system lives in Chapter 8; contracts and vendor assurance live in Chapter 11.
 
@@ -337,7 +350,7 @@ OpenTelemetry, Prometheus, Grafana, Datadog, New Relic, Sentry, Splunk, Elastic,
 ### First pass
 
 1. Assets, adversaries, attack surfaces and trust boundaries
-2. Authentication, authorisation, sessions, identities and least privilege
+2. Authentication, authorisation, sessions, account recovery, identities and least privilege
 3. Encryption, hashing, signatures, keys and certificates
 4. Input validation, output encoding, interpreters and injection
 5. Browser attacks, hostile files, unsafe URLs and server-side requests
@@ -347,8 +360,13 @@ OpenTelemetry, Prometheus, Grafana, Datadog, New Relic, Sentry, Splunk, Elastic,
 ### Further territory
 
 - Threat modelling methods and abuse cases
-- Password storage, salts, peppers and multi-factor authentication
-- Passkeys and public-key infrastructure
+- Human account patterns: passkeys, federated login and generated passwords in platform or independent password managers
+- Password policy, password managers, generated passwords and memorable passphrases
+- Multi-factor and step-up authentication, assurance levels and phishing resistance
+- Account recovery, recovery material, backup authenticators and break-glass access
+- Password storage, salts, peppers and password hashing
+- Passkeys, security keys, WebAuthn, federation and public-key infrastructure
+- Workload identities, service accounts and short-lived credentials
 - Authenticated encryption, nonces and key lifecycle
 - Cross-site scripting, cross-site request forgery and Content Security Policy
 - File upload handling, archive extraction and server-side request forgery
@@ -362,11 +380,13 @@ OpenTelemetry, Prometheus, Grafana, Datadog, New Relic, Sentry, Splunk, Elastic,
 
 *Landscape selection reviewed: 2026-07-31; verify current status before publication.*
 
-Open Worldwide Application Security Project (OWASP), OWASP Top 10, OWASP Application Security Verification Standard, NIST, United Kingdom National Cyber Security Centre, Center for Internet Security, Cyber Essentials, Open Source Security Foundation (OpenSSF), Supply-chain Levels for Software Artifacts (SLSA), common identity providers, password managers, passkeys, Dependabot, Snyk and software composition analysis.
+Open Worldwide Application Security Project (OWASP), OWASP Top 10, OWASP Application Security Verification Standard, NIST, United Kingdom National Cyber Security Centre, Cybersecurity and Infrastructure Security Agency, FIDO Alliance, WebAuthn, Center for Internet Security, Cyber Essentials, Open Source Security Foundation (OpenSSF), Supply-chain Levels for Software Artifacts (SLSA), common identity providers, federated login, platform and independent password managers, passkeys, Dependabot, Snyk and software composition analysis.
+
+Present human authentication as four practical account patterns: a suitable passkey; an approved federated login; a generated password in a platform password manager for low-consequence accounts; or a generated password in an independent password manager for consequential accounts. Treat the platform/independent boundary as a risk and recovery heuristic rather than an institutional standard or universal product ranking. Teach memorised credentials, MFA and recovery as separate decisions. Keep application and automation credentials under non-human identity and secrets management. Use [xkcd 936, “Password Strength”](https://xkcd.com/936/), as a qualified related observation under passwords and passphrases, not as evidence or a complete password policy. The reader-facing decision reference is [Authentication and credential management](reference/authentication-and-credential-management.md).
 
 Treat OpenSSF as an institution and SLSA as one current framework for reasoning about software-artefact provenance, not as proof that a dependency or build is secure. Planning references: [OpenSSF: About](https://openssf.org/about/) and the versioned [SLSA specification](https://slsa.dev/spec/).
 
-**Boundary:** security mechanisms live here; the legal and assurance categories surrounding them live in Chapter 11.
+**Boundary:** security mechanisms live here; the legal and assurance categories surrounding them live in Chapter 11. Organisation-wide workforce identity governance, provider approval and joiner-mover-leaver responsibility belong to TLB.
 
 ## 10. Product, experience and analytics
 
@@ -413,7 +433,7 @@ Figma, Storybook, Google Analytics, PostHog, Mixpanel, Amplitude, feature-flag a
 
 ### First pass
 
-1. Governance and management, ownership, accountability and risk management
+1. Governance, accountability and risk management: objectives, uncertainty, likelihood, consequences, treatment, ownership and residual risk
 2. Laws, standards, certification schemes, assurance reports and frameworks
 3. Policies, controls, evidence, change management and auditability
 4. Data-protection roles, agreements and impact assessment
@@ -441,6 +461,8 @@ Figma, Storybook, Google Analytics, PostHog, Mixpanel, Amplitude, feature-flag a
 *Landscape selection reviewed: 2026-07-31; verify current status before publication.*
 
 International Organization for Standardization, International Electrotechnical Commission, American Institute of Certified Public Accountants, United Kingdom National Cyber Security Centre, Information Commissioner's Office, PCI Security Standards Council, Cloud Security Alliance, CMMI, COBIT, ISO/IEC 38500, ITIL, ISO/IEC 20000, regulators, accreditation bodies, certification bodies and independent auditors.
+
+Teach general risk management as a cross-cutting decision loop. Start with an objective and context; describe a risk scenario as causes, an uncertain event and consequences; assess likelihood, consequence, timing and confidence proportionately; select treatment and preventive, detective or recovery controls; assign an owner; record the residual risk; and monitor whether assumptions and controls remain valid. Distinguish a risk from an issue, threat, vulnerability, hazard and control, and distinguish mitigation, remediation and contingency. Introduce inherent and residual risk, risk acceptance, appetite and tolerance without turning a risk matrix into false precision. Technical chapters supply concrete risks and controls; Chapter 11 owns this general method. Organisation-wide appetite, portfolio aggregation and risk governance belong to TLB. Planning references: [ISO 31000:2018](https://www.iso.org/standard/65694.html), HM Treasury's [Orange Book](https://www.gov.uk/government/publications/orange-book/the-orange-book-management-of-risk-principles-and-concepts) and [NIST SP 800-30 Revision 1](https://csrc.nist.gov/pubs/sp/800/30/r1/final).
 
 Teach maturity and capability models as the durable concept; use CMMI only as a named example and do not imply that a rating proves product quality. Distinguish organisational maturity from capability in an individual practice area, and verify the current level definitions before publication. Planning references: [CMMI levels](https://cmmiinstitute.com/learning/appraisals/levels) and [ISO/IEC 33001 process-assessment concepts](https://www.iso.org/standard/54175.html).
 
@@ -522,17 +544,19 @@ Apply the same distinction to generated documentation. Artificial intelligence c
 
 *Landscape selection reviewed: 2026-07-17; verify current status before publication.*
 
-Hacker Laws, the Jargon File, Joel on Software, Unix philosophy, the single-responsibility, open–closed, Liskov-substitution, interface-segregation and dependency-inversion (SOLID) principles, hacker folklore, the Bitter Lesson, *yak shaving*, *cruft*, *kludge*, *spaghetti code*, *bug-compatible*, *quick-and-dirty* and *Real Soon Now*.
+Hacker Laws, the Jargon File, Joel on Software, Unix philosophy, the single-responsibility, open–closed, Liskov-substitution, interface-segregation and dependency-inversion (SOLID) principles, hacker folklore, the Bitter Lesson, *rubber-duck debugging*, *footgun*, *bus factor*, *yak shaving*, *cruft*, *kludge*, *spaghetti code*, *bug-compatible*, *quick-and-dirty*, *Real Soon Now*, *thundering herd*, *poison message*, *dead-letter queue*, *golden path*, *paved road*, *toil*, *works on my machine*, *Friday deploy*, *dogfooding*, *cargo cult*, *hero culture*, *break glass* and *alert fatigue*.
 
 Technical laws keep their canonical homes: Amdahl's Law in [Chapter 1](#1-computing-foundations), Hyrum's Law in [Chapter 4](#4-the-internet-web-and-application-programming-interfaces), CAP and PACELC in [Chapter 6](#6-architecture-and-distributed-systems), Kerckhoffs's principle in [Chapter 9](#9-security-privacy-and-identity), and Fitts' and Hick-Hyman Laws in [Chapter 10](#10-product-experience-and-analytics).
 
 Humorous and historical terms are welcome when they help a reader remember a real mechanism. Explain them without sanding off all their personality, but state their scope and do not treat a joke as evidence.
 
+Route each retained cultural term to its technical home: for example, *bus factor* to Chapter 3, *thundering herd* and *poison message* to Chapter 6, *pets and cattle* to Chapter 7, *toil* and *alert fatigue* to Chapter 8, and *break glass* to Chapter 9. Chapter 13 provides recognition and cross-links, not duplicate definitions. Retain a term only when a reader is reasonably likely to encounter it and it clarifies a mechanism, a common misunderstanding or a technical conversation. Add it to the glossary when it appears in published prose. Google's [definition of toil](https://sre.google/sre-book/eliminating-toil/) is one planning reference for the operational vocabulary.
+
 **Boundary:** named results with a clear technical home are taught in that chapter and may be collected here only as cross-links. Chapter 13 supplies cross-cutting judgement rather than becoming a miscellaneous bin.
 
 ## Reference guides
 
-Reference guides consolidate navigation without becoming additional canonical explanations or an exhaustive bibliography.
+Reference guides consolidate navigation without becoming additional canonical explanations or an exhaustive bibliography. The Markdown pages are the fuller living references. A later book edition may select concise, prioritised versions as appendices or back matter, but should not reproduce each online page automatically.
 
 ### Institutions and sources of authority
 
@@ -542,7 +566,11 @@ Plan a reader-facing index organised by function and domain rather than prestige
 
 Plan a thematic guide to the strongest books, courses, standards, specifications and maintained online resources. Use practical priority labels such as **Start here**, **Continue** and **Reference**, with a short explanation of the value, level and limitations of each item. Select from the strongest per-entry reading rather than copying every chapter list or publishing a comprehensive canon. Verify editions, links and current scope before inclusion.
 
-The completed pages should live under `reference/` and link back to canonical chapters and entries. Chapter explanations and their local further-reading lists remain authoritative for context; reference guides provide alternative ways to browse them.
+### Authentication and credential management
+
+Maintain a practical decision reference for human account patterns, memorised credentials, MFA, recovery and non-human identities. Label the four-pattern model as a TFB synthesis, distinguish user credential storage from service-side password storage, and retain authoritative links to NIST, NCSC, OWASP and CISA. Keep the canonical explanations in Chapters 7 and 9. The current page is [Authentication and credential management](reference/authentication-and-credential-management.md).
+
+The completed pages live under `reference/` and link back to canonical chapters and entries. Chapter explanations and their local further-reading lists remain authoritative for context; reference guides provide alternative ways to browse them. Select printed back matter only after the chapters are visible, favouring material that benefits from consolidated lookup: the glossary, a compact authentication decision guide, an institutions-and-authorities index and a small thematic further-reading guide. Keep fuller, frequently updated or catalogue-like material online.
 
 ## Whole-guide dependency spine
 
