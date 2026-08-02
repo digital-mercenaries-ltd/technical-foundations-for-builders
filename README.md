@@ -157,7 +157,7 @@ Architecture describes consequential boundaries and relationships within a syste
 
 Software runs on physical resources even when a platform hides most of them. This chapter explains environments, servers, containers, cloud regions, managed services, build artefacts, deployment, rollback, shared responsibility, cost and the coupling created by products such as Kubernetes, Vercel or Supabase.
 
-[Browse the tiered Chapter 7 plan](OUTLINE.md#7-infrastructure-cloud-and-delivery)
+[Read Chapter 7](chapters/07-infrastructure-cloud-and-delivery.md) · [Browse the tiered Chapter 7 plan](OUTLINE.md#7-infrastructure-cloud-and-delivery)
 
 ### 8. Operations, reliability and observability
 

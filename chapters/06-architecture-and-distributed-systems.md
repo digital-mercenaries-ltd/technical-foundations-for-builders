@@ -4,7 +4,7 @@ Architecture determines where responsibilities, state and failure boundaries sit
 
 The entries reuse a small order system so that the same request can cross a payment provider, a queue and several copies of data without implying that every project needs this shape. They define their working terms and link to relevant computing, programming, web and data ideas instead of requiring earlier chapters.
 
-The focus is software structure and remote coordination. Language-level concurrency belongs in Chapter 2, database transactions in Chapter 5, deployment topology and managed infrastructure in Chapter 7, operational objectives and recovery in Chapter 8, security controls in Chapter 9, and organisational architecture governance in Technical Leadership for Builders.
+The focus is software structure and remote coordination. Language-level concurrency belongs in Chapter 2, database transactions in Chapter 5, deployment topology and managed infrastructure in [Chapter 7](07-infrastructure-cloud-and-delivery.md), operational objectives and recovery in Chapter 8, security controls in Chapter 9, and organisational architecture governance in Technical Leadership for Builders.
 
 ## Chapter map
 

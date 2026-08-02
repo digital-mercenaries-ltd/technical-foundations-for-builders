@@ -1,7 +1,5 @@
 # Glossary
 
-Status: Milestone 4 Chapter 6 draft - 2026-07-31
-
 This alphabetical index defines terms used by the drafted concepts and reader-facing navigation. It will grow with the guide. Definitions stay short and link to a published canonical explanation rather than to an outline placeholder.
 
 ## A
@@ -56,6 +54,10 @@ A binary digit with one of two values, `0` or `1`; see [Bits and bytes](chapters
 
 The part of a browser product that interprets web-platform resources and turns them into an interactive page; see [Browsers, semantic HTML, CSS and JavaScript](chapters/04-internet-web-and-apis.md#browsers-semantic-hypertext-markup-language-cascading-style-sheets-and-javascript).
 
+### Build artefact
+
+A particular output made from source and dependencies for release or deployment, such as a package, executable, container image or static-site bundle; see [Artefacts make change traceable](chapters/07-infrastructure-cloud-and-delivery.md#artefacts-make-change-traceable).
+
 ### Byte
 
 A group of eight bits; see [Bits and bytes](chapters/01-computing-foundations.md#bits-and-bytes).
@@ -78,9 +80,21 @@ The role that initiates an interaction with a server; the same program can be a 
 
 The degree to which the responsibilities inside a module belong together; see [Modularity, cohesion, coupling and separation of concerns](chapters/03-software-engineering.md#modularity-cohesion-coupling-and-separation-of-concerns).
 
+### Container
+
+A packaged application and its user-space dependencies that run while sharing the host operating-system kernel; see [Compute has layers](chapters/07-infrastructure-cloud-and-delivery.md#compute-has-layers).
+
 ### Constraint
 
 A rule a database checks before accepting a stored state; see [Constraints, validation and data integrity](chapters/05-data-and-databases.md#constraints-validation-and-data-integrity).
+
+### Continuous delivery
+
+The practice of keeping software in a state that can be released safely on demand; see [Delivery depends on compatibility](chapters/07-infrastructure-cloud-and-delivery.md#delivery-depends-on-compatibility).
+
+### Continuous deployment
+
+The practice of automatically releasing changes that meet stated conditions; see [Delivery depends on compatibility](chapters/07-infrastructure-cloud-and-delivery.md#delivery-depends-on-compatibility).
 
 ### Continuous integration (CI)
 
@@ -128,6 +142,10 @@ A change to a database schema or stored representation; see [Schema evolution, o
 
 The point after which an overall result is no longer worth waiting for; see [Deadlines, retries and safe repetition](chapters/06-architecture-and-distributed-systems.md#deadlines-retries-and-safe-repetition).
 
+### Deployment
+
+A change to a target environment that makes a selected release able to run there; see [Chapter 7](chapters/07-infrastructure-cloud-and-delivery.md).
+
 ### Distributed system
 
 A system whose independently running components communicate and can fail or become unreachable separately; see [Partial failure and the fallacies of distributed computing](chapters/06-architecture-and-distributed-systems.md#partial-failure-and-the-fallacies-of-distributed-computing).
@@ -141,6 +159,10 @@ A distributed, hierarchical system for records associated with domain names; see
 ### Encoding
 
 A defined way of mapping information to another representation, such as mapping Unicode values to bytes with UTF-8; see [Text, Unicode and character encodings](chapters/01-computing-foundations.md#text-unicode-and-character-encodings).
+
+### Environment
+
+A deliberately separate context in which software runs against particular configuration, identities, data and dependencies; see [Environments are evidence boundaries](chapters/07-infrastructure-cloud-and-delivery.md#environments-are-evidence-boundaries).
 
 ### Event
 
@@ -200,6 +222,10 @@ A value that distinguishes one thing from another within a stated scope; see [Da
 
 An additional maintained data structure that can help a database locate selected values or orderings efficiently; see [Queries, indexes and execution plans](chapters/05-data-and-databases.md#queries-indexes-and-execution-plans).
 
+### Infrastructure as code (IaC)
+
+Versioned configuration that expresses intended infrastructure for a tool to compare and apply against a real environment; see [Artefacts make change traceable](chapters/07-infrastructure-cloud-and-delivery.md#artefacts-make-change-traceable).
+
 ### Interface
 
 The operations and behavioural promises that another component is allowed to depend on; see [Abstraction, information hiding and interfaces](chapters/03-software-engineering.md#abstraction-information-hiding-and-interfaces).
@@ -241,6 +267,10 @@ The elapsed time from a defined start to a defined finish for one operation or p
 Selecting among eligible workers to distribute accepted work; it does not create capacity. See [Controlling overload and containing failure](chapters/06-architecture-and-distributed-systems.md#controlling-overload-and-containing-failure).
 
 ## M
+
+### Managed service
+
+A service for which a provider operates stated technical layers while the customer retains the remaining configuration, data, access and outcome responsibilities; see [Managed changes the boundary](chapters/07-infrastructure-cloud-and-delivery.md#managed-changes-the-boundary).
 
 ### Monolith
 
@@ -348,9 +378,21 @@ A bound on accepted use over time or by a stated client, operation or product; s
 
 Changing software's internal structure through small, behaviour-preserving steps so that it becomes easier to understand or modify; see [Refactoring, technical debt, legacy systems and evolutionary replacement](chapters/03-software-engineering.md#refactoring-technical-debt-legacy-systems-and-evolutionary-replacement).
 
+### Region
+
+A provider-defined geographic and operational grouping for cloud services; its precise failure boundaries, services and data paths are provider-specific. See [Managed changes the boundary](chapters/07-infrastructure-cloud-and-delivery.md#managed-changes-the-boundary).
+
+### Registry
+
+A service that stores and distributes build artefacts; see [Artefacts make change traceable](chapters/07-infrastructure-cloud-and-delivery.md#artefacts-make-change-traceable).
+
 ### Relational database
 
 A database that presents data through relations, commonly exposed as tables, rows and columns queried with SQL; see [Relational databases, SQL, keys, relationships and joins](chapters/05-data-and-databases.md#relational-databases-structured-query-language-keys-relationships-and-joins).
+
+### Release
+
+A decision and its metadata selecting a build artefact and target configuration; see [Chapter 7](chapters/07-infrastructure-cloud-and-delivery.md).
 
 ### Replication
 
@@ -359,6 +401,10 @@ Maintaining additional copies of state for purposes such as availability, locali
 ### Request for Comments (RFC)
 
 A numbered publication in the Internet technical-document series. Some RFCs define standards; others record information, experiments or current practice. Chapter 1 uses RFCs to ground [Internet byte terminology](chapters/01-computing-foundations.md#bits-and-bytes), [time representations](chapters/01-computing-foundations.md#time-clocks-dates-and-time-zones) and [performance measurements](chapters/01-computing-foundations.md#latency-and-throughput).
+
+### Rollback
+
+Restoring an earlier application or infrastructure version when doing so reverses the harmful change; it is not a synonym for recovery. See [Delivery depends on compatibility](chapters/07-infrastructure-cloud-and-delivery.md#delivery-depends-on-compatibility).
 
 ### Runtime
 
@@ -373,6 +419,10 @@ An explicit description of selected data names, types, relationships and rules; 
 ### Server
 
 The role that listens for and responds to a client's interaction; see [Service APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#service-apis-and-behavioural-contracts).
+
+### Serverless
+
+A provider model in which the provider starts and scales a function or managed runtime in response to work while the builder remains responsible for the code, configuration, permissions and dependencies; see [Compute has layers](chapters/07-infrastructure-cloud-and-delivery.md#compute-has-layers).
 
 ### Service
 
@@ -471,3 +521,13 @@ The use of tests, review, analysis or other evidence to assess whether an implem
 ### Version control
 
 A system that records project states and changes so that people can compare, attribute and recover known versions; see [Version control, code review, shared ownership and recovery](chapters/03-software-engineering.md#version-control-code-review-shared-ownership-and-recovery).
+
+### Virtual machine (VM)
+
+A virtual computer, presented by a hypervisor, with its own operating system and allocated resources; see [Compute has layers](chapters/07-infrastructure-cloud-and-delivery.md#compute-has-layers).
+
+## W
+
+### Workload identity
+
+An identity assigned to running software so that another system can decide what that workload may do; see [Configuration is not authority](chapters/07-infrastructure-cloud-and-delivery.md#configuration-is-not-authority).

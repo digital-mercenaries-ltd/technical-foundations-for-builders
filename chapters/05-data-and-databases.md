@@ -4,7 +4,7 @@ Software becomes responsible for data when it gives facts a representation, acce
 
 The entries reuse a small order system—customers, orders, products and order items—so that each mechanism extends one familiar example. Every entry defines its working terms and links to relevant computing, programming, engineering and web ideas where they add context. This local grounding lets readers begin here without treating earlier chapters as prerequisites.
 
-The focus is structure, integrity and safe change inside a data store. Replication and distributed coordination belong in Chapter 6, responsibility for managed databases in Chapter 7, backups and recovery evidence in Chapter 8, database security in Chapter 9, and legal retention or erasure obligations in Chapter 11.
+The focus is structure, integrity and safe change inside a data store. Replication and distributed coordination belong in Chapter 6, responsibility for managed databases in [Chapter 7](07-infrastructure-cloud-and-delivery.md), backups and recovery evidence in Chapter 8, database security in Chapter 9, and legal retention or erasure obligations in Chapter 11.
 
 ## Chapter map
 
