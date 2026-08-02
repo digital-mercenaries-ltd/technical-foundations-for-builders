@@ -2,7 +2,7 @@
 
 A browser or service call may look like one operation, but it crosses several boundaries with different responsibilities. Names are resolved, packets move between networks, a transport carries data, security protects a channel, protocols give messages meaning and application code decides what those messages do.
 
-This chapter assumes only the computing, programming and engineering ideas introduced in [Chapters 1–3](../README.md#map-of-the-territory). Each entry stands alone, while the chapter as a whole follows one request from an address to a response and then examines the contracts, state and compatibility concerns built on top.
+This chapter follows one request from an address to a response, then examines the contracts, state and compatibility concerns built on top. Each entry defines its working terms and links to lower-level computing, programming and engineering ideas where they add context, so readers can begin here without completing earlier chapters.
 
 The focus is communication mechanics. Distributed coordination and partial failure belong in Chapter 6, deployment infrastructure in Chapter 7, attacks and detailed defences in Chapter 9, and usability and accessibility outcomes in Chapter 10.
 
@@ -11,10 +11,10 @@ The focus is communication mechanics. Distributed coordination and partial failu
 The first pass covers:
 
 1. [The Internet, Internet Protocol, transport, ports and the journey of a request](#the-internet-internet-protocol-transport-ports-and-the-journey-of-a-request)
-2. [Domain Name System, domain names, Uniform Resource Locators and Uniform Resource Identifiers](#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers)
-3. [Hypertext Transfer Protocol, Hypertext Transfer Protocol Secure, Transport Layer Security and certificates](#hypertext-transfer-protocol-hypertext-transfer-protocol-secure-transport-layer-security-and-certificates)
+2. [Domain names and web addresses](#domain-names-and-web-addresses)
+3. [Web requests and secure transport](#web-requests-and-secure-transport)
 4. [Browsers, semantic Hypertext Markup Language, Cascading Style Sheets and JavaScript](#browsers-semantic-hypertext-markup-language-cascading-style-sheets-and-javascript)
-5. [Client-server systems, network service application programming interfaces and behavioural contracts](#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts)
+5. [Service APIs and behavioural contracts](#service-apis-and-behavioural-contracts)
 6. [Cookies, sessions, browser origins and Cross-Origin Resource Sharing](#cookies-sessions-browser-origins-and-cross-origin-resource-sharing)
 7. [Progressive enhancement, capability detection and browser compatibility](#progressive-enhancement-capability-detection-and-browser-compatibility)
 
@@ -76,7 +76,7 @@ The client interprets an address, may resolve a name, reaches an endpoint, prote
 - [Internet Assigned Numbers Authority port registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) - registered port ranges and their limits.
 - [MDN: How the web works](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works) - an accessible request overview from a documentation project, rather than a protocol standard.
 
-## Domain Name System, domain names, Uniform Resource Locators and Uniform Resource Identifiers
+## Domain names and web addresses
 
 *A human-readable address, a name-system answer and a complete resource address are related but different things.*
 
@@ -132,9 +132,9 @@ URL components affect routing, redirects, cache keys and security decisions. Use
 - [WHATWG URL Living Standard](https://url.spec.whatwg.org/) - the maintained browser URL parsing standard.
 - [Internet Assigned Numbers Authority functions: About](https://www.iana.org/about) - the functions' current registry and Internet-identifier responsibilities, reviewed 2026-07-18.
 
-## Hypertext Transfer Protocol, Hypertext Transfer Protocol Secure, Transport Layer Security and certificates
+## Web requests and secure transport
 
-*HTTP gives requests and responses meaning; HTTPS protects their journey across a verified channel.*
+*Request semantics give web messages meaning; a verified secure channel protects them in transit.*
 
 ### What they are
 
@@ -237,7 +237,7 @@ Semantic HTML supplies useful built-in behaviour and supports accessibility, alt
 - [ECMAScript language specification](https://tc39.es/ecma262/) - the maintained core JavaScript language specification.
 - [MDN: HTML as a basis for accessibility](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML) - practical documentation and examples, not a standards publication.
 
-## Client-server systems, network service application programming interfaces and behavioural contracts
+## Service APIs and behavioural contracts
 
 *A network call crosses an independently observable boundary whose promises extend beyond a data shape.*
 
@@ -254,7 +254,7 @@ A network **application programming interface (API)** exposes selected operation
 - timeout and retry assumptions; and
 - compatibility, versioning and deprecation.
 
-Suppose a client sends `POST /payments` and times out before receiving a response. The payment may have failed, succeeded or still be running. A useful contract states whether repetition is safe, whether a unique request identifier—often called an **idempotency key**—lets the server recognise a repeat, and how the result can be queried. A JSON shape alone answers none of those questions.
+Suppose a client sends `POST /payments` and times out before receiving a response. The payment may have failed, succeeded or still be running. A useful contract states whether repetition is safe, whether an **idempotency key** lets the server recognise a repeat, and how the result can be queried. A JSON shape alone answers none of those questions.
 
 OpenAPI can formally describe selected aspects of an HTTP API for documentation, client generation and tests. It neither captures every behavioural promise nor proves that an implementation conforms. Current OpenAPI details were reviewed 2026-07-18; the durable lesson applies to any machine-readable interface description.
 
@@ -386,9 +386,5 @@ Usability and accessibility outcomes belong in Chapter 10, but a compatibility p
 - [MDN: Browser detection using the user-agent string](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent) - capability-detection guidance and the limits of browser sniffing.
 - [web.dev: Web Platform Baseline](https://web.dev/baseline/) - current Baseline categories and browser set.
 - [W3C: First WebDX web-features catalogue](https://www.w3.org/blog/2025/first-catalog-of-web-features-completed-by-the-webdx-community-group/) - the World Wide Web Consortium's account of the community group's catalogue and Baseline work.
-
-## Chapter status
-
-The Chapter 4 first-pass draft covers the seven entries selected in the approved outline. Further protocol, API, browser-performance and compatibility material remains optional and will be added only where it improves awareness without overloading the main traversal.
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 4 plan](../OUTLINE.md#4-the-internet-web-and-application-programming-interfaces)

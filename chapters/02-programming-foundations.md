@@ -393,8 +393,4 @@ A **Bohr bug** is reliably reproducible under known conditions. A **heisenbug** 
 - [Jargon File: heisenbug](http://www.catb.org/jargon/html/H/heisenbug.html) - the historical debugging term and its mechanism.
 - [Jargon File: shotgun debugging](http://www.catb.org/jargon/html/S/shotgun-debugging.html) - the historical term for undirected changes.
 
-## Chapter status
-
-The approved Chapter 2 first pass covers eight concepts. Further territory and current landscape material remain optional and will be added only where they improve recognition without overwhelming the main traversal.
-
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 2 plan](../OUTLINE.md#2-programming-foundations)

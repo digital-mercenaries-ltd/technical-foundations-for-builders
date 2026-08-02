@@ -1,6 +1,8 @@
 # Technical Foundations for Builders - Execution Plan
 
-Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-18
+Status: historical milestone map and editorial lifecycle - reviewed 2026-08-02
+
+[GitHub Issues](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues) is the canonical delivery ledger. This document records the approved long-range direction and editorial method; it does not carry live work status.
 
 ## 1. Objective
 
@@ -49,7 +51,7 @@ scripts/
 
 `README.md` is the reader-facing map of the guide. It should make the whole territory visible without displaying the complete concept inventory. `OUTLINE.md` is the editorial source of truth for chapter boundaries, disclosure tiers and canonical homes. Each concept has one canonical entry within a first-pass or further-territory chapter file. Other mentions link to that entry instead of duplicating its explanation.
 
-The `reference/` pages are reader-facing navigation and decision aids, not additional disclosure tiers or canonical explanations. They consolidate a practical authentication model, institutions, sources of authority and a deliberately small thematic reading guide while linking back to the concepts that give each item context. Treat these Markdown pages as the fuller living references. A later book edition may select concise, prioritised versions as appendices or back matter; it should not reproduce every online page automatically. Make that selection after the chapters are visible, and retain the canonical explanation in the chapter or further-territory entry.
+Approved `reference/` pages will be reader-facing navigation or decision aids, not additional disclosure tiers or canonical explanations. They may eventually consolidate institutions, sources of authority and a deliberately small thematic reading guide while linking back to the concepts that give each item context. Treat these Markdown pages as the fuller living references. A later book edition may select concise, prioritised versions as appendices or back matter; it should not reproduce every online page automatically. Make that selection after the chapters are visible, and retain the canonical explanation in the chapter or further-territory entry. The current authentication and credential-management page is an editorial draft pending the canonical Chapter 7 and Chapter 9 explanations.
 
 Use standard Markdown links such as `[binary](further/01-computing-foundations.md#binary-numbers)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
 

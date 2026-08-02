@@ -12,7 +12,7 @@ A useful model and set of operations that suppress details irrelevant at that le
 
 ### Application programming interface (API)
 
-An interface through which software components exchange operations or data; a network API also exposes the behaviour and failure of a remote boundary. See [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
+An interface through which software components exchange operations or data; a network API also exposes the behaviour and failure of a remote boundary. See [Service APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#service-apis-and-behavioural-contracts).
 
 ### Architecture
 
@@ -34,7 +34,7 @@ Production data work that populates or corrects values in existing records, ofte
 
 ### Backpressure
 
-A signal from a constrained consumer towards producers asking them to slow, pause or fail early; see [Load balancing, admission control and overload](chapters/06-architecture-and-distributed-systems.md#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation).
+A signal from a constrained consumer towards producers asking them to slow, pause or fail early; see [Controlling overload and containing failure](chapters/06-architecture-and-distributed-systems.md#controlling-overload-and-containing-failure).
 
 ### Base (or radix)
 
@@ -72,7 +72,7 @@ The processor that follows machine instructions and performs calculations; see [
 
 ### Client
 
-The role that initiates an interaction with a server; the same program can be a client in one interaction and a server in another. See [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
+The role that initiates an interaction with a server; the same program can be a client in one interaction and a server in another. See [Service APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#service-apis-and-behavioural-contracts).
 
 ### Cohesion
 
@@ -126,7 +126,7 @@ A change to a database schema or stored representation; see [Schema evolution, o
 
 ### Deadline
 
-The point after which an overall result is no longer worth waiting for; see [Deadlines, timeouts, cancellation, retries and idempotency](chapters/06-architecture-and-distributed-systems.md#end-to-end-deadlines-and-time-budgets-timeouts-cancellation-retries-and-idempotency).
+The point after which an overall result is no longer worth waiting for; see [Deadlines, retries and safe repetition](chapters/06-architecture-and-distributed-systems.md#deadlines-retries-and-safe-repetition).
 
 ### Distributed system
 
@@ -134,7 +134,7 @@ A system whose independently running components communicate and can fail or beco
 
 ### Domain Name System (DNS)
 
-A distributed, hierarchical system for records associated with domain names; see [DNS, domain names, URLs and URIs](chapters/04-internet-web-and-apis.md#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers).
+A distributed, hierarchical system for records associated with domain names; see [Domain names and web addresses](chapters/04-internet-web-and-apis.md#domain-names-and-web-addresses).
 
 ## E
 
@@ -158,7 +158,7 @@ The database planner's selected tree of operations for producing a query result 
 
 ### Failure domain
 
-A group of components likely to fail together because they share a dependency, location, configuration or change path; see [Load balancing, admission control and overload](chapters/06-architecture-and-distributed-systems.md#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation).
+A group of components likely to fail together because they share a dependency, location, configuration or change path; see [Controlling overload and containing failure](chapters/06-architecture-and-distributed-systems.md#controlling-overload-and-containing-failure).
 
 ### Floating point
 
@@ -180,17 +180,17 @@ The web-platform language that describes document structure and meaning; see [Br
 
 ### Hypertext Transfer Protocol (HTTP)
 
-An application protocol that defines request and response semantics; see [HTTP, HTTPS, TLS and certificates](chapters/04-internet-web-and-apis.md#hypertext-transfer-protocol-hypertext-transfer-protocol-secure-transport-layer-security-and-certificates).
+An application protocol that defines request and response semantics; see [Web requests and secure transport](chapters/04-internet-web-and-apis.md#web-requests-and-secure-transport).
 
 ### Hypertext Transfer Protocol Secure (HTTPS)
 
-HTTP exchanged through a channel protected by Transport Layer Security; see [HTTP, HTTPS, TLS and certificates](chapters/04-internet-web-and-apis.md#hypertext-transfer-protocol-hypertext-transfer-protocol-secure-transport-layer-security-and-certificates).
+HTTP exchanged through a channel protected by Transport Layer Security; see [Web requests and secure transport](chapters/04-internet-web-and-apis.md#web-requests-and-secure-transport).
 
 ## I
 
 ### Idempotency
 
-The property that repeating an operation has the same intended effect as performing it once within a stated scope; see [Deadlines, timeouts, cancellation, retries and idempotency](chapters/06-architecture-and-distributed-systems.md#end-to-end-deadlines-and-time-budgets-timeouts-cancellation-retries-and-idempotency).
+The property that repeating an operation has the same intended effect as performing it once within a stated scope; see [Deadlines, retries and safe repetition](chapters/06-architecture-and-distributed-systems.md#deadlines-retries-and-safe-repetition).
 
 ### Identifier
 
@@ -224,7 +224,7 @@ The common name for implementations of ECMAScript in environments such as browse
 
 ### JavaScript Object Notation (JSON)
 
-A text format for structured values exchanged by many files and network APIs; see [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
+A text format for structured values exchanged by many files and network APIs; see [Service APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#service-apis-and-behavioural-contracts).
 
 ### Join
 
@@ -238,7 +238,7 @@ The elapsed time from a defined start to a defined finish for one operation or p
 
 ### Load balancing
 
-Selecting among eligible workers to distribute accepted work; it does not create capacity. See [Load balancing, admission control and overload](chapters/06-architecture-and-distributed-systems.md#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation).
+Selecting among eligible workers to distribute accepted work; it does not create capacity. See [Controlling overload and containing failure](chapters/06-architecture-and-distributed-systems.md#controlling-overload-and-containing-failure).
 
 ## M
 
@@ -342,7 +342,7 @@ Working memory used by active programs and data; see [Processors, memory and per
 
 ### Rate limit
 
-A bound on accepted use over time or by a stated client, operation or product; see [Load balancing, admission control and overload](chapters/06-architecture-and-distributed-systems.md#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation).
+A bound on accepted use over time or by a stated client, operation or product; see [Controlling overload and containing failure](chapters/06-architecture-and-distributed-systems.md#controlling-overload-and-containing-failure).
 
 ### Refactoring
 
@@ -372,7 +372,7 @@ An explicit description of selected data names, types, relationships and rules; 
 
 ### Server
 
-The role that listens for and responds to a client's interaction; see [Client-server systems, network APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts).
+The role that listens for and responds to a client's interaction; see [Service APIs and behavioural contracts](chapters/04-internet-web-and-apis.md#service-apis-and-behavioural-contracts).
 
 ### Service
 
@@ -418,7 +418,7 @@ A maintained set of rules mapping local civil times to offsets from Coordinated 
 
 ### Timeout
 
-A limit on one wait or phase of an operation; expiry does not prove that remote work failed or stopped. See [Deadlines, timeouts, cancellation, retries and idempotency](chapters/06-architecture-and-distributed-systems.md#end-to-end-deadlines-and-time-budgets-timeouts-cancellation-retries-and-idempotency).
+A limit on one wait or phase of an operation; expiry does not prove that remote work failed or stopped. See [Deadlines, retries and safe repetition](chapters/06-architecture-and-distributed-systems.md#deadlines-retries-and-safe-repetition).
 
 ### Transaction
 
@@ -430,7 +430,7 @@ A transport protocol that provides a reliable, ordered byte stream while a conne
 
 ### Transport Layer Security (TLS)
 
-A protocol that authenticates a secure-channel peer and protects data confidentiality and integrity in transit; see [HTTP, HTTPS, TLS and certificates](chapters/04-internet-web-and-apis.md#hypertext-transfer-protocol-hypertext-transfer-protocol-secure-transport-layer-security-and-certificates).
+A protocol that authenticates a secure-channel peer and protects data confidentiality and integrity in transit; see [Web requests and secure transport](chapters/04-internet-web-and-apis.md#web-requests-and-secure-transport).
 
 ### Type
 
@@ -452,11 +452,11 @@ A variable-length Unicode encoding that uses one to four bytes for each Unicode 
 
 ### Uniform Resource Identifier (URI)
 
-The general standards term for an identifier using URI syntax; in browser work, Uniform Resource Locator is usually the more useful operational term. See [DNS, domain names, URLs and URIs](chapters/04-internet-web-and-apis.md#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers).
+The general standards term for an identifier using URI syntax; in browser work, Uniform Resource Locator is usually the more useful operational term. See [Domain names and web addresses](chapters/04-internet-web-and-apis.md#domain-names-and-web-addresses).
 
 ### Uniform Resource Locator (URL)
 
-An address whose components describe how to access a resource, including a scheme, host and path; see [DNS, domain names, URLs and URIs](chapters/04-internet-web-and-apis.md#domain-name-system-domain-names-uniform-resource-locators-and-uniform-resource-identifiers).
+An address whose components describe how to access a resource, including a scheme, host and path; see [Domain names and web addresses](chapters/04-internet-web-and-apis.md#domain-names-and-web-addresses).
 
 ### Unsigned integer
 

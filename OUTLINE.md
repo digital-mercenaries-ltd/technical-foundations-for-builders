@@ -1,6 +1,6 @@
 # TFB tiered content outline
 
-Status: Milestone 4 Chapter 3 approved; Chapter 4 in progress - 2026-07-18
+Status: canonical editorial outline - reviewed 2026-08-02
 
 This is the editorial source of truth for the scope of **Technical Foundations for Builders** (TFB), Volume 1 of the project family described in [PROJECT_FAMILY.md](PROJECT_FAMILY.md). The [README](README.md) is the short reader-facing map. This file records what belongs on the first pass, what belongs in optional further territory and which names should initially appear for recognition or landscape orientation.
 
@@ -382,7 +382,7 @@ OpenTelemetry, Prometheus, Grafana, Datadog, New Relic, Sentry, Splunk, Elastic,
 
 Open Worldwide Application Security Project (OWASP), OWASP Top 10, OWASP Application Security Verification Standard, NIST, United Kingdom National Cyber Security Centre, Cybersecurity and Infrastructure Security Agency, FIDO Alliance, WebAuthn, Center for Internet Security, Cyber Essentials, Open Source Security Foundation (OpenSSF), Supply-chain Levels for Software Artifacts (SLSA), common identity providers, federated login, platform and independent password managers, passkeys, Dependabot, Snyk and software composition analysis.
 
-Present human authentication as four practical account patterns: a suitable passkey; an approved federated login; a generated password in a platform password manager for low-consequence accounts; or a generated password in an independent password manager for consequential accounts. Treat the platform/independent boundary as a risk and recovery heuristic rather than an institutional standard or universal product ranking. Teach memorised credentials, MFA and recovery as separate decisions. Keep application and automation credentials under non-human identity and secrets management. Use [xkcd 936, “Password Strength”](https://xkcd.com/936/), as a qualified related observation under passwords and passphrases, not as evidence or a complete password policy. The reader-facing decision reference is [Authentication and credential management](reference/authentication-and-credential-management.md).
+Present human authentication as four practical account patterns: a suitable passkey; an approved federated login; a generated password in a platform password manager for low-consequence accounts; or a generated password in an independent password manager for consequential accounts. Treat the platform/independent boundary as a risk and recovery heuristic rather than an institutional standard or universal product ranking. Teach memorised credentials, MFA and recovery as separate decisions. Keep application and automation credentials under non-human identity and secrets management. Use [xkcd 936, “Password Strength”](https://xkcd.com/936/), as a qualified related observation under passwords and passphrases, not as evidence or a complete password policy. [Authentication and credential management](reference/authentication-and-credential-management.md) remains an editorial draft until Chapters 7 and 9 establish these canonical explanations.
 
 Treat OpenSSF as an institution and SLSA as one current framework for reasoning about software-artefact provenance, not as proof that a dependency or build is secure. Planning references: [OpenSSF: About](https://openssf.org/about/) and the versioned [SLSA specification](https://slsa.dev/spec/).
 
@@ -568,7 +568,7 @@ Plan a thematic guide to the strongest books, courses, standards, specifications
 
 ### Authentication and credential management
 
-Maintain a practical decision reference for human account patterns, memorised credentials, MFA, recovery and non-human identities. Label the four-pattern model as a TFB synthesis, distinguish user credential storage from service-side password storage, and retain authoritative links to NIST, NCSC, OWASP and CISA. Keep the canonical explanations in Chapters 7 and 9. The current page is [Authentication and credential management](reference/authentication-and-credential-management.md).
+Consider a practical decision reference for human account patterns, memorised credentials, MFA, recovery and non-human identities after the relevant chapters exist. Label the four-pattern model as a TFB synthesis, distinguish user credential storage from service-side password storage, and retain authoritative links to NIST, NCSC, OWASP and CISA. Keep the canonical explanations in Chapters 7 and 9. The current [authentication and credential-management page](reference/authentication-and-credential-management.md) is an editorial draft, not an approved reference guide.
 
 The completed pages live under `reference/` and link back to canonical chapters and entries. Chapter explanations and their local further-reading lists remain authoritative for context; reference guides provide alternative ways to browse them. Select printed back matter only after the chapters are visible, favouring material that benefits from consolidated lookup: the glossary, a compact authentication decision guide, an institutions-and-authorities index and a small thematic further-reading guide. Keep fuller, frequently updated or catalogue-like material online.
 

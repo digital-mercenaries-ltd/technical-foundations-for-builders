@@ -1,6 +1,8 @@
 # Authentication and credential management
 
-Status: practical reference - reviewed 2026-08-02
+Status: editorial draft - reviewed 2026-08-02
+
+This page is not part of the approved TFB traversal or reference catalogue. It will be reconsidered after Chapters 7 and 9 establish the canonical explanations for workload identity, authentication, recovery and credential security.
 
 Choose an account pattern first, then design multi-factor authentication (MFA) and recovery as separate controls. The four patterns below are a practical TFB decision model, not a classification defined by the cited standards. In particular, the boundary between platform and independent password managers is a risk and recovery judgement: either category can be well or poorly implemented.
 
@@ -134,7 +136,3 @@ This model is a practical synthesis, not a replacement for the underlying standa
 - [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html), [OWASP Multifactor Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html) and [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) - implementation guidance for passwords, passkeys, MFA, recovery and service-side password hashing.
 - [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) - application credentials, secret lifecycle, least privilege, short-lived credentials and break-glass access.
 - [CISA: Implementing Phishing-Resistant MFA](https://www.cisa.gov/sites/default/files/2023-01/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf) - migration of professional systems towards FIDO/WebAuthn.
-
-## Core rule
-
-Prefer a suitable passkey, then an approved federated login. When a password is necessary, generate it. Use the platform password manager for low-consequence accounts and an independent password manager for consequential accounts, while treating that split as a risk and recovery judgement rather than a universal product ranking. Memorise only the few credentials needed to regain access. Apply MFA and recovery controls according to impact, privilege, phishing risk and failure domains.

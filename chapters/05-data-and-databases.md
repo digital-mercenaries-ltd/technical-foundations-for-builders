@@ -2,7 +2,7 @@
 
 Software becomes responsible for data when it gives facts a representation, accepts changes and later makes decisions from what was stored. A database is not merely a place to put objects. Its model, rules and guarantees determine which questions are easy to answer, which mistakes it can reject and what simultaneous users can observe.
 
-This chapter assumes only the computing, programming, engineering and web ideas introduced in [Chapters 1–4](../README.md#map-of-the-territory). The entries reuse a small order system—customers, orders, products and order items—so that each new mechanism extends one familiar example. Every entry also defines enough locally to be read on its own.
+The entries reuse a small order system—customers, orders, products and order items—so that each mechanism extends one familiar example. Every entry defines its working terms and links to relevant computing, programming, engineering and web ideas where they add context. This local grounding lets readers begin here without treating earlier chapters as prerequisites.
 
 The focus is structure, integrity and safe change inside a data store. Replication and distributed coordination belong in Chapter 6, responsibility for managed databases in Chapter 7, backups and recovery evidence in Chapter 8, database security in Chapter 9, and legal retention or erasure obligations in Chapter 11.
 
@@ -41,6 +41,8 @@ Omitting the field is structurally different. Either form might mean “not supp
 ### Why a builder needs to know this
 
 These choices appear in application types, API messages, database columns, analytics and migrations. If the representation loses a distinction the product needs, later code cannot reliably reconstruct it. A stable model also lets several writers and readers agree on what stored data means while their implementations evolve.
+
+Evidence comes from the representations that actually cross and persist at those boundaries. A generated type or diagram is not proof that the database, API and existing records preserve the same distinctions.
 
 ### Pitfalls
 
@@ -108,7 +110,7 @@ Object-relational mappers can translate objects and method calls into SQL. They 
 
 - [Collections, data structures and algorithmic cost](02-programming-foundations.md#collections-data-structures-and-algorithmic-cost) - tables and indexes support operations with different costs.
 - [Abstraction, information hiding and interfaces](03-software-engineering.md#abstraction-information-hiding-and-interfaces) - relational queries separate requested results from physical storage choices.
-- [Client-server systems and behavioural contracts](04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts) - a database interface also includes behaviour beyond data shapes.
+- [Service APIs and behavioural contracts](04-internet-web-and-apis.md#service-apis-and-behavioural-contracts) - a database interface also includes behaviour beyond data shapes.
 
 ### Deeper concepts
 
@@ -308,7 +310,7 @@ Many database incidents arise from a correct destination design reached through 
 
 - [Version control, code review, shared ownership and recovery](03-software-engineering.md#version-control-code-review-shared-ownership-and-recovery) - source reversal and production-data reversal are different operations.
 - [Build automation, continuous integration and fast feedback](03-software-engineering.md#build-automation-continuous-integration-and-fast-feedback) - automated deployment checks need compatibility assumptions, not merely successful syntax.
-- [Client-server systems and behavioural contracts](04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts) - stored representations create compatibility commitments for their consumers.
+- [Service APIs and behavioural contracts](04-internet-web-and-apis.md#service-apis-and-behavioural-contracts) - stored representations create compatibility commitments for their consumers.
 
 ### Deeper concepts
 
@@ -358,7 +360,7 @@ Storage choice creates long-lived constraints on queries, integrity, operations 
 ### Related concepts in TFB
 
 - [Abstraction, information hiding and interfaces](03-software-engineering.md#abstraction-information-hiding-and-interfaces) - storage products with similar operations can make materially different behavioural promises.
-- [Client-server systems and behavioural contracts](04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts) - remote data services expose failure and consistency as part of their contract.
+- [Service APIs and behavioural contracts](04-internet-web-and-apis.md#service-apis-and-behavioural-contracts) - remote data services expose failure and consistency as part of their contract.
 - [Processors, memory and persistent storage](01-computing-foundations.md#processors-memory-and-persistent-storage) - every store ultimately depends on defined persistence and failure boundaries.
 
 ### Deeper concepts
@@ -373,9 +375,5 @@ Storage choice creates long-lived constraints on queries, integrity, operations 
 - [Amazon DynamoDB: Read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html) - an example of guarantees varying by operation in one product.
 - [Cloud Firestore: Data model](https://firebase.google.com/docs/firestore/data-model) - a document and collection model whose structure still affects querying.
 - [Redis: Data types](https://redis.io/docs/latest/develop/data-types/) - an example of a product that crosses simple category labels.
-
-## Chapter status
-
-The Chapter 5 first pass was approved on 2026-07-31. Further data-model, database-performance, concurrency, analytical-processing and lifecycle material remains optional and will be added only where it improves awareness without overloading the main traversal.
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 5 plan](../OUTLINE.md#5-data-and-databases)

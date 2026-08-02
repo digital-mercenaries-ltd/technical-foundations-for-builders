@@ -42,7 +42,6 @@ The model helps explain integer limits, memory sizes, colour components, permiss
 - [Hexadecimal and octal](#hexadecimal-and-octal) - readable shorthand for grouped binary digits.
 - [Integer ranges and overflow](../chapters/01-computing-foundations.md#integer-ranges-and-overflow) - what happens at the boundary of a fixed representation.
 - [Values, types and conversions](../chapters/02-programming-foundations.md#values-types-and-conversions) - how programs interpret and convert represented values.
-- Planned: Boolean logic and permissions.
 
 ### Deeper concepts
 
@@ -94,7 +93,6 @@ Octal is less common, but it remains visible in Unix-style permissions because r
 
 - [Bits and bytes](../chapters/01-computing-foundations.md#bits-and-bytes) - why two hex digits fit one byte.
 - [Binary numbers](#binary-numbers) - the underlying representation being grouped.
-- Planned: CSS colours, Unix permissions, IP addresses, hashes and cryptography.
 
 ### Deeper concepts
 

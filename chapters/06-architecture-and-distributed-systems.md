@@ -2,7 +2,7 @@
 
 Architecture determines where responsibilities, state and failure boundaries sit. Once part of a system runs elsewhere, communication can be delayed, duplicated or lost while other parts continue. Trustworthy systems make those boundaries and uncertain outcomes explicit.
 
-This chapter assumes only the computing, programming, engineering, web and data ideas introduced in [Chapters 1–5](../README.md#map-of-the-territory). The entries reuse a small order system so that the same request can cross a payment provider, a queue and several copies of data without implying that every project needs this shape. Each entry also defines enough locally to be read on its own.
+The entries reuse a small order system so that the same request can cross a payment provider, a queue and several copies of data without implying that every project needs this shape. They define their working terms and link to relevant computing, programming, web and data ideas instead of requiring earlier chapters.
 
 The focus is software structure and remote coordination. Language-level concurrency belongs in Chapter 2, database transactions in Chapter 5, deployment topology and managed infrastructure in Chapter 7, operational objectives and recovery in Chapter 8, security controls in Chapter 9, and organisational architecture governance in Technical Leadership for Builders.
 
@@ -14,9 +14,9 @@ The first pass covers:
 2. [Monoliths, services, and stateful and stateless components](#monoliths-services-and-stateful-and-stateless-components)
 3. [Synchronous calls, asynchronous messages, queues, streams and events](#synchronous-calls-asynchronous-messages-queues-streams-and-events)
 4. [Partial failure and the fallacies of distributed computing](#partial-failure-and-the-fallacies-of-distributed-computing)
-5. [End-to-end deadlines and time budgets, timeouts, cancellation, retries and idempotency](#end-to-end-deadlines-and-time-budgets-timeouts-cancellation-retries-and-idempotency)
+5. [Deadlines, retries and safe repetition](#deadlines-retries-and-safe-repetition)
 6. [Replication, partitioning, consistency and user-visible intermediate states](#replication-partitioning-consistency-and-user-visible-intermediate-states)
-7. [Load balancing, admission and rate limiting, bounded queues, backpressure, overload collapse, failure domains and graceful degradation](#load-balancing-admission-and-rate-limiting-bounded-queues-backpressure-overload-collapse-failure-domains-and-graceful-degradation)
+7. [Controlling overload and containing failure](#controlling-overload-and-containing-failure)
 
 ## System context, boundaries, components and architecture views
 
@@ -44,7 +44,7 @@ A useful view exposes dependencies, responsibility and change impact. It can rev
 ### Related concepts in TFB
 
 - [Modularity, cohesion, coupling and separation of concerns](03-software-engineering.md#modularity-cohesion-coupling-and-separation-of-concerns) - architecture places module boundaries in a wider system.
-- [Client-server systems and behavioural contracts](04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts) - a remote boundary needs a behavioural contract, not only a connecting arrow.
+- [Service APIs and behavioural contracts](04-internet-web-and-apis.md#service-apis-and-behavioural-contracts) - a remote boundary needs a behavioural contract, not only a connecting arrow.
 - [Data models, schemas, identifiers and missing values](05-data-and-databases.md#data-models-schemas-identifiers-and-missing-values) - architecture must identify where important state and its meaning live.
 
 ### Deeper concepts
@@ -131,7 +131,7 @@ RabbitMQ work queues and Apache Kafka streams are current product examples, revi
 ### Related concepts in TFB
 
 - [Collections, data structures and algorithmic cost](02-programming-foundations.md#collections-data-structures-and-algorithmic-cost) - a runtime queue still has bounded storage and processing cost.
-- [Client-server systems and behavioural contracts](04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts) - message producers and consumers also need behavioural contracts.
+- [Service APIs and behavioural contracts](04-internet-web-and-apis.md#service-apis-and-behavioural-contracts) - message producers and consumers also need behavioural contracts.
 - [Schema evolution, online migrations and backfills](05-data-and-databases.md#schema-evolution-online-migrations-and-backfills) - message schemas and consumers must coexist safely while changing.
 
 ### Deeper concepts
@@ -156,7 +156,7 @@ A **partial failure** occurs when one part of a distributed operation fails or b
 
 This is a fundamental difference between local and remote calls. Waldo, Wyant, Wollrath and Kendall's [*A Note on Distributed Computing*](https://scholar.harvard.edu/files/waldo/files/waldo-94.pdf) explains why latency, concurrency and partial failure cannot be hidden behind local-looking interfaces. Generated clients and natural-language tool wrappers can make a remote operation look especially ordinary, but `timed out` still says only how long one caller waited.
 
-The **fallacies of distributed computing** make unsafe assumptions memorable: that the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology does not change, there is one administrator, transport cost is zero and the network is homogeneous. They are prompts for investigation, not claims that networks never work. L. Peter Deutsch gives first-person provenance and qualifications in [Software Engineering Radio episode 470](https://se-radio.net/2021/07/episode-470-l-peter-deutsch-on-the-fallacies-of-distributed-computing/).
+The **fallacies of distributed computing** make eight unsafe assumptions memorable. Four concern communication: that the network is reliable, latency is zero, bandwidth is infinite and the network is secure. Four concern its environment: that topology does not change, there is one administrator, transport costs nothing and the network is homogeneous. They are prompts for investigation, not claims that networks never work. L. Peter Deutsch gives first-person provenance and qualifications in [Software Engineering Radio episode 470](https://se-radio.net/2021/07/episode-470-l-peter-deutsch-on-the-fallacies-of-distributed-computing/).
 
 ### Why a builder needs to know this
 
@@ -167,7 +167,7 @@ After an uncertain payment result, the safe next step might be to query by opera
 - **“Timeout means failure.”** It means that one wait expired; remote work may have completed.
 - **“The health check passed.”** It proves only that one check worked then, not that real requests succeed.
 - **“Redundancy removes partial failure.”** Copies can share a dependency, bad change or overload path.
-- **“The client library handles it.”** A wrapper cannot invent operation identity or correct recovery semantics.
+- **“The client library handles it.”** A wrapper cannot invent an idempotency-key contract or correct recovery semantics.
 - **“The network is internal, so it is safe.”** Security assumptions require their own evidence and belong in Chapter 9.
 
 ### Related concepts in TFB
@@ -188,7 +188,7 @@ After an uncertain payment result, the safe next step might be to query by opera
 - [L. Peter Deutsch on the fallacies of distributed computing](https://se-radio.net/2021/07/episode-470-l-peter-deutsch-on-the-fallacies-of-distributed-computing/) - provenance and modern qualification of the classic eight fallacies.
 - [Google SRE: Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/) - concrete ways dependency and overload failures spread.
 
-## End-to-end deadlines and time budgets, timeouts, cancellation, retries and idempotency
+## Deadlines, retries and safe repetition
 
 *A finite operation needs one visible time budget; each wait and retry spends part of it.*
 
@@ -207,11 +207,11 @@ The diagram shows a shrinking end-to-end budget. Expiry at one layer does not au
 
 **Cancellation** asks abandoned work and its downstream calls to stop, but code must co-operate; it is not guaranteed interruption or rollback. A **retry** spends more time and capacity on another attempt. Bounded attempts, exponential backoff and random **jitter** can reduce the chance of clients retrying together, but retries at several layers can multiply one request into many. The [Amazon Builders' Library](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) connects these mechanisms and their overload risk.
 
-An operation is **idempotent** when repeating it has the same intended effect as doing it once within a defined scope. A server might record a unique operation key with a payment outcome and return that outcome for repeats. The receiving system must bind the key to the operation and matching parameters, then use one authoritative record to co-ordinate concurrent attempts; adding a key to a request changes nothing by itself. This can protect an uncertain retry, but it does not make repeated work free or guarantee success. [Request for Comments (RFC) 9110](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2) defines idempotent Hypertext Transfer Protocol methods and limits when clients may retry automatically.
+An operation is **idempotent** when repeating it has the same intended effect as doing it once within a defined scope. A server might record an **idempotency key** with a payment outcome and return that outcome for repeats. The receiving system must bind the key to the operation and matching parameters, then use one authoritative record to co-ordinate concurrent attempts; adding a key to a request changes nothing by itself. The key identifies a repeat, while the broader operation identity also includes its intended action and scope. This can protect an uncertain retry, but it does not make repeated work free or guarantee success. [Request for Comments (RFC) 9110](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2) defines idempotent Hypertext Transfer Protocol methods and limits when clients may retry automatically.
 
 ### Why a builder needs to know this
 
-Defaults can be hidden in generated clients, gateways and software development kits while an outer agent loop retries again. Builders need one visible end-to-end budget, an inventory of retry layers and explicit operation identity. A timeout value is not a complete failure policy.
+Defaults can be hidden in generated clients, gateways and software development kits while an outer agent loop retries again. Builders need one visible end-to-end budget, an inventory of retry layers and an explicit idempotency-key contract for repeatable effects. A timeout value is not a complete failure policy.
 
 ### Pitfalls
 
@@ -225,7 +225,7 @@ Defaults can be hidden in generated clients, gateways and software development k
 
 - [Latency and throughput](01-computing-foundations.md#latency-and-throughput) - time limits need a named operation and observation boundary.
 - [Errors, exceptions and cleanup](02-programming-foundations.md#errors-exceptions-and-cleanup) - cancellation and expiry need explicit cleanup paths.
-- [Data integrity](05-data-and-databases.md#constraints-validation-and-data-integrity) - a uniqueness rule can help enforce one operation identity.
+- [Data integrity](05-data-and-databases.md#constraints-validation-and-data-integrity) - a uniqueness rule can help enforce one idempotency key within its stated scope.
 
 ### Deeper concepts
 
@@ -238,7 +238,7 @@ Defaults can be hidden in generated clients, gateways and software development k
 - [gRPC: Deadlines](https://grpc.io/docs/guides/deadlines/) and [cancellation](https://grpc.io/docs/guides/cancellation/) - maintained examples of propagation and co-operative stopping.
 - [Amazon Builders' Library: Timeouts, retries and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) - the production interaction between bounded waits and retry amplification.
 - [RFC 9110: Idempotent methods](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2) - the protocol definition and retry qualification.
-- [Stripe: Idempotent requests](https://docs.stripe.com/api/idempotent_requests) - a current operation-key implementation, reviewed 2026-07-31.
+- [Stripe: Idempotent requests](https://docs.stripe.com/api/idempotent_requests) - a current idempotency-key implementation, reviewed 2026-07-31.
 
 ## Replication, partitioning, consistency and user-visible intermediate states
 
@@ -250,7 +250,7 @@ Defaults can be hidden in generated clients, gateways and software development k
 
 A **consistency model** describes the observations a system permits: whether a completed write must be visible to a later read, whether readers can temporarily see different versions and how concurrent writes are ordered. “Strong” and “eventual” name families of guarantees, not complete product requirements.
 
-The consistency, availability and partition tolerance (**CAP**) result is often shortened misleadingly to “pick any two”. Its useful first-pass claim applies during a partition: a replicated data system cannot guarantee both that every request received by a non-failing component eventually gets a non-error response and that all operations behave as though they use one current copy. Gilbert and Lynch explain the theorem's scope in [*Perspectives on the CAP Theorem*](https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer2.pdf). This consistency is also different from **atomicity, consistency, isolation and durability (ACID) consistency**, which means that a committed database transaction preserves valid-state rules.
+The consistency, availability and partition tolerance (**CAP**) result is often shortened misleadingly to “pick any two”. Its useful first-pass claim applies during a partition. A replicated data system then cannot guarantee both that every request to a non-failing component eventually gets a non-error response and that all operations behave as though they use one current copy. Gilbert and Lynch explain the theorem's scope in [*Perspectives on the CAP Theorem*](https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer2.pdf). This consistency is also different from **atomicity, consistency, isolation and durability (ACID) consistency**, which means that a committed database transaction preserves valid-state rules.
 
 ### Why a builder needs to know this
 
@@ -270,7 +270,7 @@ The same matters when an agent reads stale state and then issues a conflicting w
 
 - [Transactions, atomicity, isolation and concurrency control](05-data-and-databases.md#transactions-atomicity-isolation-and-concurrency-control) - ACID valid-state consistency is not a replica-read guarantee.
 - [Non-relational databases, consistency and the data lifecycle](05-data-and-databases.md#non-relational-databases-consistency-and-the-data-lifecycle) - storage categories do not determine one universal consistency model.
-- [Client-server systems and behavioural contracts](04-internet-web-and-apis.md#client-server-systems-network-service-application-programming-interfaces-and-behavioural-contracts) - freshness and intermediate states are part of observable behaviour.
+- [Service APIs and behavioural contracts](04-internet-web-and-apis.md#service-apis-and-behavioural-contracts) - freshness and intermediate states are part of observable behaviour.
 
 ### Deeper concepts
 
@@ -284,7 +284,7 @@ The same matters when an agent reads stale state and then issues a conflicting w
 - [Amazon DynamoDB: Read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html) - a current example of operation- and topology-specific guarantees, reviewed 2026-07-31.
 - [Apache Kafka: Introduction](https://kafka.apache.org/documentation/) - a current example of replication and per-partition ordering, reviewed 2026-07-31.
 
-## Load balancing, admission and rate limiting, bounded queues, backpressure, overload collapse, failure domains and graceful degradation
+## Controlling overload and containing failure
 
 *Finite systems remain useful under stress by controlling work before waiting and retries consume all capacity.*
 
@@ -328,9 +328,5 @@ One user request can fan out into several service, model and tool calls, each wi
 - [Google SRE: Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/) - bounded queues, load shedding, retry amplification and graceful degradation.
 - [Reactive Streams](https://www.reactive-streams.org/) - a vendor-neutral specification effort centred on bounded buffering and backpressure.
 - [Amazon Builders' Library: Static stability using Availability Zones](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) - one current fault-isolation and pre-provisioned-capacity design, reviewed 2026-07-31.
-
-## Chapter status
-
-The researched and independently reviewed Chapter 6 first-pass draft covers the seven entries selected in the approved outline. It is awaiting owner review. Further architecture-modelling, distributed-coordination and overload-control material remains optional and will be added only where it improves awareness without overloading the main traversal.
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 6 plan](../OUTLINE.md#6-architecture-and-distributed-systems)

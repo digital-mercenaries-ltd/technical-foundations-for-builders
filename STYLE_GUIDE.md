@@ -61,6 +61,10 @@ Separate durable claims from the current landscape. Current models, coding agent
 - Use acronyms only after writing the name in full. Add the acronym to the glossary if it recurs.
 - Allow personality, practitioner language and humour. Explain unfamiliar jokes or jargon, and never rely on them as the factual explanation.
 
+Use selected [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/) disciplines as editorial tests, not as a claim of compliance. Keep terminology stable, make material actors and actions explicit, use unambiguous pronouns, expose condition–mechanism–consequence relationships and review long noun clusters. Do not import STE's controlled vocabulary, American spelling, procedural rigidity or mechanical sentence limits into explanatory prose.
+
+Prefer a short heading that names one reader-facing mental model. Put the complete set of related canonical terms in the opening paragraph rather than chaining them into the heading. Review any heading longer than approximately eight words or joining more than three concepts, but retain an official technical name when shortening it would change the concept.
+
 ## Concept-entry template
 
 Use this structure by default. Merge adjacent sections when separate headings make a short entry feel mechanical, but retain every editorial function.

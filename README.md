@@ -12,6 +12,8 @@ Awareness is only the beginning. Knowing that authentication matters is differen
 
 > **Project status:** Chapter 5 was approved on 2026-07-31. The researched and independently reviewed Chapter 6 draft is ready for owner review.
 
+**[Browse the map of the territory](#map-of-the-territory)** or continue for the audience, scope and rationale behind the guide.
+
 ## Who this is for
 
 TFB is primarily written for a non-technical or newly technical builder who already has a real project: a founder, operator, domain expert or self-taught developer using AI to create software. It should also remain useful to journeyman developers, solopreneurs and sole technical contributors who can ship but have uneven exposure to the wider production landscape.
@@ -167,7 +169,7 @@ A deployed system still needs owners, evidence and recovery paths. This chapter 
 
 Security is the control of trust, authority and damage. This chapter introduces threat boundaries, authentication, authorisation, least privilege, cryptography, input and output trust, browser and file attacks, supply-chain risk and responsible handling of personal data.
 
-[Browse the tiered Chapter 9 plan](OUTLINE.md#9-security-privacy-and-identity) · [Use the authentication and credential-management reference](reference/authentication-and-credential-management.md)
+[Browse the tiered Chapter 9 plan](OUTLINE.md#9-security-privacy-and-identity)
 
 ### 10. Product, experience and analytics
 
@@ -193,32 +195,10 @@ Experienced practitioners use compact models to notice recurring patterns in sys
 
 [Browse the tiered Chapter 13 plan](OUTLINE.md#13-laws-heuristics-and-engineering-judgement)
 
-## Supporting documents
+## Project and contributor documents
 
-- [Authentication and credential management](reference/authentication-and-credential-management.md) - four human account patterns with separate rules for memorised credentials, MFA, recovery and non-human identities.
 - [Project family](PROJECT_FAMILY.md) - audiences and boundaries for TFB, TLB and DRC.
 - [Tiered content outline](OUTLINE.md) - canonical chapter boundaries, first-pass selections and further territory.
 - [Glossary](GLOSSARY.md) - short definitions linked to canonical entries.
 - [Style guide](STYLE_GUIDE.md) - the editorial contract for contributors and agents.
-- [Execution plan](PLAN.md) - milestones and document lifecycle.
-- [Issue-ready work packages](WORK_PACKAGES.md) - bounded batches for later drafting.
-- [Milestone 4 Chapter 6 audit](reviews/milestone-4-chapter-6-audit.md) - research, measurements, review findings and verification for the fourth controlled batch.
-- [Milestone 4 Chapter 5 audit](reviews/milestone-4-chapter-5-audit.md) - research, measurements, review findings and verification for the third controlled batch.
-- [Milestone 4 Chapter 4 audit](reviews/milestone-4-chapter-4-audit.md) - research, measurements, review findings and verification for the second controlled batch.
-- [Milestone 4 Chapter 3 audit](reviews/milestone-4-chapter-3-audit.md) - research, measurements, review findings and verification for the first controlled batch.
-- [Milestone 3 audit](reviews/milestone-3-audit.md) - first-pass chapter measurements, review findings and verification results.
-- [Milestone 2 audit](reviews/milestone-2-audit.md) - editorial review findings, resolutions and verification results.
-- [Milestone 1 audit](reviews/milestone-1-audit.md) - prototype review findings and verification results.
-
-## Milestone decisions
-
-Milestone 2 was approved on 2026-07-17 with a provisional 91-entry first traversal. It also established the progressive-disclosure structure, dated landscape material and qualified use of practitioner stories and hacker folklore.
-
-Milestone 3 was approved on 2026-07-17. It:
-
-- accepted the Chapter 1 and Chapter 2 first-pass pages;
-- accepted three splits that raised the traversal to 94 entries, still below the 95-entry planning guardrail;
-- moved binary and hexadecimal to Chapter 1 further territory without rewriting their explanations; and
-- retained eight entries as a calibration maximum rather than a target for later chapters.
-
-The Chapter 3 and Chapter 4 Milestone 4 batches were approved on 2026-07-18. Chapter 5 was approved on 2026-07-31. The Chapter 6 controlled increment has completed research, drafting, independent review and deterministic checks; it is awaiting owner review. Chapter 7 remains deferred until that gate is complete.
+- [Editorial history and evidence](docs/editorial-history.md) - milestone decisions, review records and historical planning artefacts.

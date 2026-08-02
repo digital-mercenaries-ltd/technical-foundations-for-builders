@@ -33,13 +33,17 @@ The most useful distinction is between a **container and its interpretation**. C
 01000001
 ```
 
-Read as an unsigned number, it is 65. Read using [UTF-8, a common text encoding](../GLOSSARY.md#unicode-transformation-format-8-bit-utf-8), it represents `A`. In another format it could be part of a colour, machine instruction, compressed file or encrypted message. The bits do not carry that meaning by themselves; a rule such as a number type, text encoding or file format supplies it. The [Unicode Standard's UTF-8 definition](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-3/#G7404) also shows why encoded size and visible-character count differ: one [Unicode scalar value](../GLOSSARY.md#unicode-scalar-value) - the basic numbered unit encoded by UTF-8 - requires one to four bytes, and one visible character can contain several scalar values.
+Read as an unsigned number, it is 65. Read using [UTF-8, a common text encoding](../GLOSSARY.md#unicode-transformation-format-8-bit-utf-8), it represents `A`. In another format it could be part of a colour, machine instruction, compressed file or encrypted message. The bits do not carry that meaning by themselves; a rule such as a number type, text encoding or file format supplies it.
+
+The [Unicode Standard's UTF-8 definition](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-3/#G7404) also shows why encoded size and visible-character count differ. One [Unicode scalar value](../GLOSSARY.md#unicode-scalar-value)—the basic numbered unit encoded by UTF-8—requires one to four bytes, and one visible character can contain several scalar values.
 
 ### Why a builder needs to know this
 
 Files, memory, databases and network messages expose sizes in bytes. Network transfer rates are commonly expressed in bits per second, while cryptographic key sizes are commonly expressed in bits. Understanding the difference helps you reason about upload limits, storage bills, memory use, text length and values such as a 256-bit encryption key.
 
 The Hypertext Transfer Protocol (HTTP) uses the more precise word [**octet**](../GLOSSARY.md#octet) for an eight-bit byte and defines `Content-Length` as a count of octets ([HTTP Semantics, section 8.6](https://www.rfc-editor.org/rfc/rfc9110.html#section-8.6)). A browser's [`Blob.size`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/size), which describes the size of a raw-data container, reports bytes. These are different interfaces to the same basic unit.
+
+When a size or encoding limit fails, compare the actual byte count at the boundary with the unit that the interface claims to count. A visible-character count is not evidence of byte size.
 
 ### Pitfalls
 
@@ -346,9 +350,5 @@ Calling a system “fast” hides the question that matters. Interactive users o
 
 - [Google Site Reliability Engineering: Service Level Objectives](https://sre.google/sre-book/service-level-objectives/#indicators-in-practice) - latency, throughput and distributions in production services.
 - [RFC 1242: Benchmarking Terminology](https://www.rfc-editor.org/rfc/rfc1242.html) - precise examples of why measurement boundaries matter.
-
-## Chapter status
-
-The Chapter 1 first pass now contains eight awareness-level entries. Optional number-notation explanations remain in [further territory](../further/01-computing-foundations.md).
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 1 plan](../OUTLINE.md#1-computing-foundations)

@@ -2,7 +2,7 @@
 
 Writing code creates behaviour. Software engineering makes that behaviour easier to understand, change and recover as a project grows. It connects intended outcomes to boundaries, evidence, recorded changes and feedback, so that neither a human nor an artificial intelligence (AI) has to rely on plausible-looking code alone.
 
-The starting assumption is that you have a real software project and recognise the programming ideas in [Chapter 2](02-programming-foundations.md). Each entry stands on its own. Together they follow a controlled change from stating its intent through testing, review and integration to the long-term evolution of an existing system.
+This chapter starts from an ordinary software project. Familiarity with the programming ideas in [Chapter 2](02-programming-foundations.md) will add context, but no earlier chapter is required because each entry defines the terms it needs. Together the entries follow a controlled change from stating its intent through testing, review and integration to the long-term evolution of an existing system.
 
 ## Chapter map
 
@@ -333,9 +333,5 @@ Joel Spolsky's 2000 essay [*Things You Should Never Do, Part I*](https://www.joe
 - [Ward Cunningham: The WyCash Portfolio Management System](https://c2.com/doc/oopsla92.html) - the original debt metaphor in its learning-and-consolidation context.
 - [Michael Feathers: *Working Effectively with Legacy Code* sample](https://www.informit.com/content/images/9780131177055/samplepages/0131177052.pdf) - feedback and seams for safer work in difficult code.
 - [Martin Fowler: Strangler Fig Application](https://martinfowler.com/bliki/StranglerFigApplication.html) - staged replacement and its transitional cost.
-
-## Chapter status
-
-The approved Chapter 3 first pass covers seven entries. Further territory and current product material remain optional and will be added only where they improve awareness without overloading the main traversal.
 
 [Return to the guide map](../README.md#map-of-the-territory) · [Browse the complete Chapter 3 plan](../OUTLINE.md#3-software-engineering)

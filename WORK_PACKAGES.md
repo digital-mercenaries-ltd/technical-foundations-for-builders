@@ -1,8 +1,8 @@
 # Technical Foundations for Builders issue-ready work packages
 
-Status: Milestone 3 approved; Milestone 4 in progress - 2026-07-18
+Status: historical work-package map - reviewed 2026-08-02
 
-These are bounded drafting and integration batches for publication to the `digital-mercenaries-ltd/technical-foundations-for-builders` GitHub issue tracker after Milestone 2 approval. They are not a required reading order.
+These work packages record the original bounded drafting and integration structure. [GitHub Issues](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues) is the canonical delivery ledger and current source of status. The packages are not a required reading order.
 
 These packages cover TFB Volume 1 only. The planned TLB Volume 2 will receive separate work packages after its audience, outline and disclosure tiers are approved. DRC is maintained as a separate project and has no deliverables in this file.
 
