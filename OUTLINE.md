@@ -245,6 +245,7 @@ PostgreSQL, MySQL, MariaDB, SQLite, Microsoft SQL Server, Oracle Database, Mongo
 - Transactional outbox, sagas and compensating actions
 - Sharding, consensus and leader election
 - Consistency, availability and partition tolerance (CAP) theorem, and “partition: availability or consistency; else: latency or consistency” (PACELC)
+- The end-to-end argument and where application-level guarantees belong
 - Distributed caching and cache invalidation
 - Deadline propagation, timeout ordering, circuit breakers, bulkheads, load shedding and retry budgets
 - Architecture frameworks including The Open Group Architecture Framework (TOGAF), Zachman and ArchiMate
@@ -256,6 +257,8 @@ PostgreSQL, MySQL, MariaDB, SQLite, Microsoft SQL Server, Oracle Database, Mongo
 Kafka, RabbitMQ, Amazon Simple Queue Service, Google Pub/Sub, Redis, content-delivery networks, service meshes and vendor well-architected frameworks.
 
 Teach deadlines, cancellation, retries and backpressure as connected controls on finite work rather than isolated patterns. An incoming request has a total time budget; downstream calls consume the remaining budget; expired or cancelled work should stop where possible; bounded queues, admission control and load shedding prevent unbounded accumulation; and retries can amplify the overload they are intended to survive. A call-chain or shrinking-budget diagram may help. Planning references: [gRPC deadlines and deadline propagation](https://grpc.io/docs/guides/deadlines/) and the Amazon Builders' Library on [timeouts, retries and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/).
+
+Teach the end-to-end argument as a guideline for deciding which layer can establish a guarantee. Some functions, including reliable transfer, duplicate suppression, recovery and confidentiality, can be completed correctly only with application knowledge at the endpoints; a lower-layer mechanism may still improve performance without proving the application-level property. Do not turn this into an absolute rule or confuse it with the end-to-end deadline budget. Planning reference: Saltzer, Reed and Clark's original paper, [*End-to-End Arguments in System Design*](https://web.mit.edu/saltzer/www/publications/endtoend/endtoendA4.pdf).
 
 **Boundary:** language concurrency lives in Chapter 2; database transactions in Chapter 5; deployment topology in Chapter 7; reliability objectives in Chapter 8.
 
@@ -327,6 +330,7 @@ Use *pets and cattle* only as historical shorthand for unique, manually tended s
 - Structured logging, correlation and trace context
 - Metric cardinality, telemetry sampling and sensitive data
 - Tail latency, queueing, saturation and load testing
+- Little's Law: average in-flight work, throughput and time in the system
 - Runbooks, automation and manual recovery paths, including prerequisites, expected observations, stopping conditions, rollback, escalation and rehearsal
 - Redundancy, shared failure domains and failover exercises
 - Recovery point and recovery time objectives
@@ -340,6 +344,8 @@ Use *pets and cattle* only as historical shorthand for unique, manually tended s
 *Landscape selection reviewed: 2026-07-17; verify current status before publication.*
 
 OpenTelemetry, Prometheus, Grafana, Datadog, New Relic, Sentry, Splunk, Elastic, PagerDuty, Opsgenie, status pages and cloud-provider monitoring services.
+
+Teach Little's Law as a consistency check for a stable system: the average number of items within a stated boundary equals their average arrival or completion rate multiplied by their average time in that system, `L = λW`. Use it to connect latency, throughput, queue length, concurrent work and resource pressure. State the system boundary, averaging period and steady-state assumptions; do not present it as a universal latency predictor or assume it describes an unstable overload. Planning reference: John D. C. Little's original [proof of the queueing formula](https://doi.org/10.1287/opre.9.3.383).
 
 **Boundary:** designing for partial failure lives in Chapter 6; deployment health in Chapter 7; security incident specifics in Chapter 9; organisational continuity evidence in Chapter 11.
 
@@ -546,7 +552,7 @@ Apply the same distinction to generated documentation. Artificial intelligence c
 
 Hacker Laws, the Jargon File, Joel on Software, Unix philosophy, the single-responsibility, open–closed, Liskov-substitution, interface-segregation and dependency-inversion (SOLID) principles, hacker folklore, the Bitter Lesson, *rubber-duck debugging*, *footgun*, *bus factor*, *yak shaving*, *cruft*, *kludge*, *spaghetti code*, *bug-compatible*, *quick-and-dirty*, *Real Soon Now*, *thundering herd*, *poison message*, *dead-letter queue*, *golden path*, *paved road*, *toil*, *works on my machine*, *Friday deploy*, *dogfooding*, *cargo cult*, *hero culture*, *break glass* and *alert fatigue*.
 
-Technical laws keep their canonical homes: Amdahl's Law in [Chapter 1](#1-computing-foundations), Hyrum's Law in [Chapter 4](#4-the-internet-web-and-application-programming-interfaces), CAP and PACELC in [Chapter 6](#6-architecture-and-distributed-systems), Kerckhoffs's principle in [Chapter 9](#9-security-privacy-and-identity), and Fitts' and Hick-Hyman Laws in [Chapter 10](#10-product-experience-and-analytics).
+Technical laws keep their canonical homes: Amdahl's Law in [Chapter 1](#1-computing-foundations), Hyrum's Law in [Chapter 4](#4-the-internet-web-and-application-programming-interfaces), CAP and PACELC in [Chapter 6](#6-architecture-and-distributed-systems), Little's Law in [Chapter 8](#8-operations-reliability-and-observability), Kerckhoffs's principle in [Chapter 9](#9-security-privacy-and-identity), and Fitts' and Hick-Hyman Laws in [Chapter 10](#10-product-experience-and-analytics).
 
 Humorous and historical terms are welcome when they help a reader remember a real mechanism. Explain them without sanding off all their personality, but state their scope and do not treat a joke as evidence.
 
