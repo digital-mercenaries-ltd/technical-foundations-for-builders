@@ -74,6 +74,8 @@ Reduce the number of concepts on the first pass, not the quality of their explan
 - If a research note should be public, create a deliberately edited, non-sensitive public version with its own source links and review it before publication.
 - The original `Technical Foundations for Founders` reference files are private-only. Do not reintroduce them or a public `research/` directory into this repository.
 
+Sub-agent handoff artefacts for this project belong in the private companion repository's `handoffs/` directory. Do not place them in this public repository or an operating-system temporary directory. Name files `YYYY-MM-DD-<task>-<agent>.md` and retain sources, findings, unresolved questions and the intended next action. Handoffs are working evidence, not a second delivery ledger; GitHub Issues remains authoritative for work status.
+
 ## Concept-entry shape
 
 Each concept should normally answer:
