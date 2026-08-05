@@ -1,6 +1,6 @@
 # TFB tiered content outline
 
-Status: canonical editorial outline - reviewed 2026-08-02
+Status: canonical editorial outline - reviewed 2026-08-05
 
 This is the editorial source of truth for the scope of **Technical Foundations for Builders** (TFB), Volume 1 of the project family described in [PROJECT_FAMILY.md](PROJECT_FAMILY.md). The [README](README.md) is the short reader-facing map. This file records what belongs on the first pass, what belongs in optional further territory and which names should initially appear for recognition or landscape orientation.
 
@@ -16,6 +16,8 @@ The guide intentionally includes material at different levels of abstraction. A 
 Each durable mechanism has one canonical home. Products, vendors, organisations, standards, schemes, laws and stories may appear beside that mechanism or receive a dated landscape entry when knowing the name is itself useful.
 
 The current approved outline contains 94 principal entries across the complete first traversal, below a planning guardrail of 95. Milestone 3 raised the Milestone 2 count from 91 by splitting three overloaded labels: integer overflow from floating point, time from performance, and error handling from diagnosis. Raising the guardrail itself requires an explicit editorial review rather than filling every chapter to its local maximum.
+
+The wider retained corpus may grow through further territory, recognition and external routes, provided every candidate still has a clear reader need, canonical home and treatment tier. Future filters or personalised projections may make that corpus easier to enter, but do not make a catalogue a better first pass or justify reducing the explanation quality of an entry. See the deferred [adaptive-projections design note](docs/adaptive-projections.md).
 
 ## Cross-cutting context and boundaries
 
@@ -93,6 +95,7 @@ Unicode Consortium, Unicode Standard, Unicode Transformation Format 8-bit (UTF-8
 - Resource ownership, cancellation and lifetime
 - Parsing limits and hostile inputs
 - Reproducible debugging, stack traces, debuggers and minimal examples
+- Pure functions, effect isolation, referential transparency and functional programming
 
 ### Recognition and landscape
 
@@ -132,6 +135,8 @@ Teach effective technical questions as part of diagnosis: state the goal, observ
 - Software documentation as maintained system evidence: audiences, document types, canonical sources, docs-as-code, ownership, freshness, tested examples and architecture decision records
 - Developer experience and work-in-progress limits
 - Maintainability, software rot and the second-system effect
+- Code smells, anti-patterns and structural failure modes, including *spaghetti code*
+- Application workflows, orchestration, domain rules and state transitions
 
 ### Recognition and landscape
 
@@ -152,6 +157,8 @@ Possible book-length routes for the curated further-reading guide are [*Docs for
 Use Toyota's history to introduce one cross-chapter distinction that software discussions often collapse: developing the product; preparing the production system that will create it; and operating and continually improving that production system. Product intent and discovery remain in Chapter 10, engineering the software and its change process in Chapter 3, production preparation in Chapter 7, and live operation and improvement in Chapter 8. Treat named product-development systems and Toyota-derived management practices as recognition or external material unless they clarify one of those mechanisms. The organisation-wide leadership and capability system belongs mainly to TLB Volume 2 under the [project-family boundary](PROJECT_FAMILY.md#toyota-production-development-and-management-systems). Planning sources reviewed 2026-08-03: Toyota's account of the stages from [vehicle development through production preparation to mass production](https://www.toyota-global.com/company/history_of_toyota/75years/data/automotive_business/production/purchasing/overview/index.html) and its [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/).
 
 **Boundary:** code construction, collaborative change and documentation required to understand or change a software system live here; network service contracts and their machine-readable descriptions live in Chapter 4, deploying the resulting artefact in Chapter 7 and operating it in Chapter 8. Organisation-wide knowledge management, records strategy, documentation staffing, enterprise taxonomy and tooling belong to TLB Volume 2.
+
+For application structure, distinguish a user-visible workflow or use case, application orchestration, domain rules and state, and infrastructure effects such as persistence, messaging and calls to other services. These are responsibilities, not mandatory layers or a prescription for a three-tier architecture. A client, gateway or storage constraint can reject unsuitable input, but it cannot replace the domain rule that decides whether a requested state change is valid. Route public contracts to Chapter 4, data constraints to Chapter 5, distributed workflows and compensation to Chapter 6, and trust enforcement to Chapter 9.
 
 ## 4. The Internet, web and application programming interfaces
 
