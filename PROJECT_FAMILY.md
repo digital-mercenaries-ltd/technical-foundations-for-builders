@@ -2,11 +2,11 @@
 
 Status: editorial direction confirmed - 2026-07-31
 
-This document defines the relationship between **Technical Foundations for Builders** (TFB), the planned **Technical Leadership for Builders** (TLB) companion and the separate **Delivery Risk Cube** (DRC) project. It prevents their audiences and promises from being collapsed into one oversized guide.
+This document defines the relationship between **Technical Foundations for Builders** (TFB), the planned **Technical Leadership for Builders** (TLB) companion, the **Software Commissioning** book and the separate **Delivery Risk Cube** (DRC) project. It prevents their audiences and promises from being collapsed into one oversized guide.
 
 ## Shared worldview
 
-All three works assume that artificial intelligence (AI) assistance and agentic engineering are normal parts of contemporary software work. They should remain useful as particular models, agents, protocols and products change.
+All four works assume that artificial intelligence (AI) assistance and agentic engineering are normal parts of contemporary software work. They should remain useful as particular models, agents, protocols and products change.
 
 Their common editorial model has three layers:
 
@@ -55,6 +55,21 @@ TLB's unit of concern is the **organisation's technical capability**. Likely ter
 
 TLB is not an advanced sequel that requires every reader to finish TFB. The volumes are sibling maps with cross-links. Before TLB drafting begins, give it its own outline, disclosure tiers and execution plan rather than adding its territory to the Volume 1 chapter inventory.
 
+## Software Commissioning
+
+Software Commissioning is a separate book about the buyer-side work of selecting, proving, onboarding, operating and eventually replacing software and online services. Its reader may be a founder, operator, product leader, technical owner or other person accountable for getting a real capability into use, whether they are buying software as a service, engaging a supplier or commissioning an integration.
+
+Its unit of concern is the **commissioning decision and resulting service relationship**. It asks:
+
+- What real workflow and outcome must the service support?
+- Which evidence proves that the proposed product, supplier or integration can perform that work?
+- Who owns the account, data, access, configuration, cost and exit route?
+- What must be tested, recorded and operated before the service becomes a consequential dependency?
+
+The book should not turn a vendor demonstration, feature list, marketplace connector or claimed application programming interface into evidence of fit. It should use an investigation proportionate to the consequence of the decision. Its wider principles, explanations and cases remain separate from the lightweight operating procedure for ordinary software-as-a-service selection and commissioning.
+
+Software Commissioning does not replace TFB's explanation of the underlying technical mechanisms, TLB's organisation-wide portfolio and supplier governance, or DRC's question about the evidence shape required for a particular commitment. Give it its own audience, promise, outline and execution plan rather than adding procurement or commissioning territory to TFB Volume 1.
+
 ## Separate project: Delivery Risk Cube
 
 DRC is a decision framework for judging whether a project's accumulated evidence and implementation are shaped appropriately for its next commitment.
@@ -87,6 +102,7 @@ Use these tests when a topic could fit more than one work:
 | --- | --- |
 | How does a software mechanism behave, fail or become trustworthy? | TFB |
 | What must the organisation own, fund, govern or coordinate? | TLB |
+| How should a buyer prove, establish and retain control of a specific software service or supplier relationship? | Software Commissioning |
 | Given the next commitment, which imbalance or missing evidence deserves attention now? | DRC |
 
 Cross-reference rather than duplicate a full explanation. A topic may appear in more than one work from a different unit of concern—for example, technical access control in TFB and organisational joiner-mover-leaver responsibility in TLB—but each treatment must state its boundary.
