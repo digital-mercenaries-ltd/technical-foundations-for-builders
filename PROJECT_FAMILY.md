@@ -2,11 +2,11 @@
 
 Status: editorial direction confirmed - 2026-07-31
 
-This document defines the relationship between **Technical Foundations for Builders** (TFB), the planned **Technical Leadership for Builders** (TLB) companion and the separate **Delivery Risk Cube** (DRC) project. It prevents their audiences and promises from being collapsed into one oversized guide.
+This document defines the relationship between **Technical Foundations for Builders** (TFB), the planned **Technical Leadership for Builders** (TLB) companion, the **Software Commissioning** book and the separate **Delivery Risk Cube** (DRC) project. It prevents their audiences and promises from being collapsed into one oversized guide.
 
 ## Shared worldview
 
-All three works assume that artificial intelligence (AI) assistance and agentic engineering are normal parts of contemporary software work. They should remain useful as particular models, agents, protocols and products change.
+All four works assume that artificial intelligence (AI) assistance and agentic engineering are normal parts of contemporary software work. They should remain useful as particular models, agents, protocols and products change.
 
 Their common editorial model has three layers:
 
@@ -55,6 +55,21 @@ TLB's unit of concern is the **organisation's technical capability**. Likely ter
 
 TLB is not an advanced sequel that requires every reader to finish TFB. The volumes are sibling maps with cross-links. Before TLB drafting begins, give it its own outline, disclosure tiers and execution plan rather than adding its territory to the Volume 1 chapter inventory.
 
+## Software Commissioning
+
+Software Commissioning is a separate book about the buyer-side work of selecting, proving, onboarding, operating and eventually replacing software and online services. Its reader may be a founder, operator, product leader, technical owner or other person accountable for getting a real capability into use, whether they are buying software as a service, engaging a supplier or commissioning an integration.
+
+Its unit of concern is the **commissioning decision and resulting service relationship**. It asks:
+
+- What real workflow and outcome must the service support?
+- Which evidence proves that the proposed product, supplier or integration can perform that work?
+- Who owns the account, data, access, configuration, cost and exit route?
+- What must be tested, recorded and operated before the service becomes a consequential dependency?
+
+The book should not turn a vendor demonstration, feature list, marketplace connector or claimed application programming interface into evidence of fit. It should use an investigation proportionate to the consequence of the decision. Its wider principles, explanations and cases remain separate from the lightweight operating procedure for ordinary software-as-a-service selection and commissioning.
+
+Software Commissioning does not replace TFB's explanation of the underlying technical mechanisms, TLB's organisation-wide portfolio and supplier governance, or DRC's question about the evidence shape required for a particular commitment. Give it its own audience, promise, outline and execution plan rather than adding procurement or commissioning territory to TFB Volume 1.
+
 ## Separate project: Delivery Risk Cube
 
 DRC is a decision framework for judging whether a project's accumulated evidence and implementation are shaped appropriately for its next commitment.
@@ -87,6 +102,7 @@ Use these tests when a topic could fit more than one work:
 | --- | --- |
 | How does a software mechanism behave, fail or become trustworthy? | TFB |
 | What must the organisation own, fund, govern or coordinate? | TLB |
+| How should a buyer prove, establish and retain control of a specific software service or supplier relationship? | Software Commissioning |
 | Given the next commitment, which imbalance or missing evidence deserves attention now? | DRC |
 
 Cross-reference rather than duplicate a full explanation. A topic may appear in more than one work from a different unit of concern—for example, technical access control in TFB and organisational joiner-mover-leaver responsibility in TLB—but each treatment must state its boundary.
@@ -114,3 +130,11 @@ Planning references: [GDS guidance on architecture decision records](https://gds
 - **DRC use:** the intended TIME direction can help state the next commitment. DRC can then ask whether the project has an appropriate shape and evidence for that direction—for example, migration compatibility and rollback evidence or elimination, data-retention and dependency-removal evidence. A TIME category is not a DRC axis, maturity level, readiness score or substitute for validating the decision.
 
 Do not infer that **Migrate** means cloud migration or that **Eliminate** means immediate deletion. Migration may replace, consolidate or move a capability, while elimination requires deliberate user, dependency, data, contractual, compliance and recovery decisions. Planning references, reviewed 2026-07-31: [Gartner's public enterprise-applications overview of the TIME method and its fitness dimensions](https://www.gartner.com/en/information-technology/topics/enterprise-apps) and [SAP LeanIX's TIME framework overview](https://www.leanix.net/en/wiki/apm/gartner-time-model).
+
+### Toyota production, development and management systems
+
+- **TFB treatment:** distinguish product development, production preparation performed by the production-engineering function, and the operation and continuous improvement of production. Route product intent to Chapter 10, software engineering to Chapter 3, production preparation to Chapter 7 and live operation to Chapter 8. Keep the automotive analogy qualified rather than creating a Toyota survey.
+- **TLB canonical home:** explain the organisational system around cross-functional integration, respect for people, capability development, standardised work as a basis for improvement and the authority to expose and stop problems. A future TLB outline should decide whether the Toyota Way or Lean Product and Process Development receives further-territory or recognition treatment after those durable mechanisms have been established.
+- **DRC use:** evidence from product development, production preparation and live operation may expose different weaknesses before a commitment. These activities are not DRC axes, maturity stages or a fixed delivery lifecycle.
+
+Do not present *Toyota Product Development System*, set-based concurrent engineering or *3P* as Toyota-branded systems without a first-party source. Planning sources reviewed 2026-08-03: Toyota's explanations of the [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/), [Toyota Way 2020](https://global.toyota/en/company/vision-and-philosophy/toyotaway_code-of-conduct/) and [production engineering](https://global.toyota/en/detail/19482767).

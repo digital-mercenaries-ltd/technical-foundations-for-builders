@@ -1,6 +1,6 @@
 # TFB tiered content outline
 
-Status: canonical editorial outline - reviewed 2026-08-02
+Status: canonical editorial outline - reviewed 2026-08-05
 
 This is the editorial source of truth for the scope of **Technical Foundations for Builders** (TFB), Volume 1 of the project family described in [PROJECT_FAMILY.md](PROJECT_FAMILY.md). The [README](README.md) is the short reader-facing map. This file records what belongs on the first pass, what belongs in optional further territory and which names should initially appear for recognition or landscape orientation.
 
@@ -16,6 +16,8 @@ The guide intentionally includes material at different levels of abstraction. A 
 Each durable mechanism has one canonical home. Products, vendors, organisations, standards, schemes, laws and stories may appear beside that mechanism or receive a dated landscape entry when knowing the name is itself useful.
 
 The current approved outline contains 94 principal entries across the complete first traversal, below a planning guardrail of 95. Milestone 3 raised the Milestone 2 count from 91 by splitting three overloaded labels: integer overflow from floating point, time from performance, and error handling from diagnosis. Raising the guardrail itself requires an explicit editorial review rather than filling every chapter to its local maximum.
+
+The wider retained corpus may grow through further territory, recognition and external routes, provided every candidate still has a clear reader need, canonical home and treatment tier. Future filters or personalised projections may make that corpus easier to enter, but do not make a catalogue a better first pass or justify reducing the explanation quality of an entry. See the deferred [adaptive-projections design note](docs/adaptive-projections.md).
 
 ## Cross-cutting context and boundaries
 
@@ -93,6 +95,7 @@ Unicode Consortium, Unicode Standard, Unicode Transformation Format 8-bit (UTF-8
 - Resource ownership, cancellation and lifetime
 - Parsing limits and hostile inputs
 - Reproducible debugging, stack traces, debuggers and minimal examples
+- Pure functions, effect isolation, referential transparency and functional programming
 
 ### Recognition and landscape
 
@@ -101,6 +104,8 @@ Unicode Consortium, Unicode Standard, Unicode Transformation Format 8-bit (UTF-8
 JavaScript, TypeScript, Python, Java, Kotlin, C#, Go, Rust, Swift, PHP, Ruby, Node.js, Deno, Bun, npm, Python Package Index (PyPI), Maven Central, NuGet, crates.io, integrated development environments and language servers.
 
 **From hacker folklore:** *heisenbug*, *Bohr bug*, *shotgun debugging*, *voodoo programming*, *phase of the moon*, “problem exists between keyboard and chair” (PEBKAC) and “problem exists between chair and keyboard” (PEBCAK) can make debugging behaviours memorable. Explain the real issue—observer effects, hidden state or lack of a causal model—rather than using the joke as the diagnosis.
+
+Teach effective technical questions as part of diagnosis: state the goal, observed and expected behaviour, environment, relevant chronology, reproduction, evidence, constraints and approaches already tried. Introduce the **XY Problem** as asking about a proposed step without exposing the underlying goal, while warning that the label does not justify dismissing the immediate question or assuming that its constraints are mistaken. Eric S. Raymond and Rick Moen's *How To Ask Questions The Smart Way* is recognisable hacker-culture history and contains useful advice about symptoms, goals and reproducibility, but its gatekeeping language and assumptions about volunteer support should not become TFB's collaboration standard. Planning references: [The XY Problem](https://xyproblem.info/) and [*How To Ask Questions The Smart Way*](http://www.catb.org/~esr/faqs/smart-questions.html).
 
 **Boundary:** language mechanics live here; organising and changing a codebase over time lives in Chapter 3.
 
@@ -130,6 +135,8 @@ JavaScript, TypeScript, Python, Java, Kotlin, C#, Go, Rust, Swift, PHP, Ruby, No
 - Software documentation as maintained system evidence: audiences, document types, canonical sources, docs-as-code, ownership, freshness, tested examples and architecture decision records
 - Developer experience and work-in-progress limits
 - Maintainability, software rot and the second-system effect
+- Code smells, anti-patterns and structural failure modes, including *spaghetti code*
+- Application workflows, orchestration, domain rules and state transitions
 
 ### Recognition and landscape
 
@@ -147,7 +154,11 @@ Possible book-length routes for the curated further-reading guide are [*Docs for
 
 **Historical practice:** the Joel Test (2000) may appear as a dated field checklist after its underlying ideas have been explained. Joel Spolsky's writing on daily builds, bug reports and rewrites supplies memorable cases, not universal process rules.
 
+Use Toyota's history to introduce one cross-chapter distinction that software discussions often collapse: developing the product; preparing the production system that will create it; and operating and continually improving that production system. Product intent and discovery remain in Chapter 10, engineering the software and its change process in Chapter 3, production preparation in Chapter 7, and live operation and improvement in Chapter 8. Treat named product-development systems and Toyota-derived management practices as recognition or external material unless they clarify one of those mechanisms. The organisation-wide leadership and capability system belongs mainly to TLB Volume 2 under the [project-family boundary](PROJECT_FAMILY.md#toyota-production-development-and-management-systems). Planning sources reviewed 2026-08-03: Toyota's account of the stages from [vehicle development through production preparation to mass production](https://www.toyota-global.com/company/history_of_toyota/75years/data/automotive_business/production/purchasing/overview/index.html) and its [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/).
+
 **Boundary:** code construction, collaborative change and documentation required to understand or change a software system live here; network service contracts and their machine-readable descriptions live in Chapter 4, deploying the resulting artefact in Chapter 7 and operating it in Chapter 8. Organisation-wide knowledge management, records strategy, documentation staffing, enterprise taxonomy and tooling belong to TLB Volume 2.
+
+For application structure, distinguish a user-visible workflow or use case, application orchestration, domain rules and state, and infrastructure effects such as persistence, messaging and calls to other services. These are responsibilities, not mandatory layers or a prescription for a three-tier architecture. A client, gateway or storage constraint can reject unsuitable input, but it cannot replace the domain rule that decides whether a requested state change is valid. Route public contracts to Chapter 4, data constraints to Chapter 5, distributed workflows and compensation to Chapter 6, and trust enforcement to Chapter 9.
 
 ## 4. The Internet, web and application programming interfaces
 
@@ -309,6 +320,8 @@ Named stack profiles such as Linux–Apache–MySQL–PHP (LAMP), MongoDB–Expr
 
 Use *pets and cattle* only as historical shorthand for unique, manually tended servers versus replaceable members of an automated pool. Pair it with *snowflake server*, *phoenix server* and *immutable server*, and explain the real questions: where state lives, whether an instance can be rebuilt, what replacement depends on and how failure is detected. Do not extend the metaphor to people. Planning references: Randy Bias's history of [pets versus cattle](https://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/) and Martin Fowler's [immutable server](https://martinfowler.com/bliki/ImmutableServer.html) entry.
 
+Use **production preparation** for recognition as the phase in which production engineering designs and proves the processes, tooling, environments and controls that will create and deliver a product. Production engineering is the broader engineering function; production preparation is part of its work between product design and routine production. The software analogy includes build and deployment pipelines, environment design, release controls and operational readiness, but it is not an assertion that software development is repetitive factory work. Planning source reviewed 2026-08-03: Toyota describes production engineers as working between vehicle concept and manufacture to design [production processes and layouts](https://global.toyota/en/detail/19482767).
+
 **Boundary:** architectural decomposition lives in Chapter 6; operating and recovering the deployed system lives in Chapter 8; contracts and vendor assurance live in Chapter 11.
 
 ## 8. Operations, reliability and observability
@@ -337,13 +350,17 @@ Use *pets and cattle* only as historical shorthand for unique, manually tended s
 - Chaos and resilience testing
 - Synthetic monitoring, canaries and post-deployment verification
 - Customer support and status communication
-- Root-cause analysis, Five Whys and contributing conditions
+- Causal analysis, Five Whys and contributing conditions
+
+Teach **Five Whys** as a prompt to continue causal inquiry, not a fixed five-question algorithm or proof that an incident has one root cause. Begin with a timeline and evidence, allow causal paths to branch, distinguish triggers from immediate, contributing and systemic conditions, test competing explanations and stop only when further questions cease to produce meaningful or actionable evidence. Do not end at “human error” or use the method to assign blame. Pair findings with owned actions that prevent recurrence, improve detection, limit impact or strengthen recovery. Toyota places Five Whys within observation, kaizen and management improvement rather than presenting it as an isolated worksheet. Planning sources reviewed 2026-08-03: Toyota's [2014 annual report](https://www.toyota-global.com/pages/contents/investors/ir_library/annual/pdf/2014/ar14_e.pdf), the Health and Safety Executive's [*Investigating accidents and incidents*](https://www.hse.gov.uk/pubns/hsg245.pdf), the NCSC Cyber Assessment Framework's [lessons-learned guidance](https://www.ncsc.gov.uk/collection/cyber-assessment-framework/caf-objective-d/principle-d2-lessons-learned) and Google's [postmortem culture](https://sre.google/sre-book/postmortem-culture/).
 
 ### Recognition and landscape
 
 *Landscape selection reviewed: 2026-07-17; verify current status before publication.*
 
 OpenTelemetry, Prometheus, Grafana, Datadog, New Relic, Sentry, Splunk, Elastic, PagerDuty, Opsgenie, status pages and cloud-provider monitoring services.
+
+Use the **Toyota Production System** for recognition where its primary TFB relevance is operating and continuously improving production. Its principles can also influence production-system design and preparation, so do not present the three activities as isolated organisations or impermeable phases. Retain only mechanisms already useful to TFB: flow and pull, small batches and work-in-progress limits, visible abnormalities, stopping unsafe propagation, built-in quality, observation of the actual system and continuous improvement. Kanban is a signalling mechanism rather than merely a task board, jidoka is broader than an automated test, and Just-in-Time does not mean removing deliberate capacity or recovery buffers. Planning source reviewed 2026-08-03: Toyota's explanation of the [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/).
 
 Teach Little's Law as a consistency check for a stable system: the average number of items within a stated boundary equals their average arrival or completion rate multiplied by their average time in that system, `L = λW`. Use it to connect latency, throughput, queue length, concurrent work and resource pressure. State the system boundary, averaging period and steady-state assumptions; do not present it as a universal latency predictor or assume it describes an unstable overload. Planning reference: John D. C. Little's original [proof of the queueing formula](https://doi.org/10.1287/opre.9.3.383).
 
@@ -571,6 +588,8 @@ Plan a reader-facing index organised by function and domain rather than prestige
 ### Curated further reading
 
 Plan a thematic guide to the strongest books, courses, standards, specifications and maintained online resources. Use practical priority labels such as **Start here**, **Continue** and **Reference**, with a short explanation of the value, level and limitations of each item. Select from the strongest per-entry reading rather than copying every chapter list or publishing a comprehensive canon. Verify editions, links and current scope before inclusion.
+
+Label practitioner essays and historical internet sources by type and explain what remains useful and what has dated. For example, *How To Ask Questions The Smart Way* may be retained for its diagnostic-question mechanics without adopting its social tone, while the XY Problem page is a compact recognition aid rather than a complete collaboration framework.
 
 ### Authentication and credential management
 

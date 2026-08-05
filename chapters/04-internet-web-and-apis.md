@@ -4,7 +4,7 @@ A browser or service call may look like one operation, but it crosses several bo
 
 This chapter follows one request from an address to a response, then examines the contracts, state and compatibility concerns built on top. Each entry defines its working terms and links to lower-level computing, programming and engineering ideas where they add context, so readers can begin here without completing earlier chapters.
 
-The focus is communication mechanics. Distributed coordination and partial failure belong in Chapter 6, deployment infrastructure in Chapter 7, attacks and detailed defences in Chapter 9, and usability and accessibility outcomes in Chapter 10.
+The focus is communication mechanics. Distributed coordination and partial failure belong in Chapter 6, deployment infrastructure in [Chapter 7](07-infrastructure-cloud-and-delivery.md), attacks and detailed defences in Chapter 9, and usability and accessibility outcomes in Chapter 10.
 
 ## Chapter map
 

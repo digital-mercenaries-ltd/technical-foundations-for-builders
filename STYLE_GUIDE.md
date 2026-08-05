@@ -161,6 +161,8 @@ An entry is deep enough when a reader can:
 
 Stop before derivations, exhaustive variants, historical catalogues, language-specific recipes or implementation instructions unless one is essential to the initial model.
 
+Future reading routes may select or order entries differently for a reader's background or goal. They do not lower this standard: each retained entry must make sense when encountered independently, define unfamiliar terminology before relying on it and link to prerequisites where useful. A presentation may offer an acronym expansion, glossary preview or adaptive explanation, but the published prose must remain understandable without that interface.
+
 Do not solve breadth by putting every candidate on the first pass. Move optional concepts to further territory, name them briefly for recognition or link externally.
 
 ## Examples

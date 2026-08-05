@@ -1,6 +1,6 @@
 # Technical Foundations for Builders - Execution Plan
 
-Status: historical milestone map and editorial lifecycle - reviewed 2026-08-02
+Status: historical milestone map and editorial lifecycle - reviewed 2026-08-05
 
 [GitHub Issues](https://github.com/digital-mercenaries-ltd/technical-foundations-for-builders/issues) is the canonical delivery ledger. This document records the approved long-range direction and editorial method; it does not carry live work status.
 
@@ -31,6 +31,8 @@ STYLE_GUIDE.md
 GLOSSARY.md
 OUTLINE.md
 WORK_PACKAGES.md
+docs/
+  adaptive-projections.md
 chapters/
   01-<chapter-name>.md
   02-<chapter-name>.md
@@ -55,7 +57,7 @@ Approved `reference/` pages will be reader-facing navigation or decision aids, n
 
 Use standard Markdown links such as `[binary](further/01-computing-foundations.md#binary-numbers)` rather than `[[wikilinks]]`, which GitHub does not render as repository-page links. The editorial experience should feel wiki-like even though the syntax remains GitHub-compatible.
 
-Do not introduce a site generator, database, content management system (CMS), or structured content schema during the first milestones. Reconsider this only if the Markdown repository exposes a concrete limitation.
+Do not introduce a site generator, database, content management system (CMS), or structured content schema during the first milestones. Reconsider this only if the Markdown repository exposes a concrete limitation. A future projection service may derive an index or graph from approved Markdown, but it must not become a second canonical content store. Its scope, learner model and decision gates are recorded in [the adaptive-projections design note](docs/adaptive-projections.md).
 
 Raw research notes and original source material live in the separate private companion repository, `digital-mercenaries-ltd/technical-foundations-for-builders-private`. This public repository receives only deliberately edited reader-facing material and non-sensitive review records.
 
@@ -69,6 +71,12 @@ Every retained candidate receives one treatment:
 4. **External or omitted:** a link or omission when more TFB coverage would add weight without useful understanding.
 
 The README map, first-pass chapters and further-territory pages are three different browsing depths. External references provide depth beyond TFB; they are not a fourth internal curriculum.
+
+### 2.2 Deferred adaptive projections
+
+TFB remains a curated, explanation-first guide rather than a personalised course. A future knowledge-product layer may offer filtered reading routes, project-aware guidance or adaptive explanations for different backgrounds and goals. It should consume canonical TFB entries and their typed relationships, not restructure the 13-chapter traversal or dilute its entry standard.
+
+Start with deterministic, inspectable routing rules where they meet the need. Artificial intelligence may conduct a diagnostic conversation, explain a recommended route or adapt language to a recorded learner model, but it is not required for every projection. Treat self-reported familiarity, quiz answers and authorised project inspection as fallible signals, not proof of competence. Detailed design and deferral criteria live in [the adaptive-projections design note](docs/adaptive-projections.md).
 
 ## 3. Editorial unit
 
@@ -89,6 +97,8 @@ Relevant internal and external links should also be embedded naturally throughou
 Use a soft initial budget of 250-500 words per concept, excluding resource lists. Milestone 1 showed that this range can support concrete awareness-level teaching; clarity takes priority over a rigid limit.
 
 Concepts do not need equal-sized entries or to occupy the same level of abstraction. Use the full template for durable mechanisms. Use shorter dated landscape items for current products, vendors, organisations, protocols and schemes when name recognition is useful. Use related observations, historical asides and cultural jargon where they make a mechanism memorable.
+
+The size or prominence of a future route must not determine an entry's treatment. Retain a concept only when its own explanation earns a place at the selected tier; a personalised projection selects and orders already-curated material.
 
 ## 4. Document software development lifecycle
 
@@ -246,6 +256,7 @@ Acceptance gate: all planned concepts have a reviewed first draft and a canonica
 - Find gaps, unnecessary overlap, contradictory definitions, orphaned concepts, and poorly grounded jargon.
 - Review every chapter for material AI-assisted and agentic consequences instead of treating Chapter 12 as the only relevant location.
 - Check that TFB, TLB and DRC boundaries remain clear and that cross-references do not duplicate canonical explanations.
+- Assess whether canonical homes, cross-links, prerequisites and glossary definitions are sufficiently consistent to support a derived concept index; do not implement an adaptive service at this gate.
 - Complete cross-links and the glossary.
 - Maintain the authentication-and-credential-management decision reference and build the planned institutions-and-authorities and curated-further-reading guides from reviewed chapter material.
 - Recheck source authority, accessibility, durability, and link health.
@@ -261,6 +272,7 @@ Acceptance gate: the guide is coherent and browsable as a whole, not merely a co
 - Establish a reviewed currentness workflow that can use automation to flag stale dates, links, versions, products and standards without publishing unattended editorial changes.
 - Publish the approved Markdown repository and create an initial tagged release.
 - Record deferred ideas separately; do not add a site generator or practical guide layer during release hardening.
+- Keep adaptive projections as a deferred knowledge-product decision until the guide has enough approved content and a demonstrated reader-routing need.
 
 Acceptance gate: the public repository accurately represents the approved scope and has a maintainable update process.
 

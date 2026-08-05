@@ -31,6 +31,8 @@ AI-assisted work is the guide's contemporary context, not an appendix that repla
 
 TFB is Volume 1: the map of the software system and the ideas needed to make it trustworthy. The planned **Technical Leadership for Builders** (TLB) companion will be Volume 2: a map of the wider technical function carried by a solopreneur, sole technical employee, technical lead or accidental chief technology officer. TLB will cover organisational responsibilities such as technology strategy, product ownership, delivery, workplace information technology, business systems, governance, sourcing, budgets and continuity without inflating TFB's software-focused traversal.
 
+**Software Commissioning** is a separate book about the buyer-side work of selecting, proving, onboarding, operating and replacing software and online services. It addresses the commissioning decision and service relationship: whether the real workflow works, who owns data and access, what evidence supports the decision, and whether the service can be exited. It does not duplicate TFB's technical explanations or TLB's organisation-wide portfolio and supplier governance.
+
 The **Delivery Risk Cube** (DRC) is being developed as a separate but related decision framework. It asks whether a project's functional breadth, implementation fidelity and production-quality evidence have the right shape for its next commitment. DRC provides a decision lens; TFB supplies many of the technical explanations beneath it.
 
 [Read the project-family boundaries](PROJECT_FAMILY.md).
@@ -157,7 +159,7 @@ Architecture describes consequential boundaries and relationships within a syste
 
 Software runs on physical resources even when a platform hides most of them. This chapter explains environments, servers, containers, cloud regions, managed services, build artefacts, deployment, rollback, shared responsibility, cost and the coupling created by products such as Kubernetes, Vercel or Supabase.
 
-[Browse the tiered Chapter 7 plan](OUTLINE.md#7-infrastructure-cloud-and-delivery)
+[Read Chapter 7](chapters/07-infrastructure-cloud-and-delivery.md) · [Browse the tiered Chapter 7 plan](OUTLINE.md#7-infrastructure-cloud-and-delivery)
 
 ### 8. Operations, reliability and observability
 
